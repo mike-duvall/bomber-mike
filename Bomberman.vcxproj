@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D9F9E755-0EE7-44B8-A34E-1FA357BE9DE3}</ProjectGuid>
+    <RootNamespace>Bomberman</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25420.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>Debug\</OutDir>
+    <IntDir>Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>Release\</OutDir>
+    <IntDir>Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ddraw.lib;dinput8.lib;dinput8.lib;dsound.lib;winmm.lib;dxerr.lib;dxguid.lib;odbc32.lib;odbccp32.lib;fmodex_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)Bomberman.exe</OutputFile>
+      <AdditionalLibraryDirectories>external\lib;fmod;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBCMT.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)Bomberman.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)Bomberman.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ai\PathFinder.cpp" />
+    <ClCompile Include="bob\BlitterObject.cpp" />
+    <ClCompile Include="gameobjects\Block.cpp" />
+    <ClCompile Include="gameobjects\Bomb.cpp" />
+    <ClCompile Include="gameobjects\BombPowerup.cpp" />
+    <ClCompile Include="gameobjects\ControllerSelector.cpp" />
+    <ClCompile Include="gameobjects\DestructableBlock.cpp" />
+    <ClCompile Include="gameobjects\Explodingplayer.cpp" />
+    <ClCompile Include="gameobjects\Explosion.cpp" />
+    <ClCompile Include="gameobjects\ExplosionPart.cpp" />
+    <ClCompile Include="gameobjects\FlamePowerup.cpp" />
+    <ClCompile Include="gameobjects\GameObject.cpp" />
+    <ClCompile Include="gameobjects\IndestructableBlock.cpp" />
+    <ClCompile Include="gameobjects\Number.cpp" />
+    <ClCompile Include="gameobjects\Player.cpp" />
+    <ClCompile Include="gameobjects\Powerup.cpp" />
+    <ClCompile Include="gameobjects\Selector.cpp" />
+    <ClCompile Include="gameobjects\SimpleGameObject.cpp" />
+    <ClCompile Include="gameobjects\Timer.cpp" />
+    <ClCompile Include="gameobjects\VictoryLightHorizontalGroup.cpp" />
+    <ClCompile Include="gameobjects\VictoryLightVerticalGroup.cpp" />
+    <ClCompile Include="gameobjects\VictoryLlight.cpp" />
+    <ClCompile Include="gamestate\EndOfMatch.cpp" />
+    <ClCompile Include="gamestate\EndOfRound.cpp" />
+    <ClCompile Include="gamestate\EndOfRoundReport.cpp" />
+    <ClCompile Include="gamestate\GameStart.cpp" />
+    <ClCompile Include="gamestate\GameState.cpp" />
+    <ClCompile Include="gamestate\Playing.cpp" />
+    <ClCompile Include="gamestate\SelectingBaseGameState.cpp" />
+    <ClCompile Include="gamestate\SelectingController.cpp" />
+    <ClCompile Include="gamestate\SelectingNumPlayers.cpp" />
+    <ClCompile Include="gamestate\SelectingNumRounds.cpp" />
+    <ClCompile Include="gamestate\TitleGameState.cpp" />
+    <ClCompile Include="input\ComputerController.cpp" />
+    <ClCompile Include="input\Joystick.cpp" />
+    <ClCompile Include="input\Keyboard.cpp" />
+    <ClCompile Include="main\main.cpp" />
+    <ClCompile Include="main\winmain.cpp" />
+    <ClCompile Include="sound\dxutil.cpp" />
+    <ClCompile Include="sound\MSound.cpp" />
+    <ClCompile Include="t3dlib\ddutil.cpp" />
+    <ClCompile Include="t3dlib\t3dlib1.cpp" />
+    <ClCompile Include="t3dlib\t3dlib3.cpp" />
+    <ClCompile Include="universe\Universe.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ai\PathFinder.h" />
+    <ClInclude Include="bob\BlitterObject.h" />
+    <ClInclude Include="Bomberman.h" />
+    <ClInclude Include="fmod\fmod.hpp" />
+    <ClInclude Include="gameobjects\Block.h" />
+    <ClInclude Include="gameobjects\Bomb.h" />
+    <ClInclude Include="gameobjects\BombPowerup.h" />
+    <ClInclude Include="gameobjects\ControlEvent.h" />
+    <ClInclude Include="gameobjects\DestructableBlock.h" />
+    <ClInclude Include="gameobjects\ExplodingPlayer.h" />
+    <ClInclude Include="gameobjects\Explosion.h" />
+    <ClInclude Include="gameobjects\ExplosionPart.h" />
+    <ClInclude Include="gameobjects\FlamePowerup.h" />
+    <ClInclude Include="gameobjects\GameObject.h" />
+    <ClInclude Include="gameobjects\HowManyPlayers.h" />
+    <ClInclude Include="gameobjects\IndestructableBlock.h" />
+    <ClInclude Include="gameobjects\Player.h" />
+    <ClInclude Include="gameobjects\Powerup.h" />
+    <ClInclude Include="gameobjects\SelectMatch.h" />
+    <ClInclude Include="gameobjects\VictoryLight.h" />
+    <ClInclude Include="gamestate\EndOfMatch.h" />
+    <ClInclude Include="gamestate\EndOfRound.h" />
+    <ClInclude Include="gamestate\EndOfRoundReport.h" />
+    <ClInclude Include="gamestate\GameStart.h" />
+    <ClInclude Include="gamestate\GameState.h" />
+    <ClInclude Include="gamestate\Playing.h" />
+    <ClInclude Include="gamestate\SelectingBaseGameState.h" />
+    <ClInclude Include="gamestate\SelectingController.h" />
+    <ClInclude Include="gamestate\SelectingNumPlayers.h" />
+    <ClInclude Include="gamestate\SelectingNumRounds.h" />
+    <ClInclude Include="gamestate\Starting.h" />
+    <ClInclude Include="input\ComputerController.h" />
+    <ClInclude Include="input\Controller.h" />
+    <ClInclude Include="input\Joystick.h" />
+    <ClInclude Include="input\Keyboard.h" />
+    <ClInclude Include="main\Globals.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="sound\AudioEngine.h" />
+    <ClInclude Include="sound\AudioManager.h" />
+    <ClInclude Include="sound\dxutil.h" />
+    <ClInclude Include="sound\ErrorHandling.h" />
+    <ClInclude Include="sound\jni.h" />
+    <ClInclude Include="sound\MSound.h" />
+    <ClInclude Include="sound\RefCountPtr.h" />
+    <ClInclude Include="sound\Sound.h" />
+    <ClInclude Include="sound\WAVFile.h" />
+    <ClInclude Include="source\t3dlib\t3dlib1.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="t3dlib\ddutil.h" />
+    <ClInclude Include="t3dlib\t3dlib3.h" />
+    <ClInclude Include="universe\Point.h" />
+    <ClInclude Include="universe\Universe.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Bomberman.ico" />
+    <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Bomberman.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

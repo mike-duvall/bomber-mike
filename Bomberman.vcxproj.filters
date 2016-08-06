@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\main">
+      <UniqueIdentifier>{55827c23-350a-4285-9b01-5fad5bdfdf10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\t3dlib">
+      <UniqueIdentifier>{522604d5-69e3-468c-bfbe-a1cc6a1b2a9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\bob">
+      <UniqueIdentifier>{8cae67de-97a6-4107-a227-8dabeed2c63c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gameobjects">
+      <UniqueIdentifier>{409e683b-8a42-4f65-963f-9bc15a4976e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\input">
+      <UniqueIdentifier>{de731667-b9ad-4d72-afa8-0a83f8735ff1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\universe">
+      <UniqueIdentifier>{94ed2db2-79f6-4fe8-8318-5d5826939155}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gamestate">
+      <UniqueIdentifier>{5a2883ba-1538-4a39-b38b-1025a1905005}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sound">
+      <UniqueIdentifier>{b8962353-6795-4c24-9558-0deb89dedccf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ai">
+      <UniqueIdentifier>{551f85c4-a9b7-428b-87f3-486b410077b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\t3dlib">
+      <UniqueIdentifier>{2c9893b5-3d4f-4481-a658-8b9f91090c51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\bob">
+      <UniqueIdentifier>{1fd35d6f-52b9-46bd-b28c-7395a2e5ce1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gameobjects">
+      <UniqueIdentifier>{d9d33cad-143c-4605-a611-d3416fedca1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\input">
+      <UniqueIdentifier>{6f0b9e30-00b5-4653-8632-58264ffb36b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\universe">
+      <UniqueIdentifier>{a1c5c377-fb80-4903-9d86-52f6e8675bba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gamestate">
+      <UniqueIdentifier>{b941923c-1b30-4909-8dae-3f5fc4c58858}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\main">
+      <UniqueIdentifier>{f6e3b0c4-41b7-4340-ac45-b2f888a4ab87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sound">
+      <UniqueIdentifier>{8a9f5b04-ba2d-4f02-a7c3-c843aaadc912}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\fmod">
+      <UniqueIdentifier>{e39eef37-d713-4b9a-9c58-b57a71fa259d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ai">
+      <UniqueIdentifier>{13af5262-e28c-412b-9662-326d04b23af4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main\main.cpp">
+      <Filter>Source Files\main</Filter>
+    </ClCompile>
+    <ClCompile Include="main\winmain.cpp">
+      <Filter>Source Files\main</Filter>
+    </ClCompile>
+    <ClCompile Include="t3dlib\ddutil.cpp">
+      <Filter>Source Files\t3dlib</Filter>
+    </ClCompile>
+    <ClCompile Include="t3dlib\t3dlib1.cpp">
+      <Filter>Source Files\t3dlib</Filter>
+    </ClCompile>
+    <ClCompile Include="t3dlib\t3dlib3.cpp">
+      <Filter>Source Files\t3dlib</Filter>
+    </ClCompile>
+    <ClCompile Include="bob\BlitterObject.cpp">
+      <Filter>Source Files\bob</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\Block.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\Bomb.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\BombPowerup.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\ControllerSelector.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\DestructableBlock.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\Explodingplayer.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\Explosion.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\ExplosionPart.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\FlamePowerup.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\GameObject.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\IndestructableBlock.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\Number.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\Player.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\Powerup.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\Selector.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\SimpleGameObject.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\Timer.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\VictoryLightHorizontalGroup.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\VictoryLightVerticalGroup.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="gameobjects\VictoryLlight.cpp">
+      <Filter>Source Files\gameobjects</Filter>
+    </ClCompile>
+    <ClCompile Include="input\ComputerController.cpp">
+      <Filter>Source Files\input</Filter>
+    </ClCompile>
+    <ClCompile Include="input\Joystick.cpp">
+      <Filter>Source Files\input</Filter>
+    </ClCompile>
+    <ClCompile Include="input\Keyboard.cpp">
+      <Filter>Source Files\input</Filter>
+    </ClCompile>
+    <ClCompile Include="universe\Universe.cpp">
+      <Filter>Source Files\universe</Filter>
+    </ClCompile>
+    <ClCompile Include="gamestate\EndOfMatch.cpp">
+      <Filter>Source Files\gamestate</Filter>
+    </ClCompile>
+    <ClCompile Include="gamestate\EndOfRound.cpp">
+      <Filter>Source Files\gamestate</Filter>
+    </ClCompile>
+    <ClCompile Include="gamestate\EndOfRoundReport.cpp">
+      <Filter>Source Files\gamestate</Filter>
+    </ClCompile>
+    <ClCompile Include="gamestate\GameStart.cpp">
+      <Filter>Source Files\gamestate</Filter>
+    </ClCompile>
+    <ClCompile Include="gamestate\GameState.cpp">
+      <Filter>Source Files\gamestate</Filter>
+    </ClCompile>
+    <ClCompile Include="gamestate\Playing.cpp">
+      <Filter>Source Files\gamestate</Filter>
+    </ClCompile>
+    <ClCompile Include="gamestate\SelectingBaseGameState.cpp">
+      <Filter>Source Files\gamestate</Filter>
+    </ClCompile>
+    <ClCompile Include="gamestate\SelectingController.cpp">
+      <Filter>Source Files\gamestate</Filter>
+    </ClCompile>
+    <ClCompile Include="gamestate\SelectingNumPlayers.cpp">
+      <Filter>Source Files\gamestate</Filter>
+    </ClCompile>
+    <ClCompile Include="gamestate\SelectingNumRounds.cpp">
+      <Filter>Source Files\gamestate</Filter>
+    </ClCompile>
+    <ClCompile Include="gamestate\TitleGameState.cpp">
+      <Filter>Source Files\gamestate</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\dxutil.cpp">
+      <Filter>Source Files\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="sound\MSound.cpp">
+      <Filter>Source Files\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="ai\PathFinder.cpp">
+      <Filter>Source Files\ai</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bomberman.h">
+      <Filter>Source Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="t3dlib\ddutil.h">
+      <Filter>Header Files\t3dlib</Filter>
+    </ClInclude>
+    <ClInclude Include="source\t3dlib\t3dlib1.h">
+      <Filter>Header Files\t3dlib</Filter>
+    </ClInclude>
+    <ClInclude Include="t3dlib\t3dlib3.h">
+      <Filter>Header Files\t3dlib</Filter>
+    </ClInclude>
+    <ClInclude Include="bob\BlitterObject.h">
+      <Filter>Header Files\bob</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjects\Block.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjects\Bomb.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjects\BombPowerup.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjects\ControlEvent.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjects\DestructableBlock.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjects\ExplodingPlayer.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjects\Explosion.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjects\ExplosionPart.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjects\FlamePowerup.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjects\GameObject.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjects\HowManyPlayers.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjects\IndestructableBlock.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjects\Player.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjects\Powerup.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjects\SelectMatch.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjects\VictoryLight.h">
+      <Filter>Header Files\gameobjects</Filter>
+    </ClInclude>
+    <ClInclude Include="input\ComputerController.h">
+      <Filter>Header Files\input</Filter>
+    </ClInclude>
+    <ClInclude Include="input\Controller.h">
+      <Filter>Header Files\input</Filter>
+    </ClInclude>
+    <ClInclude Include="input\Joystick.h">
+      <Filter>Header Files\input</Filter>
+    </ClInclude>
+    <ClInclude Include="input\Keyboard.h">
+      <Filter>Header Files\input</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\Point.h">
+      <Filter>Header Files\universe</Filter>
+    </ClInclude>
+    <ClInclude Include="universe\Universe.h">
+      <Filter>Header Files\universe</Filter>
+    </ClInclude>
+    <ClInclude Include="gamestate\EndOfMatch.h">
+      <Filter>Header Files\gamestate</Filter>
+    </ClInclude>
+    <ClInclude Include="gamestate\EndOfRound.h">
+      <Filter>Header Files\gamestate</Filter>
+    </ClInclude>
+    <ClInclude Include="gamestate\EndOfRoundReport.h">
+      <Filter>Header Files\gamestate</Filter>
+    </ClInclude>
+    <ClInclude Include="gamestate\GameStart.h">
+      <Filter>Header Files\gamestate</Filter>
+    </ClInclude>
+    <ClInclude Include="gamestate\GameState.h">
+      <Filter>Header Files\gamestate</Filter>
+    </ClInclude>
+    <ClInclude Include="gamestate\Playing.h">
+      <Filter>Header Files\gamestate</Filter>
+    </ClInclude>
+    <ClInclude Include="gamestate\SelectingBaseGameState.h">
+      <Filter>Header Files\gamestate</Filter>
+    </ClInclude>
+    <ClInclude Include="gamestate\SelectingController.h">
+      <Filter>Header Files\gamestate</Filter>
+    </ClInclude>
+    <ClInclude Include="gamestate\SelectingNumPlayers.h">
+      <Filter>Header Files\gamestate</Filter>
+    </ClInclude>
+    <ClInclude Include="gamestate\SelectingNumRounds.h">
+      <Filter>Header Files\gamestate</Filter>
+    </ClInclude>
+    <ClInclude Include="gamestate\Starting.h">
+      <Filter>Header Files\gamestate</Filter>
+    </ClInclude>
+    <ClInclude Include="main\Globals.h">
+      <Filter>Header Files\main</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\AudioEngine.h">
+      <Filter>Header Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\AudioManager.h">
+      <Filter>Header Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\dxutil.h">
+      <Filter>Header Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\ErrorHandling.h">
+      <Filter>Header Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\jni.h">
+      <Filter>Header Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\MSound.h">
+      <Filter>Header Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\RefCountPtr.h">
+      <Filter>Header Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\Sound.h">
+      <Filter>Header Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sound\WAVFile.h">
+      <Filter>Header Files\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="fmod\fmod.hpp">
+      <Filter>Header Files\fmod</Filter>
+    </ClInclude>
+    <ClInclude Include="ai\PathFinder.h">
+      <Filter>Header Files\ai</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Bomberman.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="small.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Bomberman.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
