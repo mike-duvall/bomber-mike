@@ -36,7 +36,7 @@ Number::Number(int x, int y)
 
 
 
-	string filename = string("../bitmaps/InGame/Scoreboard/Numbers.bmp");
+	string filename = string("bitmaps/InGame/Scoreboard/Numbers.bmp");
 
 	IDirectDrawSurface7 * dds = DDLoadBitmap(lpdd, filename.c_str(), 0, 0 );
 
