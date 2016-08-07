@@ -39,7 +39,11 @@ void ERRCHECK(	FMOD_RESULT & result)
 {
 	if (result != FMOD_OK)
 	{
+
 		printf("FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
+		char buffer[150];
+		sprintf(buffer, "FMOD error! (%d) %s\n", result, FMOD_ErrorString(result));
+		OutputDebugString(buffer);
 		exit(-1);
 	}
 
@@ -67,17 +71,17 @@ void Sound::InitSounds()
 		exit(-1);
 	}
 
-	explosion_sound = InitSound("../waves/Explosion-From-Base.wav");
-	drop_bomb_sound = InitSound("../waves/BombDrop.mp3");
-	pickup_powerup_sound = InitSound("../waves/PickupPowerup.mp3");
-	player_dies_sound = InitSound("../waves/gameover04.wav");
-	playing = InitSound("../waves/PlayingA.wav", FMOD_LOOP_NORMAL | FMOD_2D | FMOD_HARDWARE);
-	pickingStuff = InitSound("../waves/PickingStuff.wav", FMOD_LOOP_NORMAL | FMOD_2D | FMOD_HARDWARE);
-	selectorMoved = InitSound("../waves/SelectorMoved.mp3");
-	selectionMade = InitSound("../waves/SelectionMade.mp3");
-	opening = InitSound("../waves/Opening.mp3");
-	creditsWhoosh = InitSound("../waves/airwhoosh15.wav");
-	gameStart = InitSound("../waves/TransitionToGameStart.mp3");
+	explosion_sound = InitSound("waves/Explosion-From-Base.wav");
+	drop_bomb_sound = InitSound("waves/BombDrop.mp3");
+	pickup_powerup_sound = InitSound("waves/PickupPowerup.mp3");
+	player_dies_sound = InitSound("waves/gameover04.wav");
+	playing = InitSound("waves/PlayingA.wav", FMOD_LOOP_NORMAL | FMOD_2D | FMOD_HARDWARE);
+	pickingStuff = InitSound("waves/PickingStuff.wav", FMOD_LOOP_NORMAL | FMOD_2D | FMOD_HARDWARE);
+	selectorMoved = InitSound("waves/SelectorMoved.mp3");
+	selectionMade = InitSound("waves/SelectionMade.mp3");
+	opening = InitSound("waves/Opening.mp3");
+	creditsWhoosh = InitSound("waves/airwhoosh15.wav");
+	gameStart = InitSound("waves/TransitionToGameStart.mp3");
 
 
 }
