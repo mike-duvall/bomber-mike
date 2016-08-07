@@ -15,7 +15,7 @@ SimpleGameObject::SimpleGameObject(int x, int y, int blockWidth, int blockHeight
 
 	int animations[] = {0};
 
-	string filename = string("../bitmaps/").operator +=(shortFilename);
+	string filename = string("bitmaps/").operator +=(shortFilename);
 
 	IDirectDrawSurface7 * dds = DDLoadBitmap(lpdd, filename.c_str(), 0, 0 );
 
