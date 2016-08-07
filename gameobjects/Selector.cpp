@@ -33,10 +33,15 @@ Selector::Selector()
 
 
 
-	string filename = "../bitmaps/Selecting/Selector-New.bmp";
+	string filename = "bitmaps/Selecting/Selector-New.bmp";
 
 	// load in new bitmap file
 	IDirectDrawSurface7 * dds = DDLoadBitmap(lpdd, filename.c_str(), 0, 0 );
+	if (dds == 0)
+	{
+		throw "Could not load bitmap";
+	}
+
 
 	theBlitterObject_->Load_Frame(dds,0,0,0,BITMAP_EXTRACT_MODE_CELL);  
 	theBlitterObject_->Load_Frame(dds,1,1,0,BITMAP_EXTRACT_MODE_CELL);  
