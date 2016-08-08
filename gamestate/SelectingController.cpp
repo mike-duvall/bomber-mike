@@ -107,11 +107,11 @@ SelectingController::SelectingController(	FMOD::Channel * aSoundChannel)
 void SelectingController::Create_IconsForPlayer(const string & playerNumber,  int x, int y)
 {
 
-	string bitmapFileName = "../bitmaps/PickControl/PickControl_Player" + playerNumber + ".bmp";
+	string bitmapFileName = "bitmaps/PickControl/PickControl_Player" + playerNumber + ".bmp";
 	SimpleGameObject * playerIcon = new SimpleGameObject(x,y,80,38,bitmapFileName,1);
 	playerIcons.push_back(playerIcon);
 
-	string bomberBitmapFileName = "../bitmaps/PickControl/Bomber.bmp";
+	string bomberBitmapFileName = "bitmaps/PickControl/Bomber.bmp";
 	SimpleGameObject * bomberIcon = new SimpleGameObject(x + 85,y + 10,146,30,bomberBitmapFileName,1);
 	this->bomberIcons.push_back(bomberIcon);
 

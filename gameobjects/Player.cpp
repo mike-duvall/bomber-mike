@@ -1566,13 +1566,13 @@ Player::Player(int x, int y, int aPlayerType)
 
 	string playerTypeName = GetNameFromPlayerType();
 
-	string iconLongFilename = pathPrefix + string("InGame/Scoreboard/" ) + playerTypeName + string("Icon.bmp");
+	string iconLongFilename = pathPrefix + string("bitmaps/InGame/Scoreboard/" ) + playerTypeName + string("Icon.bmp");
 	scoreIcon = new SimpleGameObject(0,0,36,30,iconLongFilename,_RGB32BIT(0,0,182,0));
-	string iconCryLongFilename = pathPrefix + string("InGame/Scoreboard/" ) + playerTypeName + string("CryIcon.bmp");
+	string iconCryLongFilename = pathPrefix + string("bitmaps/InGame/Scoreboard/" ) + playerTypeName + string("CryIcon.bmp");
 	scoreCryIcon = new SimpleGameObject(0,0,36,30,iconCryLongFilename,_RGB32BIT(0,0,182,0));
 
 	
-	scoreShell = new SimpleGameObject(1,1, 18,18,"../bitmaps/InGame/Scoreboard/BlankPlayerScore.bmp",1);
+	scoreShell = new SimpleGameObject(1,1, 18,18,"bitmaps/InGame/Scoreboard/BlankPlayerScore.bmp",1);
 	scoreNumber = new Number(1,1);
 	scoreNumber->SetValue(this->GetNumberOfWins());
 

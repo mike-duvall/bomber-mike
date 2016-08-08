@@ -39,7 +39,7 @@ GameState * SelectingNumPlayers::GetNextGameStateAndDeleteCurrentGameState()
 
 SelectingNumPlayers::SelectingNumPlayers()
 {
-	string filename = "Selecting/HowManyPlayers.bmp";
+	string filename = "bitmaps/Selecting/HowManyPlayers.bmp";
 	gameObject = new SimpleGameObject(70,55, 478,370,filename);
 
 
