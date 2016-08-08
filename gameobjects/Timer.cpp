@@ -7,7 +7,7 @@
 Timer::Timer(int x, int y)
 {
 
-	emptyTimerShell = new SimpleGameObject(x,y,66,18,"../bitmaps/InGame/Scoreboard/BlankTime.bmp",1);
+	emptyTimerShell = new SimpleGameObject(x,y,66,18,"bitmaps/InGame/Scoreboard/BlankTime.bmp",1);
 	int numberY = y + 0;
 	minutes = new Number(x + 1,numberY );
 	tensOfSeconds = new Number(x + 30,numberY );

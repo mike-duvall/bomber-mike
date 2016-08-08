@@ -13,9 +13,9 @@ ControllerSelector::ControllerSelector(int x, int y)
 
 	selection = CONTROLLER_COMPUTER;
 
-	computerSelection = new SimpleGameObject(x,y,78,30, "../bitmaps/PickControl/Computer.bmp");
-	gamepadSelection  = new SimpleGameObject(x,y,78,30, "../bitmaps/PickControl/GamePad.bmp");
-	keyboardSelection  = new SimpleGameObject(x,y,78,30, "../bitmaps/PickControl/Keyboard.bmp");
+	computerSelection = new SimpleGameObject(x,y,78,30, "bitmaps/PickControl/Computer.bmp");
+	gamepadSelection  = new SimpleGameObject(x,y,78,30, "bitmaps/PickControl/GamePad.bmp");
+	keyboardSelection  = new SimpleGameObject(x,y,78,30, "bitmaps/PickControl/Keyboard.bmp");
 
 
 }

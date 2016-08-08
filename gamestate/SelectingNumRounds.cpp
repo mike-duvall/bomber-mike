@@ -32,7 +32,7 @@ SelectingNumRounds::SelectingNumRounds(	FMOD::Channel * aSoundChannel)
 {
 	int width = 478;
 	int height = 370;
-	string filename = "../bitmaps/Selecting/SelectMatch.bmp";
+	string filename = "bitmaps/Selecting/SelectMatch.bmp";
 	gameObject = new SimpleGameObject(70,55,width, height,filename);
 
 	selectorPosition = 1;

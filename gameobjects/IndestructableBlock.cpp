@@ -25,9 +25,14 @@ IndestructableBlock::IndestructableBlock(int x, int y)
 
 		int animations[] = {0};
 
-		string filename = "../bitmaps/IndestructBlock.bmp";
+		string filename = "bitmaps/IndestructBlock.bmp";
 
 		IDirectDrawSurface7 * dds = DDLoadBitmap(lpdd, filename.c_str(), 0, 0 );
+		if (dds == 0)
+		{
+			throw "Could not load bitmap";
+		}
+
 
 		theArchetypeBlitterObject_->Load_Frame(dds,0,0,0,BITMAP_EXTRACT_MODE_CELL);  
 

@@ -26,9 +26,9 @@ using namespace std;
 Playing::Playing()
 {
 	soundChannel = Sound::PlaySound(Sound::playing, .5f);
-// 	clock = new SimpleGameObject(30,10,30,40,"../bitmaps/InGame/Scoreboard/Clock.bmp",_RGB32BIT(0,0,182,0));
+// 	clock = new SimpleGameObject(30,10,30,40,"bitmaps/InGame/Scoreboard/Clock.bmp",_RGB32BIT(0,0,182,0));
 // 	timer = new Timer(70,25);
-	clock = new SimpleGameObject(10,-40,30,40,"../bitmaps/InGame/Scoreboard/Clock.bmp",_RGB32BIT(0,0,182,0));
+	clock = new SimpleGameObject(10,-40,30,40,"bitmaps/InGame/Scoreboard/Clock.bmp",_RGB32BIT(0,0,182,0));
 	timer = new Timer(50,-25);
 
 	SetScoreIconLocations();
