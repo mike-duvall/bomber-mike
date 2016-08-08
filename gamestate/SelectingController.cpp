@@ -79,7 +79,7 @@ SelectingController::SelectingController(	FMOD::Channel * aSoundChannel)
 //SelectingController::SelectingController(	)
 {
 //	gameObject = new SelectMatch(70,55);
-	string filename = "../bitmaps/PickControl/ChooseControl.bmp";
+	string filename = "bitmaps/PickControl/ChooseControl.bmp";
 	gameObject = new SimpleGameObject(70,55, 478,370,filename);
 
 	selectorPosition = 1;

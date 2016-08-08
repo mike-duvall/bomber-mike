@@ -1524,7 +1524,8 @@ Player::Player(int x, int y, int aPlayerType)
 	string shortFileName = GetBitmapFilenameFromPlayerType(playerType);
 	
 
-	string pathPrefix = "../bitmaps/";
+//	string pathPrefix = "../bitmaps/";
+	string pathPrefix = "";
 //	string longFilename = pathPrefix.operator +=(shortFileName);
 	string longFilename = pathPrefix + shortFileName;
 
