@@ -1526,11 +1526,17 @@ Player::Player(int x, int y, int aPlayerType)
 
 //	string pathPrefix = "../bitmaps/";
 	string pathPrefix = "";
+//	string pathPrefix = "bitmaps/";
 //	string longFilename = pathPrefix.operator +=(shortFileName);
-	string longFilename = pathPrefix + shortFileName;
+	string longFilename = "bitmaps/" + shortFileName;
 
 	// load in new bitmap file
 	IDirectDrawSurface7 * dds = DDLoadBitmap(lpdd, longFilename.c_str(), 0, 0 );
+	if (dds == 0)
+	{
+		throw "Could not load bitmap";
+	}
+
 
 	int frameNumber = 0;
 	for(int row = 0; row < 4; row++)

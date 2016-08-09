@@ -70,6 +70,11 @@ ExplodingPlayer::ExplodingPlayer(int x, int y, int aPlayerType)
 
 
 	IDirectDrawSurface7 * dds = DDLoadBitmap(lpdd, longFilename.c_str(), 0, 0 );
+	if (dds == 0)
+	{
+		throw "Could not load bitmap";
+	}
+
 
 	theBlitterObject_->Load_Frame(dds,0,0,0,BITMAP_EXTRACT_MODE_CELL);  
 	theBlitterObject_->Load_Frame(dds,1,1,0,BITMAP_EXTRACT_MODE_CELL);  

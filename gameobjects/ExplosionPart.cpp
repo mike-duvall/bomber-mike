@@ -41,11 +41,16 @@ ExplosionPart::ExplosionPart(int x, int y, int aType, Player * aPlayer)
 		{ 
 			char filename[80];
 			// build up file name
-			sprintf(filename,"../bitmaps/CenterExplosion%d.BMP",direction);
+			sprintf(filename,"bitmaps/CenterExplosion%d.BMP",direction);
 
 			// load in new bitmap file
 //			Load_Bitmap_File(&bitmap8bit,filename);
 			IDirectDrawSurface7 * dds = DDLoadBitmap(lpdd, filename, 0, 0 );
+			if (dds == 0)
+			{
+				throw "Could not load bitmap";
+			}
+
 
 			theArchetypeBlitterObject_[aType]->Load_Frame(dds,0+direction*4,0,type_ ,BITMAP_EXTRACT_MODE_CELL);  
 			theArchetypeBlitterObject_[aType]->Load_Frame(dds,1+direction*4,1,type_ ,BITMAP_EXTRACT_MODE_CELL);  

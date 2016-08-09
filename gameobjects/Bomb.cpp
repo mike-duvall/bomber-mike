@@ -53,10 +53,15 @@ void Bomb::SetupArchetype()
 
 
 	int animations[] = { 0,1,0,2 };
-	string filename = "../bitmaps/Bomb.bmp";
+	string filename = "bitmaps/Bomb.bmp";
 
 	// load in new bitmap file
 	IDirectDrawSurface7 * dds = DDLoadBitmap(lpdd, filename.c_str(), 0, 0 );
+	if (dds == 0)
+	{
+		throw "Could not load bitmap";
+	}
+
 
 	theArchetypeBlitterObject_->Load_Frame(dds,0,0,0,BITMAP_EXTRACT_MODE_CELL);  
 	theArchetypeBlitterObject_->Load_Frame(dds,1,1,0,BITMAP_EXTRACT_MODE_CELL);  

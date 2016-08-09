@@ -63,10 +63,15 @@ void FlamePowerup::SetupArchetype()
 	{ 
 		char filename[80];
 		// build up file name
-		sprintf(filename,"../bitmaps/FlamePowerup.BMP",direction);
+		sprintf(filename,"bitmaps/FlamePowerup.BMP",direction);
 
 		// load in new bitmap file
 		IDirectDrawSurface7 * dds = DDLoadBitmap(lpdd, filename, 0, 0 );
+		if (dds == 0)
+		{
+			throw "Could not load bitmap";
+		}
+
 
 		theArchetypeBlitterObject_->Load_Frame(dds,0+direction*4,0,0,BITMAP_EXTRACT_MODE_CELL);  
 		theArchetypeBlitterObject_->Load_Frame(dds,1+direction*4,1,0,BITMAP_EXTRACT_MODE_CELL);  
