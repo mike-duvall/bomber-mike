@@ -51,11 +51,11 @@ GameState * EndOfMatch::Update()
 	stringstream ss (stringstream::in | stringstream::out);
 	ss << survivorId;
 
-	const string message = survivor->GetName() + string(" Player " )  + string(" WON THE MATCH!!!");
-	Draw_Text_GDI(message.c_str(),110,240,RGB(255,255,255),lpddsback);
-
-
 	DDraw_Fill_Surface(lpddsback,backgroundColor );
+
+	const string message = survivor->GetName() + string(" Player ") + string(" WON THE MATCH!!!");
+	Draw_Text_GDI(message.c_str(), 110, 240, RGB(255, 255, 255), lpddsback);
+
 
 	DDraw_Flip();
 
