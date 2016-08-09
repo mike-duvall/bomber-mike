@@ -82,14 +82,19 @@ void VictoryLight::SetupArchetypes()
 
 
 
-	string blueFilename = string("../bitmaps/EndOfRound/BlueLight.bmp");
-	string redFilename = string("../bitmaps/EndOfRound/RedLight.bmp");
-	string greenFilename = string("../bitmaps/EndOfRound/GreenLight.bmp");
-	string orangeFilename = string("../bitmaps/EndOfRound/OrangeLight.bmp");
+	string blueFilename = string("bitmaps/EndOfRound/BlueLight.bmp");
+	string redFilename = string("bitmaps/EndOfRound/RedLight.bmp");
+	string greenFilename = string("bitmaps/EndOfRound/GreenLight.bmp");
+	string orangeFilename = string("bitmaps/EndOfRound/OrangeLight.bmp");
 
 	{
 	int blueAnimations[] = {0,1,0,0,1};
 	IDirectDrawSurface7 * blueDds = DDLoadBitmap(lpdd, blueFilename.c_str(), 0, 0 );
+	if (blueDds == 0)
+	{
+		throw "Could not load bitmap";
+	}
+
 	theBlueArchetypeBlitterObject_->Load_Frame(blueDds,0,0,0,BITMAP_EXTRACT_MODE_CELL);  
 	theBlueArchetypeBlitterObject_->Load_Frame(blueDds,1,1,0,BITMAP_EXTRACT_MODE_CELL);  
 	Unload_Bitmap_File(&bitmap8bit);
@@ -103,6 +108,12 @@ void VictoryLight::SetupArchetypes()
 	{
 	int redAnimations[] = {0,1,0,0,0,1};
 	IDirectDrawSurface7 * redDds = DDLoadBitmap(lpdd, redFilename.c_str(), 0, 0 );
+	if (redDds == 0)
+	{
+		throw "Could not load bitmap";
+	}
+
+
 	theRedArchetypeBlitterObject_->Load_Frame(redDds,0,0,0,BITMAP_EXTRACT_MODE_CELL);  
 	theRedArchetypeBlitterObject_->Load_Frame(redDds,1,1,0,BITMAP_EXTRACT_MODE_CELL);  
 	Unload_Bitmap_File(&bitmap8bit);
@@ -115,6 +126,11 @@ void VictoryLight::SetupArchetypes()
 	{
 	int greenAnimations[] = {0,0,1,0,0,1,};
 	IDirectDrawSurface7 * greenDds = DDLoadBitmap(lpdd, greenFilename.c_str(), 0, 0 );
+	if (greenDds == 0)
+	{
+		throw "Could not load bitmap";
+	}
+
 	theGreenArchetypeBlitterObject_->Load_Frame(greenDds,0,0,0,BITMAP_EXTRACT_MODE_CELL);  
 	theGreenArchetypeBlitterObject_->Load_Frame(greenDds,1,1,0,BITMAP_EXTRACT_MODE_CELL);  
 	Unload_Bitmap_File(&bitmap8bit);
@@ -127,6 +143,12 @@ void VictoryLight::SetupArchetypes()
 	{
 	int orangeAnimations[] = {1,0,0,1,0,0,1,0};
 	IDirectDrawSurface7 * orangeDds = DDLoadBitmap(lpdd, orangeFilename.c_str(), 0, 0 );
+	if (orangeDds == 0)
+	{
+		throw "Could not load bitmap";
+	}
+
+
 	theOrangeArchetypeBlitterObject_->Load_Frame(orangeDds,0,0,0,BITMAP_EXTRACT_MODE_CELL);  
 	theOrangeArchetypeBlitterObject_->Load_Frame(orangeDds,1,1,0,BITMAP_EXTRACT_MODE_CELL);  
 	Unload_Bitmap_File(&bitmap8bit);

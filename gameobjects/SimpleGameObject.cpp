@@ -19,7 +19,6 @@ SimpleGameObject::SimpleGameObject(int x, int y, int blockWidth, int blockHeight
 	string filename = shortFilename;
 
 	IDirectDrawSurface7 * dds = DDLoadBitmap(lpdd, filename.c_str(), 0, 0 );
-
 	if(dds == 0)
 	{
 		throw "Could not load bitmap";
