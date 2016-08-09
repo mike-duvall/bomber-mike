@@ -57,7 +57,7 @@ void EndOfRoundReport::Create_Player_GoldCoins()
 		int numberOfWins = next->GetNumberOfWins();
 		for(int i = 0; i < numberOfWins; i++)
 		{
-			SimpleGameObject * goldCoin  = new SimpleGameObject(x,y,44,44,"EndOfRound/GoldCoin.bmp");
+			SimpleGameObject * goldCoin  = new SimpleGameObject(x,y,44,44,"bitmaps/EndOfRound/GoldCoin.bmp");
 			nextGoldCoinVector->push_back(goldCoin);
 			x += xIncrement;
 		}
@@ -71,7 +71,7 @@ void EndOfRoundReport::Create_Player_GoldCoins()
 
 string GetBitmapFileNameFromPlayerType(Player * aPlayer, bool isSurvivor)
 {
-	string bitmapFilename = "EndOfRound/";
+	string bitmapFilename = "bitmaps/EndOfRound/";
 
 	bitmapFilename = bitmapFilename + aPlayer->GetNameFromPlayerType();
 	bitmapFilename = bitmapFilename + "Player";
@@ -127,7 +127,7 @@ void EndOfRoundReport::Create_PlayerIcons()
 void EndOfRoundReport::Create_Title()
 {
 
-	winMatchText = new SimpleGameObject(200,60,238,32,"EndOfRound/WinMatch.bmp");
+	winMatchText = new SimpleGameObject(200,60,238,32,"bitmaps/EndOfRound/WinMatch.bmp");
 	int numberOfRounds = Universe::GetNumberOfRoundsInGame();
 
 	int numberX = 150;
@@ -139,23 +139,23 @@ void EndOfRoundReport::Create_Title()
 	{
 
 	case 1:
-		winMatchNumber = new SimpleGameObject(numberX,numberY,16,30,"GameStart/1.bmp", mask);
+		winMatchNumber = new SimpleGameObject(numberX,numberY,16,30,"bitmaps/GameStart/1.bmp", mask);
 		break;
 
 	case 2:
-		winMatchNumber = new SimpleGameObject(numberX,numberY,24,30,"GameStart/2.bmp", mask);
+		winMatchNumber = new SimpleGameObject(numberX,numberY,24,30,"bitmaps/GameStart/2.bmp", mask);
 		break;
 
 	case 3:
-		winMatchNumber = new SimpleGameObject(numberX,numberY,24,30,"GameStart/3.bmp", mask);
+		winMatchNumber = new SimpleGameObject(numberX,numberY,24,30,"bitmaps/GameStart/3.bmp", mask);
 		break;
 
 	case 4:
-		winMatchNumber = new SimpleGameObject(numberX,numberY,24,30,"GameStart/4.bmp", mask);
+		winMatchNumber = new SimpleGameObject(numberX,numberY,24,30,"bitmaps/GameStart/4.bmp", mask);
 		break;
 
 	case 5:
-		winMatchNumber = new SimpleGameObject(numberX,numberY,22,30,"GameStart/5.bmp", mask);
+		winMatchNumber = new SimpleGameObject(numberX,numberY,22,30,"bitmaps/GameStart/5.bmp", mask);
 		break;
 
 	}

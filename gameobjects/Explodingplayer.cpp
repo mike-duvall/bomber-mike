@@ -65,7 +65,7 @@ ExplodingPlayer::ExplodingPlayer(int x, int y, int aPlayerType)
 
 	string shortFileName = GetExplodingBitmapFilenameFromPlayerType(aPlayerType);
 
-	string pathPrefix = "../bitmaps/";
+	string pathPrefix = "bitmaps/";
 	string longFilename = pathPrefix.operator +=(shortFileName);
 
 
