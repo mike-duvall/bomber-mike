@@ -289,21 +289,21 @@ GameState * Playing::Update()
 	rectangle.right = 640;
 	rectangle.left = 0;
 
-	DDraw_Fill_Surface(lpddsback,scoreboardBackground, &rectangle );
+	//DDraw_Fill_Surface(lpddsback,scoreboardBackground, &rectangle );
 
-	Update_And_Draw_Powerups();
+	//Update_And_Draw_Powerups();
 
-	Update_And_Draw_Blocks();
+	//Update_And_Draw_Blocks();
 
-	Update_And_Draw_Bombs();
+	//Update_And_Draw_Bombs();
 
-	Update_And_Draw_ExplosionParts();
+	//Update_And_Draw_ExplosionParts();
 
 	Update_And_Draw_Players();
 
-	Update_And_Draw_ExplodingPlayers();
+	//Update_And_Draw_ExplodingPlayers();
 
-	Update_And_Draw_Scoreboard();
+	//Update_And_Draw_Scoreboard();
 
 	// flip the surfaces
 	DDraw_Flip();

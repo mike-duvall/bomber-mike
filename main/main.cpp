@@ -330,7 +330,7 @@ int Game_Main(void *parms, int num_parms)
 	// sync to 30 fps
 //	Wait_Clock(30);
 //	Wait_Clock(20);
-	Wait_Clock(15);
+	Wait_Clock(1);
 
 
 	return(1);
