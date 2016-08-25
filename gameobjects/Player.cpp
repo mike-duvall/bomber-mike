@@ -83,13 +83,8 @@ void Player::HandleMoveLeftWithNoBlockToTheLeft()
 
 
 
-
-
-
-
 void Player::HandleMoveUp()
 {
-
 	HandleMoveUpWithNoBlockAbove();
 }
 
