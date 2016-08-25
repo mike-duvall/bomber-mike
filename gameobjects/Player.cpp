@@ -32,28 +32,7 @@ using namespace std;
 
 void Player::HandleMoveDown()
 {
-
-	GameObject * blockingGameObjectBelowAndRight = this->GetBlockingGameObjectImmediatelyBelowAndToTheRight();
-	GameObject * blockingGameObjectBelowAndLeft = this->GetBlockingGameObjectImmediatelyBelowAndToTheLeft();
-
-	if( blockingGameObjectBelowAndRight && blockingGameObjectBelowAndLeft)
-	{
-		HandleBlockedMoveDown();
-	}
-	else 
-	if( !blockingGameObjectBelowAndRight && ! blockingGameObjectBelowAndLeft)
-	{
-		HandleMoveDownWithNoBlockBelow();
-	}
-	else
-	if( blockingGameObjectBelowAndRight)
-	{
-		HandleMoveDownWithBlockBelow((Block *)blockingGameObjectBelowAndRight);
-	}
-	else
-	{
-		HandleMoveDownWithBlockBelow((Block *)blockingGameObjectBelowAndLeft);
-	}
+	HandleMoveDownWithNoBlockBelow();
 
 }
 
@@ -852,58 +831,10 @@ Powerup *  Player::IsCollisionWithPowerup()
 }
 
 
-// FlamePowerup *  Player::IsCollisionWithFlamePowerup()
-// {
-// 	BOB * playerBOB = this->GetTheCollisionBob();
-// 	FLAME_POWERUP_VECTOR::iterator theIterator;
-// 	FLAME_POWERUP_VECTOR & theFlames = Universe::GetFlamePowerups();
-// 
-// 	for(	theIterator = theFlames.begin();
-// 		theIterator != theFlames.end();
-// 		theIterator++
-// 		)
-// 	{
-// 		FlamePowerup * next = *theIterator;
-// 		BOB * nextBOB = next->GetBlitterObject()->getTheBOB();
-// 		boolean collision = Collision_BOBS_Half_Overlap(playerBOB,nextBOB);
-// 
-// 		if(collision)
-// 		{
-// 			return next;
-// 		}
-// 
-// 	}
-// 	return 0;
-// }
-
-
-
-
 void Player::HandleMoveUp()
 {
 
-	GameObject * blockingGameObjectAboveAndRight = this->GetBlockingGameObjectImmediatelyAboveAndToTheRight();
-	GameObject * blockingGameObjectAboveAndLeft = this->GetBlockingGameObjectImmediatelyAboveAndToTheLeft();
-
-
-	if( blockingGameObjectAboveAndRight && blockingGameObjectAboveAndLeft)
-	{
-		HandleBlockedMoveUp();
-	}
-	else
-	if( !blockingGameObjectAboveAndRight && !blockingGameObjectAboveAndLeft)
-	{
-		HandleMoveUpWithNoBlockAbove();
-	}
-	else
-	if(blockingGameObjectAboveAndRight)
-	{
-		HandleMoveUpWithBlockAbove((Block *)blockingGameObjectAboveAndRight);
-	}
-	else
-	{
-		HandleMoveUpWithBlockAbove((Block *)blockingGameObjectAboveAndLeft);
-	}
+	HandleMoveUpWithNoBlockAbove();
 }
 
 
@@ -914,40 +845,6 @@ bool Player::HandleMoveRight(int controlEvent)
 	HandleMoveRightWithNoBlockToTheRight();
     return playerMoved;
 
-	//GameObject * blockingGameObjectRightAndAbove = this->GetBlockingGameObjectImmediatelyToTheRightAndAbove();
-	//GameObject * blockingGameObjectRightAndBelow = this->GetBlockingGameObjectImmediatelyToTheRightAndBelow();
-
-	//if( blockingGameObjectRightAndAbove && blockingGameObjectRightAndBelow)
-	//if(controlEvent == CONTROL_EVENT_MOVE_SOUTH_EAST)
-	//{
-	//	HandleMoveDown();
-	//}
-	//else
-	//if(controlEvent == CONTROL_EVENT_MOVE_NORTH_EAST)
-	//{
-	//	HandleMoveUp();
-	//}
-	//else
-	//{
-	//	HandleBlockedMoveRight();
-	//	playerMoved = FALSE;
-	//}
-	//else
-	//if( !blockingGameObjectRightAndAbove && !blockingGameObjectRightAndBelow)
-	//{
-	//	HandleMoveRightWithNoBlockToTheRight();
-	//}
-	//else
-	//if(blockingGameObjectRightAndAbove)
-	//{
-	//	HandleMoveRightWithBlockToTheRight((Block *)blockingGameObjectRightAndAbove);
-	//}
-	//else
-	//{
-	//	HandleMoveRightWithBlockToTheRight((Block *)blockingGameObjectRightAndBelow);
-	//}
-	//return playerMoved;
-
 
 }
 
@@ -955,245 +852,13 @@ bool Player::HandleMoveRight(int controlEvent)
 
 void Player::HandleMoveLeft(int controlEvent)
 {
-
 	HandleMoveLeftWithNoBlockToTheLeft();
-	//GameObject * blockingGameObjectLeftAndAbove = this->GetBlockingGameObjectImmediatelyToTheLeftAndAbove();
-	//GameObject * blockingGameObjectLeftAndBelow = this->GetBlockingGameObjectImmediatelyToTheLeftAndBelow();
-
-	//if( blockingGameObjectLeftAndAbove && blockingGameObjectLeftAndBelow)
-	//{
-	//	if(controlEvent == CONTROL_EVENT_MOVE_SOUTH_WEST)
-	//	{
-	//		HandleMoveDown();
-	//	}
-	//	else
-	//	if(controlEvent == CONTROL_EVENT_MOVE_NORTH_WEST)
-	//	{
-	//		HandleMoveUp();
-	//	}
-	//	else
-	//	{
-	//		HandleBlockedMoveLeft();
-	//	}
-
-	//}
-	//else
-	//if( !blockingGameObjectLeftAndAbove && !blockingGameObjectLeftAndBelow)
-	//{
-	//	HandleMoveLeftWithNoBlockToTheLeft();
-	//}
-	//else
-	//if(blockingGameObjectLeftAndAbove)
-	//{
-	//	HandleMoveLeftWithBlockToTheLeft((Block *)blockingGameObjectLeftAndAbove);
-	//}
-	//else
-	//{
-	//	HandleMoveLeftWithBlockToTheLeft((Block *)blockingGameObjectLeftAndBelow);
-	//}
-
-
-
-}
-
-
-
-GameObject *  Player::GetBlockingGameObjectImmediatelyToTheLeftAndAbove()
-{
-	GameObject * foundGameObject = 0;
-
-	int playerLeft = this->GetCollisionBox().left;
-	int playerTop = this->GetCollisionBox().top;
-
-	foundGameObject = Universe::GetBlockAtPoint(playerLeft - 1, playerTop);
-
-	if(!foundGameObject)
-	{
-		Bomb * foundBomb = Universe::GetBombAtPoint(playerLeft - 1, playerTop);
-		if(foundBomb && !foundBomb->IsPlayerMovingOverAfterDropping(this))
-		{
-			foundGameObject = foundBomb;
-		}
-
-	}
-
-	return foundGameObject;
-
-}
-
-
-
-GameObject *  Player::GetBlockingGameObjectImmediatelyBelowAndToTheRight()
-{
-	GameObject * foundGameObject = 0;
-
-	int playerRight = this->GetCollisionBox().right;
-	int playerBottom = this->GetCollisionBox().bottom;
-
-	foundGameObject = Universe::GetBlockAtPoint(playerRight, playerBottom + 1);
-
-	if(!foundGameObject)
-	{
-		Bomb * foundBomb = Universe::GetBombAtPoint(playerRight, playerBottom + 1);
-		if(foundBomb && !foundBomb->IsPlayerMovingOverAfterDropping(this))
-		{
-			foundGameObject = foundBomb;
-		}
-
-	}
-
-	return foundGameObject;
-
-}
-
-
-GameObject *  Player::GetBlockingGameObjectImmediatelyAboveAndToTheRight()
-{
-	GameObject * foundGameObject = 0;
-
-	int playerRight = this->GetCollisionBox().right;
-	int playerTop = this->GetCollisionBox().top;
-
-	foundGameObject = Universe::GetBlockAtPoint(playerRight, playerTop - 1);
-
-	if(!foundGameObject)
-	{
-		Bomb * foundBomb = Universe::GetBombAtPoint(playerRight, playerTop - 1);
-		if(foundBomb && !foundBomb->IsPlayerMovingOverAfterDropping(this))
-		{
-			foundGameObject = foundBomb;
-		}
-
-	}
-
-	return foundGameObject;
-
 }
 
 
 
 
-GameObject *  Player::GetBlockingGameObjectImmediatelyBelowAndToTheLeft()
-{
-	GameObject * foundGameObject = 0;
 
-	int playerLeft = this->GetCollisionBox().left;
-	int playerBottom = this->GetCollisionBox().bottom;
-
-	foundGameObject = Universe::GetBlockAtPoint(playerLeft, playerBottom + 1);
-
-	if(!foundGameObject)
-	{
-		Bomb * foundBomb = Universe::GetBombAtPoint(playerLeft, playerBottom + 1);
-		if(foundBomb && !foundBomb->IsPlayerMovingOverAfterDropping(this))
-		{
-			foundGameObject = foundBomb;
-		}
-
-	}
-
-	return foundGameObject;
-
-}
-
-
-GameObject *  Player::GetBlockingGameObjectImmediatelyAboveAndToTheLeft()
-{
-	GameObject * foundGameObject = 0;
-
-	int playerLeft = this->GetCollisionBox().left;
-	int playerTop = this->GetCollisionBox().top;
-
-	foundGameObject = Universe::GetBlockAtPoint(playerLeft, playerTop - 1);
-
-	if(!foundGameObject)
-	{
-		Bomb * foundBomb = Universe::GetBombAtPoint(playerLeft, playerTop - 1);
-		if(foundBomb && !foundBomb->IsPlayerMovingOverAfterDropping(this))
-		{
-			foundGameObject = foundBomb;
-		}
-
-	}
-
-	return foundGameObject;
-
-}
-
-
-
-GameObject *  Player::GetBlockingGameObjectImmediatelyToTheRightAndAbove()
-{
-	GameObject * foundGameObject = 0;
-
-	int playerRight = this->GetCollisionBox().right;
-	int playerTop = this->GetCollisionBox().top;
-
-	foundGameObject = Universe::GetBlockAtPoint(playerRight + 1, playerTop);
-
-	if(!foundGameObject)
-	{
-		Bomb * foundBomb = Universe::GetBombAtPoint(playerRight + 1, playerTop);
-		if(foundBomb && !foundBomb->IsPlayerMovingOverAfterDropping(this))
-		{
-			foundGameObject = foundBomb;
-		}
-
-	}
-
-	return foundGameObject;
-
-}
-
-
-
-
-GameObject *  Player::GetBlockingGameObjectImmediatelyToTheLeftAndBelow()
-{
-	GameObject * foundGameObject = 0;
-
-	int playerLeft = this->GetCollisionBox().left;
-	int playerBottom = this->GetCollisionBox().bottom;
-
-	foundGameObject = Universe::GetBlockAtPoint(playerLeft - 1, playerBottom);
-
-	if(!foundGameObject)
-	{
-		Bomb * foundBomb = Universe::GetBombAtPoint(playerLeft - 1, playerBottom);
-		if(foundBomb && !foundBomb->IsPlayerMovingOverAfterDropping(this))
-		{
-			foundGameObject = foundBomb;
-		}
-
-	}
-
-	return foundGameObject;
-
-}
-
-
-GameObject *  Player::GetBlockingGameObjectImmediatelyToTheRightAndBelow()
-{
-	GameObject * foundGameObject = 0;
-
-	int playerRight = this->GetCollisionBox().right;
-	int playerBottom = this->GetCollisionBox().bottom;
-
-	foundGameObject = Universe::GetBlockAtPoint(playerRight + 1, playerBottom);
-
-	if(!foundGameObject)
-	{
-		Bomb * foundBomb = Universe::GetBombAtPoint(playerRight + 1, playerBottom);
-		if(foundBomb && !foundBomb->IsPlayerMovingOverAfterDropping(this))
-		{
-			foundGameObject = foundBomb;
-		}
-
-	}
-
-	return foundGameObject;
-
-}
 
 
 
