@@ -125,21 +125,7 @@ int Collision_BOBS_Half_Overlap(BOB_PTR bob1, BOB_PTR bob2);
 bool ExplosionPart::IsBlitterObjectInThisExplosionPart(GameObject * aGameObject)
 {
 
-	BOB * gameObjectBOB = aGameObject->GetTheCollisionBob();
-	BOB * myBOB = this->GetBlitterObject()->getTheBOB();
-	
-
-	int collision = Collision_BOBS_Half_Overlap(gameObjectBOB,myBOB);
-	if(collision)
-	{
-		return TRUE;
-	}
-	else
-	{
-		return FALSE;
-	}
-//	return 	(bool) Collision_BOBS_Half_Overlap(gameObjectBOB,myBOB);
-
+	return false;
 
 }
 

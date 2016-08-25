@@ -43,28 +43,6 @@ Number * Player::GetScoreNumber()
 
 
 
-
-
-void Player::HandleMoveLeftTopEdgeOverlappingBottomHalf()
-{
-	int currentDirection = this->GetBlitterObject()->Get_Current_Animation();
-
-
-	this->GetBlitterObject()->IncrementY(moveIncrementAmount);
-	this->GetBlitterObject()->IncrementX(-moveIncrementAmount);
-
-	if(currentDirection != WEST)
-	{
-		this->GetBlitterObject()->Set_Animation(WEST);
-	}
-	this->GetBlitterObject()->Animate();
-}
-
-
-
-
-
-
 void Player::HandleMoveDownWithNoBlockBelow()
 {
 	this->GetBlitterObject()->IncrementY(moveIncrementAmount);
@@ -84,23 +62,6 @@ void Player::HandleMoveUpWithNoBlockAbove()
 }
 
 
-
-
-
-
-void Player::HandleMoveUpPlayerLeftEdgeOverlapsBlockRightHalf()
-{
-	this->GetBlitterObject()->IncrementY(-moveIncrementAmount);
-	this->GetBlitterObject()->IncrementX(moveIncrementAmount);
-	if (this->GetBlitterObject()->Get_Current_Animation() != NORTH)
-	{
-		this->GetBlitterObject()->Set_Animation(NORTH);
-	}
-}
-
-
-
-
 void Player::HandleMoveRightWithNoBlockToTheRight()
 {
 	this->GetBlitterObject()->IncrementX(moveIncrementAmount);
@@ -109,12 +70,6 @@ void Player::HandleMoveRightWithNoBlockToTheRight()
 	//	this->GetBlitterObject()->Set_Animation(EAST);
 	//this->GetBlitterObject()->Animate();
 }
-
-
-
-
-
-
 
 
 void Player::HandleMoveLeftWithNoBlockToTheLeft()
@@ -131,99 +86,6 @@ void Player::HandleMoveLeftWithNoBlockToTheLeft()
 
 
 
-bool Player::IsCollisionWithBomb()
-{
-
-	BOB * playerBOB = this->GetTheCollisionBob();
-
-	Bomb * foundBomb = 0;
-	BOMB_VECTOR::iterator theBombIterator;
-
-	BOMB_VECTOR & theBombs = Universe::GetBombs();
-
-	for(	theBombIterator = theBombs.begin();
-		theBombIterator != theBombs.end();
-		theBombIterator++
-		)
-	{
-		Bomb * nextBomb = *theBombIterator;
-		BOB * bombBOB = nextBomb->GetBlitterObject()->getTheBOB();
-		boolean collision = Collision_BOBS(playerBOB,bombBOB);
-
-		if(collision)
-		{
-			return TRUE;
-		}
-
-	}
-
-	return FALSE;
-
-
-}
-
-
-int Collision_BOBS_Half_Overlap(BOB_PTR bob1, BOB_PTR bob2)
-{
-	// are these a valid bobs
-	if (!bob1 || !bob2)
-		return(0);
-
-	// get the radi of each rect
-	int width1  = (bob1->width>>1);
-	int height1 = (bob1->height>>1);
-
-	int width2  = (bob2->width>>1);
-	int height2 = (bob2->height>>1);
-
-
-
-	// compute center of each rect
-	int cx1 = bob1->x + width1;
-	int cy1 = bob1->y + height1;
-
-	int cx2 = bob2->x + width2;
-	int cy2 = bob2->y + height2;
-
-	// compute deltas
-	int dx = abs(cx2 - cx1);
-	int dy = abs(cy2 - cy1);
-
-	// test if rects overlap
-	if (dx < ( (width1+width2) / 2) && dy < ((height1+height2)/2))
-		return(1);
-	else
-		// else no collision
-		return(0);
-
-} // end Collision_BOBS
-
-
-
-Powerup *  Player::IsCollisionWithPowerup()
-{
-	BOB * playerBOB = this->GetTheCollisionBob();
-	POWERUP_VECTOR::iterator theIterator;
-	POWERUP_VECTOR & theBombs = Universe::GetPowerups();
-
-	for(	theIterator = theBombs.begin();
-		theIterator != theBombs.end();
-		theIterator++
-		)
-	{
-		Powerup * next = *theIterator;
-		BOB * nextBOB = next->GetBlitterObject()->getTheBOB();
-		boolean collision = Collision_BOBS_Half_Overlap(playerBOB,nextBOB);
-
-		if(collision)
-		{
-			return next;
-		}
-
-	}
-	return 0;
-}
-
 
 void Player::HandleMoveUp()
 {
@@ -239,9 +101,7 @@ bool Player::HandleMoveRight(int controlEvent)
 	HandleMoveRightWithNoBlockToTheRight();
     return playerMoved;
 
-
 }
-
 
 
 void Player::HandleMoveLeft(int controlEvent)
@@ -252,14 +112,8 @@ void Player::HandleMoveLeft(int controlEvent)
 
 
 
-
-
-
-
-
 bool Player::Update()
 {
-
 	int controlEvent = CONTROL_EVENT_DO_NOTHING;
 	bool playerMoved = FALSE;
 
@@ -267,7 +121,6 @@ bool Player::Update()
 	this->Update(controlEvent);
 
 	return false;
-
 }
 
 
@@ -302,11 +155,8 @@ void Player::Update(int controlEvent)
 	//	HandleDropBomb();
 	//	break;
 	}
-
-
 	
 }
-
 
 
 
@@ -334,7 +184,6 @@ RECT Player::GetRoundedPlayerLocationMapSquare()
 
 
 
-
 int Player::GetRoundedSquareCenterX()
 {
 	RECT roundedLocation = this->GetRoundedPlayerLocationMapSquare();
@@ -353,8 +202,6 @@ int Player::GetRoundedSquareCenterY()
 	int y = roundedLocation.top + 16;
 
 	return y;
-
-
 }
 
 
