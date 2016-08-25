@@ -642,9 +642,9 @@ void Player::HandleMoveRightWithNoBlockToTheRight()
 {
 	this->GetBlitterObject()->IncrementX(moveIncrementAmount);
 	// check animation needs to change
-	if (this->GetBlitterObject()->Get_Current_Animation() != EAST)
-		this->GetBlitterObject()->Set_Animation(EAST);
-	this->GetBlitterObject()->Animate();
+	//if (this->GetBlitterObject()->Get_Current_Animation() != EAST)
+	//	this->GetBlitterObject()->Set_Animation(EAST);
+	//this->GetBlitterObject()->Animate();
 }
 
 
@@ -911,40 +911,42 @@ bool Player::HandleMoveRight(int controlEvent)
 {
 
 	bool playerMoved = TRUE;
+	HandleMoveRightWithNoBlockToTheRight();
+    return playerMoved;
 
-	GameObject * blockingGameObjectRightAndAbove = this->GetBlockingGameObjectImmediatelyToTheRightAndAbove();
-	GameObject * blockingGameObjectRightAndBelow = this->GetBlockingGameObjectImmediatelyToTheRightAndBelow();
+	//GameObject * blockingGameObjectRightAndAbove = this->GetBlockingGameObjectImmediatelyToTheRightAndAbove();
+	//GameObject * blockingGameObjectRightAndBelow = this->GetBlockingGameObjectImmediatelyToTheRightAndBelow();
 
-	if( blockingGameObjectRightAndAbove && blockingGameObjectRightAndBelow)
-	if(controlEvent == CONTROL_EVENT_MOVE_SOUTH_EAST)
-	{
-		HandleMoveDown();
-	}
-	else
-	if(controlEvent == CONTROL_EVENT_MOVE_NORTH_EAST)
-	{
-		HandleMoveUp();
-	}
-	else
-	{
-		HandleBlockedMoveRight();
-		playerMoved = FALSE;
-	}
-	else
-	if( !blockingGameObjectRightAndAbove && !blockingGameObjectRightAndBelow)
-	{
-		HandleMoveRightWithNoBlockToTheRight();
-	}
-	else
-	if(blockingGameObjectRightAndAbove)
-	{
-		HandleMoveRightWithBlockToTheRight((Block *)blockingGameObjectRightAndAbove);
-	}
-	else
-	{
-		HandleMoveRightWithBlockToTheRight((Block *)blockingGameObjectRightAndBelow);
-	}
-	return playerMoved;
+	//if( blockingGameObjectRightAndAbove && blockingGameObjectRightAndBelow)
+	//if(controlEvent == CONTROL_EVENT_MOVE_SOUTH_EAST)
+	//{
+	//	HandleMoveDown();
+	//}
+	//else
+	//if(controlEvent == CONTROL_EVENT_MOVE_NORTH_EAST)
+	//{
+	//	HandleMoveUp();
+	//}
+	//else
+	//{
+	//	HandleBlockedMoveRight();
+	//	playerMoved = FALSE;
+	//}
+	//else
+	//if( !blockingGameObjectRightAndAbove && !blockingGameObjectRightAndBelow)
+	//{
+	//	HandleMoveRightWithNoBlockToTheRight();
+	//}
+	//else
+	//if(blockingGameObjectRightAndAbove)
+	//{
+	//	HandleMoveRightWithBlockToTheRight((Block *)blockingGameObjectRightAndAbove);
+	//}
+	//else
+	//{
+	//	HandleMoveRightWithBlockToTheRight((Block *)blockingGameObjectRightAndBelow);
+	//}
+	//return playerMoved;
 
 
 }
@@ -954,40 +956,41 @@ bool Player::HandleMoveRight(int controlEvent)
 void Player::HandleMoveLeft(int controlEvent)
 {
 
-	GameObject * blockingGameObjectLeftAndAbove = this->GetBlockingGameObjectImmediatelyToTheLeftAndAbove();
-	GameObject * blockingGameObjectLeftAndBelow = this->GetBlockingGameObjectImmediatelyToTheLeftAndBelow();
+	HandleMoveLeftWithNoBlockToTheLeft();
+	//GameObject * blockingGameObjectLeftAndAbove = this->GetBlockingGameObjectImmediatelyToTheLeftAndAbove();
+	//GameObject * blockingGameObjectLeftAndBelow = this->GetBlockingGameObjectImmediatelyToTheLeftAndBelow();
 
-	if( blockingGameObjectLeftAndAbove && blockingGameObjectLeftAndBelow)
-	{
-		if(controlEvent == CONTROL_EVENT_MOVE_SOUTH_WEST)
-		{
-			HandleMoveDown();
-		}
-		else
-		if(controlEvent == CONTROL_EVENT_MOVE_NORTH_WEST)
-		{
-			HandleMoveUp();
-		}
-		else
-		{
-			HandleBlockedMoveLeft();
-		}
+	//if( blockingGameObjectLeftAndAbove && blockingGameObjectLeftAndBelow)
+	//{
+	//	if(controlEvent == CONTROL_EVENT_MOVE_SOUTH_WEST)
+	//	{
+	//		HandleMoveDown();
+	//	}
+	//	else
+	//	if(controlEvent == CONTROL_EVENT_MOVE_NORTH_WEST)
+	//	{
+	//		HandleMoveUp();
+	//	}
+	//	else
+	//	{
+	//		HandleBlockedMoveLeft();
+	//	}
 
-	}
-	else
-	if( !blockingGameObjectLeftAndAbove && !blockingGameObjectLeftAndBelow)
-	{
-		HandleMoveLeftWithNoBlockToTheLeft();
-	}
-	else
-	if(blockingGameObjectLeftAndAbove)
-	{
-		HandleMoveLeftWithBlockToTheLeft((Block *)blockingGameObjectLeftAndAbove);
-	}
-	else
-	{
-		HandleMoveLeftWithBlockToTheLeft((Block *)blockingGameObjectLeftAndBelow);
-	}
+	//}
+	//else
+	//if( !blockingGameObjectLeftAndAbove && !blockingGameObjectLeftAndBelow)
+	//{
+	//	HandleMoveLeftWithNoBlockToTheLeft();
+	//}
+	//else
+	//if(blockingGameObjectLeftAndAbove)
+	//{
+	//	HandleMoveLeftWithBlockToTheLeft((Block *)blockingGameObjectLeftAndAbove);
+	//}
+	//else
+	//{
+	//	HandleMoveLeftWithBlockToTheLeft((Block *)blockingGameObjectLeftAndBelow);
+	//}
 
 
 
@@ -1204,48 +1207,7 @@ bool Player::Update()
 	controlEvent = this->theController->GetControlEvent();
 	this->Update(controlEvent);
 
-
-	if (this->theController->IsDropBombPressed())
-	{
-		int x = 3;
-		if( 
-			(bombDropCoundownTimer <= 0) &&
-			!IsCollisionWithBomb() && 
-			(numAllowedBombs > numBombsDropped)
-		  )
-		{
-			this->numBombsDropped++;
-			controlEvent = CONTROL_EVENT_DROP_BOMB;
-			this->Update(controlEvent);
-			bombDropCoundownTimer = bombDropCoundownTimerInitialValue;
-
-		}
-	}
-
-	if(bombDropCoundownTimer > 0)
-	{
-		bombDropCoundownTimer--;
-	}
-
-
-	Powerup * aPowerup = IsCollisionWithPowerup();
-	if(aPowerup)
-	{
-		aPowerup->Activate(this);
-		Universe::RemovePowerup(aPowerup );
-		delete aPowerup;
-		Sound::PlaySound(Sound::pickup_powerup_sound);
-	}
-
-
-
-	bool collisionWithExplosion = ExplosionPart::IsGameObjectInAnyExplosionPart(this);
-	if(collisionWithExplosion)
-	{
-		this->playerState = PLAYER_STATE_DEAD;
-		Sound::PlaySound(Sound::player_dies_sound);
-	}
-	return collisionWithExplosion;
+	return false;
 
 }
 
@@ -1277,9 +1239,9 @@ void Player::Update(int controlEvent)
 		HandleMoveUp();
 		break;
 
-	case CONTROL_EVENT_DROP_BOMB:
-		HandleDropBomb();
-		break;
+	//case CONTROL_EVENT_DROP_BOMB:
+	//	HandleDropBomb();
+	//	break;
 	}
 
 
@@ -1312,18 +1274,6 @@ RECT Player::GetRoundedPlayerLocationMapSquare()
 }
 
 
-void Player::HandleDropBomb()
-{
-	RECT roundedLocation = GetRoundedPlayerLocationMapSquare();
-	int bombX = roundedLocation.left;
-	int bombY = roundedLocation.top;
-
-	Bomb * aBomb = new Bomb(bombX, bombY,this );
-	Universe::GetBombs().push_back(aBomb);
-
-	Sound::PlaySound(Sound::drop_bomb_sound, 100);
-
-}
 
 
 int Player::GetRoundedSquareCenterX()

@@ -27,6 +27,7 @@
 #include "../universe/Universe.h"
 #include "../universe/Point.h"
 #include "../gamestate/TitleGameState.h"
+#include "../gamestate/SelectingNumPlayers.h"
 
 #include "../sound/MSound.h"
 
@@ -279,7 +280,8 @@ int Game_Init(void *parms,  int num_parms)
 
 	Sound::InitSounds();
 
-	currentGameState = new TitleGameState();
+	//currentGameState = new TitleGameState();
+	currentGameState = new SelectingNumPlayers();
 
 
 	return(1);
