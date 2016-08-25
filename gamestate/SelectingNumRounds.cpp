@@ -9,7 +9,7 @@
 GameState * SelectingNumRounds::Update()
 {
 
-	bool skip = false;
+	bool skip = true;
 	if(skip)
 	{
 		Universe::SetNumberOfRoundsInGame(2);

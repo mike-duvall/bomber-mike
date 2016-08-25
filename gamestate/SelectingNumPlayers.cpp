@@ -11,7 +11,7 @@
 GameState * SelectingNumPlayers::Update()
 {
 
-	bool skip = false;
+	bool skip = true;
 	if(skip)
 	{
 		this->HandleSetupPlayers(2);

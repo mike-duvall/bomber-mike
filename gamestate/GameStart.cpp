@@ -91,7 +91,7 @@ GameState * GameStart::Update()
 		Setup();
 		setupCalled = 1;
 	}
-	bool skip = false;
+	bool skip = true;
 	if(skip)
 	{
 		delete this;
