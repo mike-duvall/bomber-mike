@@ -121,44 +121,6 @@ void Bomb::AddFlames(int explosionSize, int xModifier, int yModifier, int type)
 	int proposedY = y + yModifier;
 
 
-	while(!done)
-	{
-		Block * foundBlock = Universe::GetBlockAtPoint(proposedX + 1, proposedY + 1);
-		IndestructableBlock * foundIndestructableBlock = dynamic_cast<IndestructableBlock *> (foundBlock);
-		if(!foundIndestructableBlock)
-		{
-
-			// If we found a block and it wasn't an IndestructibleBlock,
-			// it was a Destructible block
-			// so remove it
-			if(foundBlock)
-			{
-				Universe::RemoveBlock(foundBlock);
-				delete foundBlock;
-				done = true;
-			}
-			else
-			{
-				// otherwise, nothing was there so place an explosion
-				Universe::GetExplosionParts().push_back(new ExplosionPart(proposedX,proposedY, type, this->GetPlayer() ));
-				numPlacedExplosions++;
-
-			}
-		}
-
-		if(
-			(numPlacedExplosions == explosionSize) ||
-			foundBlock
-		  )
-		{
-			done = true;
-		}
-
-		proposedX += xModifier;
-		proposedY += yModifier;
-
-	}
-
 }
 
 

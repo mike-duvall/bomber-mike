@@ -111,13 +111,7 @@
     <ClCompile Include="gameobjects\ExplosionPart.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
-    <ClCompile Include="gameobjects\FlamePowerup.cpp">
-      <Filter>Source Files\gameobjects</Filter>
-    </ClCompile>
     <ClCompile Include="gameobjects\GameObject.cpp">
-      <Filter>Source Files\gameobjects</Filter>
-    </ClCompile>
-    <ClCompile Include="gameobjects\IndestructableBlock.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
     <ClCompile Include="gameobjects\Number.cpp">
@@ -245,16 +239,10 @@
     <ClInclude Include="gameobjects\ExplosionPart.h">
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
-    <ClInclude Include="gameobjects\FlamePowerup.h">
-      <Filter>Header Files\gameobjects</Filter>
-    </ClInclude>
     <ClInclude Include="gameobjects\GameObject.h">
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
     <ClInclude Include="gameobjects\HowManyPlayers.h">
-      <Filter>Header Files\gameobjects</Filter>
-    </ClInclude>
-    <ClInclude Include="gameobjects\IndestructableBlock.h">
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
     <ClInclude Include="gameobjects\Player.h">

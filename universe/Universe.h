@@ -13,7 +13,6 @@ class Point;
 #define MAP_BLOCK_HEIGHT 32
 
 
-#include "../gameobjects/IndestructableBlock.h"
 #include "../gameobjects/DestructableBlock.h"
 #include "../gameobjects/Bomb.h"
 #include "../gameobjects/Powerup.h"

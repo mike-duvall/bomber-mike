@@ -106,9 +106,7 @@
     <ClCompile Include="gameobjects\Explodingplayer.cpp" />
     <ClCompile Include="gameobjects\Explosion.cpp" />
     <ClCompile Include="gameobjects\ExplosionPart.cpp" />
-    <ClCompile Include="gameobjects\FlamePowerup.cpp" />
     <ClCompile Include="gameobjects\GameObject.cpp" />
-    <ClCompile Include="gameobjects\IndestructableBlock.cpp" />
     <ClCompile Include="gameobjects\Number.cpp" />
     <ClCompile Include="gameobjects\Player.cpp" />
     <ClCompile Include="gameobjects\Powerup.cpp" />
@@ -153,10 +151,8 @@
     <ClInclude Include="gameobjects\ExplodingPlayer.h" />
     <ClInclude Include="gameobjects\Explosion.h" />
     <ClInclude Include="gameobjects\ExplosionPart.h" />
-    <ClInclude Include="gameobjects\FlamePowerup.h" />
     <ClInclude Include="gameobjects\GameObject.h" />
     <ClInclude Include="gameobjects\HowManyPlayers.h" />
-    <ClInclude Include="gameobjects\IndestructableBlock.h" />
     <ClInclude Include="gameobjects\Player.h" />
     <ClInclude Include="gameobjects\Powerup.h" />
     <ClInclude Include="gameobjects\SelectMatch.h" />

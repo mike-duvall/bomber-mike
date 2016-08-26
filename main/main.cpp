@@ -17,8 +17,7 @@
 #include "../bob/BlitterObject.h"
 
 #include "../gameobjects/Player.h"
-#include "../gameobjects/IndestructableBlock.h"
-#include "../gameobjects/FlamePowerup.h"
+
 
 #include "../input/Keyboard.h"
 #include "../input/Joystick.h"
