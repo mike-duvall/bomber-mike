@@ -101,7 +101,6 @@
     <ClCompile Include="bob\BlitterObject.cpp" />
     <ClCompile Include="gameobjects\Block.cpp" />
     <ClCompile Include="gameobjects\Bomb.cpp" />
-    <ClCompile Include="gameobjects\BombPowerup.cpp" />
     <ClCompile Include="gameobjects\ControllerSelector.cpp" />
     <ClCompile Include="gameobjects\DestructableBlock.cpp" />
     <ClCompile Include="gameobjects\Explodingplayer.cpp" />
@@ -149,7 +148,6 @@
     <ClInclude Include="fmod\fmod.hpp" />
     <ClInclude Include="gameobjects\Block.h" />
     <ClInclude Include="gameobjects\Bomb.h" />
-    <ClInclude Include="gameobjects\BombPowerup.h" />
     <ClInclude Include="gameobjects\ControlEvent.h" />
     <ClInclude Include="gameobjects\DestructableBlock.h" />
     <ClInclude Include="gameobjects\ExplodingPlayer.h" />

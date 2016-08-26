@@ -24,10 +24,6 @@ public:
 	Powerup(int x, int y ) {};
 	virtual ~Powerup() {};
 
-	virtual void Activate(Player * aPlayer) = 0;
-
-
-
 
 };
 

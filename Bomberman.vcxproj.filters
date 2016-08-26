@@ -96,9 +96,6 @@
     <ClCompile Include="gameobjects\Bomb.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
-    <ClCompile Include="gameobjects\BombPowerup.cpp">
-      <Filter>Source Files\gameobjects</Filter>
-    </ClCompile>
     <ClCompile Include="gameobjects\ControllerSelector.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
@@ -231,9 +228,6 @@
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
     <ClInclude Include="gameobjects\Bomb.h">
-      <Filter>Header Files\gameobjects</Filter>
-    </ClInclude>
-    <ClInclude Include="gameobjects\BombPowerup.h">
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
     <ClInclude Include="gameobjects\ControlEvent.h">

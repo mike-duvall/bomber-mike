@@ -18,7 +18,6 @@
 
 #include "../gameobjects/Player.h"
 #include "../gameobjects/IndestructableBlock.h"
-#include "../gameobjects/BombPowerup.h"
 #include "../gameobjects/FlamePowerup.h"
 
 #include "../input/Keyboard.h"
@@ -31,8 +30,6 @@
 
 #include "../sound/MSound.h"
 
-//#include "../ai/aStarLibrary.h"
-// A Test Change
 
 using namespace std;
 
