@@ -156,10 +156,6 @@ void Update_And_Draw_Players()
 		{
 			boolean removeThisPlayer =  next->Update();
 			next->Draw(lpddsback);
-			if(removeThisPlayer)
-			{
-				next->PlaceExplodingPlayer();
-			}
 
 		}
 	}

@@ -246,14 +246,6 @@ string Player::GetBitmapFilenameFromPlayerType(int aPlayerType)
  	return  GetNameFromPlayerType() + string("Player.bmp");
 }
 
-void Player::PlaceExplodingPlayer()
-{
-	int explodingPlayerX = GetCollisionBox().left;
-	int explodingPlayerY = GetCollisionBox().top;
-	ExplodingPlayer * newExplodingPlayer = new ExplodingPlayer( explodingPlayerX, explodingPlayerY, playerType );
-	Universe::GetExplodingPlayers().push_back(newExplodingPlayer);
-
-}
 
 
 #define NUM_FRAMES_PER_ANIMATION 4
