@@ -71,50 +71,6 @@ Playing::~Playing()
 
 
 
-void Update_And_Draw_Blocks()
-{
-
-	BLOCK_VECTOR::iterator theBlockIterator;
-
-	for(	theBlockIterator = Universe::GetAllBlocks().begin();
-		theBlockIterator != Universe::GetAllBlocks().end();
-		)
-	{
-		Block * nextBlock = *theBlockIterator;
-
-		boolean removeThisBlock =  nextBlock->Update();
-		nextBlock->GetBlitterObject()->Draw(lpddsback);
-		if(removeThisBlock)
-		{
-			theBlockIterator = Universe::GetAllBlocks().erase(theBlockIterator);
-			delete nextBlock;
-		}
-		else
-		{
-			theBlockIterator++;
-		}
-	}
-
-}
-
-
-void Update_And_Draw_Powerups()
-{
-	POWERUP_VECTOR::iterator theIterator;
-
-	for(	theIterator = Universe::GetPowerups().begin();
-		theIterator != Universe::GetPowerups().end();
-		theIterator++
-		)
-	{
-		Powerup * next = *theIterator;
-		next->GetBlitterObject()->Draw(lpddsback);
-		next->GetBlitterObject()->Animate();
-	}
-
-}
-
-
 
 
 void Draw_Score(Player * aPlayer, int x, int y)
@@ -162,63 +118,6 @@ void Update_And_Draw_Players()
 
 }
 
-
-void Update_And_Draw_ExplodingPlayers()
-{
-	EXPLODING_PLAYER_VECTOR::iterator theIterator;
-
-	for(	theIterator = Universe::GetExplodingPlayers().begin();
-		theIterator != Universe::GetExplodingPlayers().end();
-		)
-	{
-		ExplodingPlayer * next = *theIterator;
-
-		boolean removeThisExplodingPlayer =  next->Update();
-
-		next->GetBlitterObject()->Draw(lpddsback);
-		if(removeThisExplodingPlayer)
-		{
-			theIterator = Universe::GetExplodingPlayers().erase(theIterator);
-			delete next;
-		}
-		else 
-		{
-			theIterator++;
-		}
-	}
-
-}
-
-
-
-
-void Update_And_Draw_Bombs()
-{
-
-	BOMB_VECTOR::iterator theIterator;
-
-	for(	theIterator = Universe::GetBombs().begin();
-		theIterator != Universe::GetBombs().end();
-		
-		)
-	{
-		Bomb * nextBomb = *theIterator;
-
-		boolean removeThisBomb =  nextBomb->Update();
-		nextBomb->GetBlitterObject()->Draw(lpddsback);
-		if(removeThisBomb)
-		{
-			theIterator = Universe::GetBombs().erase(theIterator);
-			delete nextBomb;
-		}
-		else
-		{
-			theIterator++;
-		}
-
-	}
-
-}
 
 
 
