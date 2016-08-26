@@ -13,10 +13,8 @@ class Point;
 #define MAP_BLOCK_HEIGHT 32
 
 
-#include "../gameobjects/DestructableBlock.h"
 #include "../gameobjects/Bomb.h"
 #include "../gameobjects/Powerup.h"
-#include "../gameobjects/ExplosionPart.h"
 #include "../gameobjects/Player.h"
 #include "../gameobjects/ExplodingPlayer.h"
 
@@ -39,7 +37,6 @@ public:
 
 	static EXPLODING_PLAYER_VECTOR & GetExplodingPlayers() { return explodingPlayers; }
 
-	static BLOCK_VECTOR & GetAllBlocks() { return blocks; }
 	static Block * GetBlockAtPoint(int x, int y);
 	static Block * GetBlockAtGridPoint(int x, int y);
 	static void RemoveBlock(Block * aBlock);
@@ -50,9 +47,6 @@ public:
 	static Bomb * Universe::GetBombAtPoint(int x, int y);
 	static Bomb * Universe::GetBombAtGridPoint(int x, int y);
 
-	static EXPLOSIONPART_VECTOR & GetExplosionParts() { return explosionParts; }
-	static ExplosionPart * Universe::GetExplosionPartAtPoint(int x, int y);
-	static ExplosionPart * Universe::GetExplosionPartAtGridPoint(int x, int y);
 
  	static POWERUP_VECTOR & GetPowerups() { return powerups; }
  	static void RemovePowerup(Powerup * aPowerup);
@@ -73,9 +67,7 @@ private:
 	static int mapLeftX;
 	static int mapTopY;
 
-	static BLOCK_VECTOR  blocks;
 	static BOMB_VECTOR  bombs;
-	static EXPLOSIONPART_VECTOR  explosionParts;
 	static POWERUP_VECTOR powerups;
 	static PLAYER_VECTOR players;
 	static EXPLODING_PLAYER_VECTOR explodingPlayers;

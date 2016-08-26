@@ -7,10 +7,8 @@
 
 using namespace std;
 
-BLOCK_VECTOR  Universe::blocks;
 
 BOMB_VECTOR  Universe::bombs;
-EXPLOSIONPART_VECTOR  Universe::explosionParts;
 POWERUP_VECTOR Universe::powerups;
 
 PLAYER_VECTOR Universe::players;
@@ -35,18 +33,6 @@ int Universe::mapTopY;
 
 void Delete_All_Blocks()
 {
-	BLOCK_VECTOR::iterator theBlockIterator;
-
-	for(	theBlockIterator = Universe::GetAllBlocks().begin();
-		theBlockIterator != Universe::GetAllBlocks().end();
-		theBlockIterator++
-		)
-	{
-		Block * nextBlock = *theBlockIterator;
-		delete nextBlock;
-	}
-
-	Universe::GetAllBlocks().clear();
 }
 
 
@@ -71,18 +57,6 @@ void Delete_All_ExplodingPlayers()
 void Delete_All_ExplosionParts()
 {
 
-	EXPLOSIONPART_VECTOR::iterator theIterator;
-
-	for(	theIterator = Universe::GetExplosionParts().begin();
-		theIterator != Universe::GetExplosionParts().end();
-		theIterator++
-		)
-	{
-		ExplosionPart * nextExplosionPart = *theIterator;
-		delete nextExplosionPart;
-
-	}
-	Universe::GetExplosionParts().clear();
 
 }
 
@@ -257,33 +231,8 @@ Point Universe::GetNearestCenterPointFromPoint(int x, int y)
 
 Block * Universe::GetBlockAtPoint(int x, int y)
 {
-	Block * foundBlock = 0;
-	BLOCK_VECTOR::iterator theBlockIterator;
 
-	BLOCK_VECTOR & theBlocks = Universe::GetAllBlocks();
-
-	int t = 0;
-	for(	theBlockIterator = theBlocks.begin();
-		theBlockIterator != theBlocks.end();
-		theBlockIterator++
-		)
-	{
-		t++;
-		Block * nextBlock = *theBlockIterator;
-		if(nextBlock->IsPointInBlock(x,y))
-		{
-			if(foundBlock)
-			{
-				// shouldn't hit this point
-				int x = 3;
-			}
-			foundBlock = nextBlock;
-		}
-	}
-
-
-	return foundBlock;
-
+	return NULL;
 }
 
 Block * Universe::GetBlockAtGridPoint(int gridX, int gridY)
@@ -337,67 +286,12 @@ Bomb * Universe::GetBombAtPoint(int x, int y)
 }
 
 
-ExplosionPart * Universe::GetExplosionPartAtGridPoint(int gridX, int gridY)
-{
-	int x = (gridX * MAP_BLOCK_WIDTH) + (MAP_BLOCK_WIDTH / 2);
-	int y = (gridY * MAP_BLOCK_HEIGHT) + (MAP_BLOCK_HEIGHT / 2);
-	return Universe::GetExplosionPartAtPoint(x,y);
-}
-
-
-
- ExplosionPart * Universe::GetExplosionPartAtPoint(int x, int y)
-{
-	ExplosionPart * foundExplosionPart = 0;
-	EXPLOSIONPART_VECTOR::iterator theExplosionPartIterator;
-
-	EXPLOSIONPART_VECTOR & theExplosionParts = Universe::GetExplosionParts();
-
-	int t = 0;
-	for(	theExplosionPartIterator = theExplosionParts.begin();
-		theExplosionPartIterator != theExplosionParts.end();
-		theExplosionPartIterator++
-		)
-	{
-		t++;
-		ExplosionPart * nextExplosionPart = *theExplosionPartIterator;
-		if(nextExplosionPart->IsPointInExplosionPartSquare(x,y))
-		{
-			if(foundExplosionPart)
-			{
-				// shouldn't hit this point
-				int x = 3;
-			}
-			foundExplosionPart = nextExplosionPart;
-		}
-	}
-	return foundExplosionPart;
-}
 
 
 
 
 void Universe::RemoveBlock(Block * aBlock)
 {
-	BLOCK_VECTOR::iterator theBlockIterator;
-
-	BLOCK_VECTOR & theBlocks = Universe::GetAllBlocks();
-
-	for(	theBlockIterator = theBlocks.begin();
-		theBlockIterator != theBlocks.end();
-		theBlockIterator++
-		)
-	{
-
-		Block * nextBlock = *theBlockIterator;
-		if(nextBlock == aBlock)
-		{
-			theBlocks.erase(theBlockIterator);
-			return;
-
-		}
-	}
-
 
 
 }

@@ -99,16 +99,7 @@
     <ClCompile Include="gameobjects\ControllerSelector.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
-    <ClCompile Include="gameobjects\DestructableBlock.cpp">
-      <Filter>Source Files\gameobjects</Filter>
-    </ClCompile>
     <ClCompile Include="gameobjects\Explodingplayer.cpp">
-      <Filter>Source Files\gameobjects</Filter>
-    </ClCompile>
-    <ClCompile Include="gameobjects\Explosion.cpp">
-      <Filter>Source Files\gameobjects</Filter>
-    </ClCompile>
-    <ClCompile Include="gameobjects\ExplosionPart.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
     <ClCompile Include="gameobjects\GameObject.cpp">
@@ -227,16 +218,7 @@
     <ClInclude Include="gameobjects\ControlEvent.h">
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
-    <ClInclude Include="gameobjects\DestructableBlock.h">
-      <Filter>Header Files\gameobjects</Filter>
-    </ClInclude>
     <ClInclude Include="gameobjects\ExplodingPlayer.h">
-      <Filter>Header Files\gameobjects</Filter>
-    </ClInclude>
-    <ClInclude Include="gameobjects\Explosion.h">
-      <Filter>Header Files\gameobjects</Filter>
-    </ClInclude>
-    <ClInclude Include="gameobjects\ExplosionPart.h">
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
     <ClInclude Include="gameobjects\GameObject.h">

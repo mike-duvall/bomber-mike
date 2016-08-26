@@ -12,22 +12,6 @@
 extern void Draw_Score(Player * aPlayer, int x, int y);
 
 
-void Draw_Blocks()
-{
-
-	BLOCK_VECTOR::iterator theBlockIterator;
-
-	for(	theBlockIterator = Universe::GetAllBlocks().begin();
-		theBlockIterator != Universe::GetAllBlocks().end();
-		theBlockIterator++
-		)
-	{
-		Block * nextBlock = *theBlockIterator;
-		nextBlock->GetBlitterObject()->Draw(lpddsback);
-	}
-
-}
-
 
 void Draw_Players()
 {
@@ -65,10 +49,7 @@ GameState * EndOfRound::Update()
 	// clear the drawing surface
 	DDraw_Fill_Surface(lpddsback,backgroundColor );
 
- 	Draw_Blocks();
-
 	Draw_Players();
-
 
 	// flip the surfaces
 	DDraw_Flip();

@@ -61,17 +61,7 @@ int AS_Valid(_asNode *parent, _asNode *node, int data, void *pointer)
 	}
 
 
-	ExplosionPart * anExplosionPart = Universe::GetExplosionPartAtPoint(node->x * MAP_BLOCK_WIDTH, node->y * MAP_BLOCK_HEIGHT );
-
-	if( anExplosionPart != 0)
-	{
-		return FALSE;
-	}
-	else
-	{
-		return TRUE;
-	}
-
+	return FALSE;
 }
 
 int AS_Cost(_asNode *parent, _asNode *node, int data, void *pointer) 
@@ -233,16 +223,6 @@ GameObject * ComputerController::GetGameObjectAtPoint( int x, int y)
 
 	GameObject * foundGameObject = 0;
 
-	foundGameObject = Universe::GetBlockAtPoint(x, y);
-	if(foundGameObject == 0)
-	{
-		foundGameObject = Universe::GetExplosionPartAtPoint(x,y);
-	}
-
-	if(foundGameObject == 0)
-	{
-		foundGameObject = Universe::GetBombAtPoint(x,y);
-	}
 
 
 	return foundGameObject;
@@ -251,56 +231,6 @@ GameObject * ComputerController::GetGameObjectAtPoint( int x, int y)
 
 }
 
-
-
-
-// int ComputerController::RunFromBomb( Bomb * aBomb )
-// {
-// 
-// 	int controlEvent = CONTROL_EVENT_DO_NOTHING;
-// 
-// 	
-// 	POINT_VECTOR pointVector = aBomb->GetPredictedFlameLocations();
-// 
-// 	POINT_VECTOR::iterator pointIterator;
-// 
-// 	for(	pointIterator = pointVector.begin();
-// 		pointIterator != pointVector.end();
-// 		pointIterator++
-// 		)
-// 	{
-// 		Point nextPoint = *pointIterator;
-// 		int x = 3;
-// 	}
-// 
-// 
-// 
-// 	int theBombX = aBomb->GetBlitterObject()->GetX();
-// 	int theBombY = aBomb->GetBlitterObject()->GetY();
-// 
-//     int x = this->myPlayer->GetRoundedSquareCenterX();
-//     int y = this->myPlayer->GetRoundedSquareCenterY();
-// 
-// 	int safeLocationX = 0;
-// 	int safeLocationY = 0;
-// 	// Check block above
-// 
-// 	int tryX = x;
-// 	int tryY = y - MAP_BLOCK_HEIGHT;
-// 	GameObject * aboveObject = GetGameObjectAtPoint(tryX, tryY);
-// 	if(aboveObject == 0)
-// 	{
-// 		safeLocationX = tryX;
-// 		safeLocationY = tryY;
-// 	}
-// 
-// 
-// 
-// 	return controlEvent;
-// 
-// 
-// }
-// 
 
 
 
@@ -432,35 +362,6 @@ Bomb * ComputerController::GetBombCloseToMe()
 		if(distance < 200)
 		{
 			return nextBomb;
-		}
-
-	}
-
-	return 0;
-
-}
-
-
-ExplosionPart * ComputerController::GetExplosionPartCloseToMe()
-{
-	RECT myPlayerCollisionBoxRect = myPlayer->GetCollisionBox();
-	int thePlayerX = myPlayerCollisionBoxRect.left;
-	int thePlayerY = myPlayerCollisionBoxRect.top;
-
-
-	EXPLOSIONPART_VECTOR::iterator theIterator;
-
-	for(	theIterator = Universe::GetExplosionParts().begin();
-		theIterator != Universe::GetExplosionParts().end();
-		theIterator++
-		)
-	{
-		ExplosionPart * nextExplosionPart = *theIterator;
-
-		float  distance = DistanceBetweenTwoPoints(thePlayerX,thePlayerY, nextExplosionPart->GetBlitterObject()->GetX(), nextExplosionPart->GetBlitterObject()->GetY());
-		if(distance < 200)
-		{
-			return nextExplosionPart;
 		}
 
 	}

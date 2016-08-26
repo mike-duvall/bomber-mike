@@ -7,7 +7,6 @@
 #include "../t3dlib/ddutil.h"
 #include "../bob/BlitterObject.h"
 #include "../universe/Universe.h"
-#include "../gameobjects//ExplosionPart.h"
 #include "../sound/MSound.h"
 #include "../universe/Point.h"
 
@@ -205,23 +204,6 @@ POINT_VECTOR Bomb::GetPredictedFlameLocations()
 
 void Bomb::AddExplosionParts()
 {
-	int x = this->GetBlitterObject()->GetX();
-	int y = this->GetBlitterObject()->GetY();
-
-	int explosionSize = this->myPlayer_->GetExplosionSize();
-
-	Universe::GetExplosionParts().push_back(new ExplosionPart(x,y, EXPLOSION_PART_CENTER, this->GetPlayer() ));
-	// to right
-	AddFlames(explosionSize, 32, 0,EXPLOSION_PART_RIGHT_LEFT_SIDE);
-
-	// to left
-	AddFlames(explosionSize, -32, 0,EXPLOSION_PART_RIGHT_LEFT_SIDE);
-
-	// below
-	AddFlames(explosionSize, 0, 32, EXPLOSION_PART_TOP_BOTTOM_SIDE );
-
-	// above
-	AddFlames(explosionSize, 0, -32, EXPLOSION_PART_TOP_BOTTOM_SIDE );
 
 }
 
@@ -229,36 +211,8 @@ void Bomb::AddExplosionParts()
 bool Bomb::Update()
 {
 
-	bool removeThisBomb = false;
-	coundownTimer_--;
-	bool hitByExplosion = ExplosionPart::IsGameObjectInAnyExplosionPart(this);
+	return false;
 
-	if(
-		(coundownTimer_ <= 0) ||
-		hitByExplosion
-		)
-	{
-
-		removeThisBomb = true;
-		Sound::PlaySound(Sound::explosion_sound);
-
-		AddExplosionParts();
-		myPlayer_->DecrementNumberOfActuallyDroppedBombs();
-
-
-	}
-
-
-
-	if(!this->hasPlayerLeft_)
-	{
-		BOB * playerBOB = myPlayer_->GetTheCollisionBob();
-		hasPlayerLeft_ = !Collision_BOBS(playerBOB, this->GetBlitterObject()->getTheBOB());
-	}
-
-
-	this->GetBlitterObject()->Animate();
-	return removeThisBomb;
 }
 
 
