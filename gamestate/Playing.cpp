@@ -101,11 +101,6 @@ void Update_And_Draw_Players()
 		)
 	{
 		Player * next = *theIterator;
-// 		int x = (playerIndex * 100) + 50;
-// 		Draw_Score(next, x, 30);
-		next->GetScoreIcon()->Draw(lpddsback);
-		next->GetScoreShell()->Draw(lpddsback);
-		next->GetScoreNumber()->Draw(lpddsback);
 		playerIndex++;
 
 		if(next->GetPlayerState() == PLAYER_STATE_ALIVE)
@@ -122,43 +117,14 @@ void Update_And_Draw_Players()
 
 
 
-
-
-
-
-
 GameState * Playing::Update()
 {
 	DWORD backgroundColor = _RGB32BIT(0,0,107,0);
 	// clear the drawing surface
 	DDraw_Fill_Surface(lpddsback,backgroundColor );
 
-
-	DWORD scoreboardBackground = _RGB32BIT(0,0,182,0);
-	RECT rectangle;
-
-	rectangle.bottom = 50;
-	rectangle.top = 0;
-	rectangle.right = 640;
-	rectangle.left = 0;
-
-	//DDraw_Fill_Surface(lpddsback,scoreboardBackground, &rectangle );
-
-	//Update_And_Draw_Powerups();
-
-	//Update_And_Draw_Blocks();
-
-	//Update_And_Draw_Bombs();
-
-	//Update_And_Draw_ExplosionParts();
-
 	Update_And_Draw_Players();
 
-	//Update_And_Draw_ExplodingPlayers();
-
-	//Update_And_Draw_Scoreboard();
-
-	// flip the surfaces
 	DDraw_Flip();
 
 	return this;
