@@ -155,49 +155,6 @@ void Player::Update(int controlEvent)
 
 
 
-RECT Player::GetRoundedPlayerLocationMapSquare()
-{
-	RECT theRect;
-
-	int playerX = this->GetCollisionBox().left;
-	int playerY = this->GetCollisionBox().top;
-
-	playerX += MAP_BLOCK_WIDTH / 2;
-	playerY += MAP_BLOCK_HEIGHT / 2;
-
-	int blockHorizontalOffset = playerX / MAP_BLOCK_WIDTH;
-	int blockVerticalOffset = playerY/ MAP_BLOCK_HEIGHT;
-	theRect.left = blockHorizontalOffset * MAP_BLOCK_WIDTH;
-	theRect.right = theRect.left + MAP_BLOCK_WIDTH;
-
-	theRect.top = blockVerticalOffset * MAP_BLOCK_HEIGHT;
-	theRect.bottom = theRect.top + MAP_BLOCK_HEIGHT;
-
-	return theRect;
-
-}
-
-
-
-int Player::GetRoundedSquareCenterX()
-{
-	RECT roundedLocation = this->GetRoundedPlayerLocationMapSquare();
-
-	int x = roundedLocation.left + 16;
-
-	return x;
-
-}
-
-
-int Player::GetRoundedSquareCenterY()
-{
-	RECT roundedLocation = this->GetRoundedPlayerLocationMapSquare();
-
-	int y = roundedLocation.top + 16;
-
-	return y;
-}
 
 
 
