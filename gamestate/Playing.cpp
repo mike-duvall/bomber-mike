@@ -121,48 +121,6 @@ void Update_And_Draw_Players()
 
 
 
-void Update_And_Draw_ExplosionParts()
-{
-
-	EXPLOSIONPART_VECTOR::iterator theIterator;
-
-	for(	theIterator = Universe::GetExplosionParts().begin();
-		theIterator != Universe::GetExplosionParts().end();
-
-		)
-	{
-		ExplosionPart * nextExplosionPart = *theIterator;
-
-		boolean removeThisExplosion =  nextExplosionPart->Update();
-		nextExplosionPart->Draw(lpddsback);
-		if(removeThisExplosion)
-		{
-			theIterator = Universe::GetExplosionParts().erase(theIterator);
-			delete nextExplosionPart;
-			//theIterator--;
-			int numExplosions = (int)Universe::GetExplosionParts().size();
-			int x = 3;
-		}
-		else
-		{
-			theIterator++;
-		}
-
-	}
-
-}
-
-
-
-void Playing::Update_And_Draw_Scoreboard()
-{
-	timer->Draw(lpddsback);
-	clock->Draw(lpddsback);
-
-	timer->Update();
-}
-
-
 
 
 
@@ -202,26 +160,6 @@ GameState * Playing::Update()
 
 	// flip the surfaces
 	DDraw_Flip();
-
-
-	int numberOfAlivePlayersLeft = Universe::GetNumberOfAlivePlayers();
-	int numberOfExplodingPlayers = (int)Universe::GetExplodingPlayers().size();
-
-	if(
-		(
-			(numberOfAlivePlayersLeft < 2)  &&
-			(numberOfExplodingPlayers == 0)
-		) 
-		||
-		timer->Expired()
-	  )
-	{
-
-		delete this;
-		return new EndOfRound();
-	}
-
-
 
 	return this;
 
