@@ -73,18 +73,6 @@ Playing::~Playing()
 
 
 
-void Draw_Score(Player * aPlayer, int x, int y)
-{
-	int wins = aPlayer->GetNumberOfWins();
-	string name = aPlayer->GetName();
-	stringstream wins_stream (stringstream::in | stringstream::out);
-	wins_stream << wins;
-
-	string score = name + string(" ") + wins_stream.str();
-
-	Draw_Text_GDI(score.c_str(),x,y,RGB(255,255,255),lpddsback);
-
-}
 
 
 void Update_And_Draw_Players()

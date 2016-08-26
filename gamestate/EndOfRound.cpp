@@ -43,10 +43,7 @@ void Draw_Players()
 
 		Player * next = *theIterator;
 		int x = (playerIndex * 100) + 50;
-		Draw_Score(next, x, 30);
 		playerIndex++;
-
-
 
 		if(next->GetPlayerState() == PLAYER_STATE_ALIVE)
 		{

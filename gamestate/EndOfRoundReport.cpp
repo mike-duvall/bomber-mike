@@ -239,25 +239,6 @@ void EndOfRoundReport::Draw_GoldCoins()
 }
 
 
-void Draw_Scores()
-{
-
-	int playerIndex = 0;
-	PLAYER_VECTOR::iterator theIterator;
-
-	for(	theIterator = Universe::GetPlayers().begin();
-		theIterator != Universe::GetPlayers().end();
-		theIterator++
-		)
-	{
-
-		Player * next = *theIterator;
-		int x = (playerIndex * 100) + 50;
-		Draw_Score(next, x, 30);
-		playerIndex++;
-	}
-
-}
 
 
 void EndOfRoundReport::Update_And_Draw_VictoryLights()
@@ -320,7 +301,6 @@ GameState * EndOfRoundReport::Update()
 
 	DDraw_Fill_Surface(lpddsback,backgroundColor );
 
-	Draw_Scores();
 	Update_And_Draw_VictoryLights();
 	Draw_GoldCoins();
 
