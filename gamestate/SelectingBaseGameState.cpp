@@ -184,48 +184,8 @@ GameState * SelectingBaseGameState::Update()
 {
 
 
-	// clear the drawing surface 
-	DWORD backgroundColor = _RGB32BIT(0,0,182,255);
-	DDraw_Fill_Surface(lpddsback,backgroundColor );
 
-
-
-
-	if(subState == SUB_STATE_PAUSE_AFTER_SELECTING)
-	{
-		if(pauseAfterSelectionTimer > 0)
-		{
-			pauseAfterSelectionTimer--;
-		}
-		else
-		{
-			return OnItemSelected();
-		}
-	}
-	else
-	{
-
-		UpdateSelectorLocation();
-
-		boolean selectionMadeByKeyboard = HandleKeyboardInput();
-//		boolean selectionMadeByJoystick = HandleJoystickInput();
-		boolean selectionMadeByJoystick = false;
-		if(selectionMadeByKeyboard || selectionMadeByJoystick)
-		{
-			subState = SUB_STATE_PAUSE_AFTER_SELECTING;
-			selector->GetBlitterObject()->Set_Animation(1);
-		}
-
-	}
-	selector->GetBlitterObject()->Animate();
-	gameObject->GetBlitterObject()->Draw(lpddsback);
-	selector->GetBlitterObject()->Draw(lpddsback);
-	Draw_Special();
-
-	DDraw_Flip();
-
-	return this;
-
+	return NULL;
 }
  
 

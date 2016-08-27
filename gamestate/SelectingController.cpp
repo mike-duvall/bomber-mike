@@ -71,36 +71,4 @@ SelectingController::SelectingController()
 
 
 
-GameState * SelectingController::OnItemSelected()
-{
-
-	CONTROLLER_SELECT_VECTOR ::iterator theIterator;
-
-	int playerNumber = 0;
-	int joystickIndex = 0;
-
-	for(	theIterator = controllerSelectors.begin();
-		theIterator != controllerSelectors.end();
-		theIterator++
-		)
-	{
-		ControllerSelector * next = *theIterator;
-		int selection = next->GetSelection();
-		Player * thePlayer = Universe::GetPlayers()[playerNumber];
-		switch(selection)
-		{
-
-		case CONTROLLER_KEYBOARD:
-			thePlayer->SetController(Universe::GetKeyboard());
-			break;
-
-		}
-		playerNumber++;
-
-
-	}
-
-
-	return this->GetNextGameStateAndDeleteCurrentGameState();
-}
 

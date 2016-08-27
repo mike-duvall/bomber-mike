@@ -49,13 +49,6 @@ SelectingNumPlayers::SelectingNumPlayers()
 }
 
 
-GameState * SelectingNumPlayers::OnItemSelected()
-{
-	this->HandleSetupPlayers(selectorPosition + 1);
-	return GetNextGameStateAndDeleteCurrentGameState();
-
-}
-
 
 
 void SelectingNumPlayers::HandleSetupPlayers(int numPlayers)

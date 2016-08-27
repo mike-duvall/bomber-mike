@@ -23,7 +23,7 @@ public:
 
 protected:
 
-	virtual GameState * OnItemSelected() = 0;
+
 	void HandleSetupPlayers(int numPlayers);
 	void UpdateSelectorLocation();
 	virtual bool HandleKeyboardInput();
