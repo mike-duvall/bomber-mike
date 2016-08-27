@@ -1,6 +1,5 @@
 #include "SelectingNumPlayers.h"
 
-#include "SelectingController.h"
 #include "../universe/Universe.h"
 #include "../input/Joystick.h"
 #include "../input/Keyboard.h"
@@ -11,9 +10,20 @@ GameState * SelectingNumPlayers::Update()
 {
 
 	this->HandleSetupPlayers(2);
-//	return GetNextGameStateAndDeleteCurrentGameState();
+	{
+	Player * computerPlayer = Universe::GetPlayers()[1];
+	computerPlayer->SetController(Universe::GetKeyboard());
+	}
+
+
+	{
+	Player * humanPlayer = Universe::GetPlayers()[0];
+	humanPlayer->SetController(Universe::GetKeyboard());
+	}
+
 	delete this;
-	return new SelectingController();
+	Universe::SetNumberOfRoundsInGame(2);
+	return new GameStart();
 
 }
 
