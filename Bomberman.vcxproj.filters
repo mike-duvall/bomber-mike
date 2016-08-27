@@ -90,9 +90,6 @@
     <ClCompile Include="bob\BlitterObject.cpp">
       <Filter>Source Files\bob</Filter>
     </ClCompile>
-    <ClCompile Include="gameobjects\Block.cpp">
-      <Filter>Source Files\gameobjects</Filter>
-    </ClCompile>
     <ClCompile Include="gameobjects\Bomb.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
@@ -193,9 +190,6 @@
     </ClInclude>
     <ClInclude Include="bob\BlitterObject.h">
       <Filter>Header Files\bob</Filter>
-    </ClInclude>
-    <ClInclude Include="gameobjects\Block.h">
-      <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
     <ClInclude Include="gameobjects\Bomb.h">
       <Filter>Header Files\gameobjects</Filter>

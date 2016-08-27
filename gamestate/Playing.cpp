@@ -3,7 +3,6 @@
 
 #include "../t3dlib/t3dlib1.h"
 
-#include "../gameobjects/Block.h"
 #include "../gameobjects/SimpleGameObject.h"
 #include "../gameobjects/Timer.h"
 #include "../gameobjects/Number.h"

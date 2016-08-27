@@ -3,7 +3,6 @@
 
 #include "../t3dlib/t3dlib1.h"
 
-#include "../gameobjects/Block.h"
 #include "../universe/Universe.h"
 #include "../bob/BlitterObject.h"
 
