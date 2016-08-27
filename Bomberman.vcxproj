@@ -109,8 +109,6 @@
     <ClCompile Include="gameobjects\Selector.cpp" />
     <ClCompile Include="gameobjects\SimpleGameObject.cpp" />
     <ClCompile Include="gameobjects\Timer.cpp" />
-    <ClCompile Include="gameobjects\VictoryLightHorizontalGroup.cpp" />
-    <ClCompile Include="gameobjects\VictoryLlight.cpp" />
     <ClCompile Include="gamestate\EndOfMatch.cpp" />
     <ClCompile Include="gamestate\EndOfRound.cpp" />
     <ClCompile Include="gamestate\EndOfRoundReport.cpp" />
@@ -147,8 +145,6 @@
     <ClInclude Include="gameobjects\HowManyPlayers.h" />
     <ClInclude Include="gameobjects\Player.h" />
     <ClInclude Include="gameobjects\SelectMatch.h" />
-    <ClInclude Include="gameobjects\VictoryLight.h" />
-    <ClInclude Include="gameobjects\VictoryLightHorizontalGroup.h" />
     <ClInclude Include="gamestate\EndOfMatch.h" />
     <ClInclude Include="gamestate\EndOfRound.h" />
     <ClInclude Include="gamestate\EndOfRoundReport.h" />

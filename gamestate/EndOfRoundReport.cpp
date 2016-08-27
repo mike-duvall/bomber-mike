@@ -5,7 +5,6 @@
 #include "../t3dlib/t3dlib1.h"
 #include "../universe/Universe.h"
 #include "../input/Keyboard.h"
-#include "../gameobjects/VictoryLightHorizontalGroup.h"
 #include "../gameobjects/SimpleGameObject.h"
 
 #include "GameStart.h"

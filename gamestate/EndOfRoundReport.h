@@ -6,7 +6,6 @@
 #include "GameState.h"
 
 
-#include "../gameobjects/VictoryLightHorizontalGroup.h"
 #include "../gameobjects/SimpleGameObject.h"
 
 
@@ -30,7 +29,6 @@ private:
 	void Draw_GoldCoins();
 
 	int countdownTimer;
-	VICTORY_LIGHT_HORIZONTAL_GROUP_VECTOR victoryLightHorizontalGroups;
 	SimpleGameObject * winMatchText;
 	SimpleGameObject * winMatchNumber;
 

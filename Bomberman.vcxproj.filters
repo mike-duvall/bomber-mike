@@ -120,12 +120,6 @@
     <ClCompile Include="gameobjects\Timer.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
-    <ClCompile Include="gameobjects\VictoryLightHorizontalGroup.cpp">
-      <Filter>Source Files\gameobjects</Filter>
-    </ClCompile>
-    <ClCompile Include="gameobjects\VictoryLlight.cpp">
-      <Filter>Source Files\gameobjects</Filter>
-    </ClCompile>
     <ClCompile Include="input\ComputerController.cpp">
       <Filter>Source Files\input</Filter>
     </ClCompile>
@@ -227,9 +221,6 @@
     <ClInclude Include="gameobjects\SelectMatch.h">
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
-    <ClInclude Include="gameobjects\VictoryLight.h">
-      <Filter>Header Files\gameobjects</Filter>
-    </ClInclude>
     <ClInclude Include="input\ComputerController.h">
       <Filter>Header Files\input</Filter>
     </ClInclude>
@@ -316,9 +307,6 @@
     </ClInclude>
     <ClInclude Include="ai\PathFinder.h">
       <Filter>Header Files\ai</Filter>
-    </ClInclude>
-    <ClInclude Include="gameobjects\VictoryLightHorizontalGroup.h">
-      <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
