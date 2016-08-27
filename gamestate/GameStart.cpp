@@ -39,9 +39,7 @@ void Setup()
 		next->SetInitialValuesForNewRound();
 	}
 
-
 	Universe::ClearAndDeleteAll();
-
 
 }
 

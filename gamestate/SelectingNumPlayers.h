@@ -9,12 +9,8 @@ class SelectingNumPlayers : public GameState
 {
 public:
 
-	SelectingNumPlayers();
 
 private:
-
-
- 	void HandleSetupPlayers(int numPlayers);
 
 	GameState * Update();
 	
