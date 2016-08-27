@@ -28,14 +28,11 @@
 
 
 
-
 using namespace std;
-
 
 
 extern HINSTANCE main_instance;
 extern HWND      main_window_handle;
-
 
 #include "../gameobjects/ControlEvent.h"
 
@@ -45,19 +42,8 @@ GameState * currentGameState;
 
 
 
-void Set_Pallete_From_Bitmap(string filename)
-{
-	Load_Bitmap_File(&bitmap8bit, (char *)filename.c_str());
-	Set_Palette(bitmap8bit.palette);
-	Unload_Bitmap_File(&bitmap8bit);
-
-}
-
-
 #define TOTAL_NUM_ROWS 11
 #define TOTAL_NUM_COLUMNS 13
-
-
 
 
 
@@ -113,7 +99,6 @@ int Game_Init(void *parms,  int num_parms)
 	currentGameState =  new GameStart();
 
 
-
 	return(1);
 
 } // end Game_Init
@@ -124,12 +109,7 @@ int Game_Shutdown(void *parms,  int num_parms)
 {
 
 	lpdi->Release();
-
-
-
 	DDraw_Shutdown();
-
-
 	return(1);
 } 
 
