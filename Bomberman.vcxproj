@@ -107,7 +107,6 @@
     <ClCompile Include="gamestate\GameStart.cpp" />
     <ClCompile Include="gamestate\GameState.cpp" />
     <ClCompile Include="gamestate\Playing.cpp" />
-    <ClCompile Include="gamestate\SelectingNumPlayers.cpp" />
     <ClCompile Include="input\Joystick.cpp" />
     <ClCompile Include="input\Keyboard.cpp" />
     <ClCompile Include="main\main.cpp" />
@@ -128,7 +127,6 @@
     <ClInclude Include="gamestate\GameStart.h" />
     <ClInclude Include="gamestate\GameState.h" />
     <ClInclude Include="gamestate\Playing.h" />
-    <ClInclude Include="gamestate\SelectingNumPlayers.h" />
     <ClInclude Include="input\Controller.h" />
     <ClInclude Include="input\Joystick.h" />
     <ClInclude Include="input\Keyboard.h" />

@@ -24,7 +24,8 @@
 
 #include "../universe/Universe.h"
 #include "../universe/Point.h"
-#include "../gamestate/SelectingNumPlayers.h"
+#include "../gamestate/GameStart.h"
+
 
 
 
@@ -84,7 +85,33 @@ int Game_Init(void *parms,  int num_parms)
 	ShowCursor(FALSE);
 
 	//currentGameState = new TitleGameState();
-	currentGameState = new SelectingNumPlayers();
+	//currentGameState = new SelectingNumPlayers();
+
+	Keyboard * aKeyboard = 0;
+	Player * player1 = new Player(32, 32, WHITE_PLAYER);
+	Universe::GetPlayers().push_back(player1);
+
+	int columnOffset = 13 * 32;
+	int rowOffset = 11 * 32;
+
+	Player * player2 = new Player(columnOffset, rowOffset, BLACK_PLAYER);
+	Universe::GetPlayers().push_back(player2);
+
+	{
+		Player * computerPlayer = Universe::GetPlayers()[1];
+		computerPlayer->SetController(Universe::GetKeyboard());
+	}
+
+
+	{
+		Player * humanPlayer = Universe::GetPlayers()[0];
+		humanPlayer->SetController(Universe::GetKeyboard());
+	}
+
+
+	Universe::SetNumberOfRoundsInGame(2);
+	currentGameState =  new GameStart();
+
 
 
 	return(1);
