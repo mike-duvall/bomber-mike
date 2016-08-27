@@ -61,93 +61,8 @@ void Set_Pallete_From_Bitmap(string filename)
 void CreateIndestructableBlocks()
 {
 
-	// top row
-// 	int x = Universe::GetMapLeftX();
-// 	int y = Universe::GetMapTopY();
-
 	int x = 0;
 	int y = 0;
-
-
-
-//	BombPowerup * aBombPowerup = new BombPowerup(x + 64 + 32, y + 32 + 32);
-//	Universe::GetPowerups().push_back(aBombPowerup);
-//
-//	FlamePowerup * aFlamePowerup = new FlamePowerup(x + 64 + 32, y + 32 + 32 + 64);
-//	Universe::GetPowerups().push_back(aFlamePowerup);
-//
-//	aBombPowerup = new BombPowerup(x + 5 * 32, y + 5 * 32);
-//	Universe::GetPowerups().push_back(aBombPowerup);
-//
-//	aFlamePowerup = new FlamePowerup(x + 7 * 32, y + 9 * 32);
-//	Universe::GetPowerups().push_back(aFlamePowerup);
-//
-//
-//	aBombPowerup = new BombPowerup(x + 13 * 32, y + 8 * 32);
-//	Universe::GetPowerups().push_back(aBombPowerup);
-//
-//	aFlamePowerup = new FlamePowerup(x + 5 * 32, y + 11 * 32);
-//	Universe::GetPowerups().push_back(aFlamePowerup);
-//
-//
-//
-//
-//	// top row
-//	Block * aBlock = 0;
-//	for(int i = 0; i < 15; i++)
-//	{
-//		aBlock = new IndestructableBlock(x, y );
-//		Universe::GetAllBlocks().push_back(aBlock);
-//		x += 32;
-//	}
-//
-//	// left column
-////	x = Universe::GetMapLeftX();
-//	x = 0;
-//	y = 32;
-//	for(int i = 0; i < 12; i++)
-//	{
-//		aBlock = new IndestructableBlock(x, y );
-//		Universe::GetAllBlocks().push_back(aBlock);
-//		y += 32;
-//	}
-//
-//	// bottom row
-//	x = 32;
-//	y = 32 * 12;
-//	for(int i = 0; i < 14; i++)
-//	{
-//		aBlock = new IndestructableBlock(x, y );
-//		Universe::GetAllBlocks().push_back(aBlock);
-//		x += 32;
-//	}
-//
-//
-//	// right row
-//	x = 14*32;
-//	y = 32;
-//	for(int i = 0; i < 11; i++)
-//	{
-//		aBlock = new IndestructableBlock(x, y );
-//		Universe::GetAllBlocks().push_back(aBlock);
-//		y += 32;
-//	}
-//
-//
-//	y = 32 + 32;
-//
-//	for(int row = 0; row < 5; row++, y += 64)
-//	{
-//		x =  32 + 32;
-//		for(int i = 0; i < 6; i++)
-//		{
-//			aBlock = new IndestructableBlock(x, y );
-//			Universe::GetAllBlocks().push_back(aBlock);
-//			x += 64;
-//		}
-//
-//	}
-
 
 }
 
@@ -221,29 +136,6 @@ void BuildMap()
 int Game_Init(void *parms,  int num_parms)
 {
 
-//	srand((unsigned)time(NULL));
-
-// 	for (int x = 0; x <= mapWidth; x++){
-// 		for (int y = 0; y <= mapHeight; y++){
-// 			walkability [x][y] = walkable;
-// 		}
-// 	}
-// 
-// 	int pathfinderID = 1;
-// 	int startingX = 16;
-// 	int startingY = 16;
-//     int targetX = 120;
-// 	int targetY = 120;
-// 
-// 	int result = FindPath (pathfinderID, startingX, startingY, targetX,  targetY);
-// 
-// 
-// 	ReadPath(pathfinderID, startingX ,startingY, 32);
-// 
-
-
-
-
 	int windowed = true;
 	DDraw_Init(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, windowed);
 
@@ -256,14 +148,6 @@ int Game_Init(void *parms,  int num_parms)
 	Joystick::InitializeJoysticks(lpdi, main_window_handle);
 
 
-
-
-	// set the palette to background image palette
-//	Set_Pallete_From_Bitmap("../bitmaps/WhitePlayer.bmp");
-
-
-
-	
 	// set clipping rectangle to screen extents so mouse cursor
 	// doens't mess up at edges
 	RECT screen_rect = {0,0,screen_width,screen_height};

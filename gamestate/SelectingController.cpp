@@ -23,7 +23,10 @@ GameState * SelectingController::Update()
 	humanPlayer->SetController(Universe::GetKeyboard());
 	}
 
-	return this->GetNextGameStateAndDeleteCurrentGameState();
+//	return this->GetNextGameStateAndDeleteCurrentGameState();
+	delete this;
+	Universe::SetNumberOfRoundsInGame(2);
+	return new GameStart();
 
 
 }
@@ -33,9 +36,7 @@ GameState * SelectingController::Update()
 
 GameState * SelectingController::GetNextGameStateAndDeleteCurrentGameState()
 {
-	delete this;
-	Universe::SetNumberOfRoundsInGame(2);
-	return new GameStart();
+	return NULL;
 }
 
 
