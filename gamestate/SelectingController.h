@@ -18,23 +18,9 @@ public:
 
 private:
 
-	virtual bool HandleKeyboardInput();
-
 	GameState * OnItemSelected();
 	GameState * Update();
 	GameState * GetNextGameStateAndDeleteCurrentGameState();
-	void Create_PlayerIcons();
-
-	void Draw_PlayerIcons();
-	void Draw_BomberIcons();
-	void Draw_ControllerSelectors();
-
-	void HandleIncrementSelectedController();
-	void HandleDecrementSelectedController();
-
-	void Create_IconsForPlayer(const string & playerNumber, int x, int y);
-
-	virtual void Draw_Special();
 	
 	SIMPLE_GAME_OBJECT_VECTOR playerIcons;
 	SIMPLE_GAME_OBJECT_VECTOR bomberIcons;
