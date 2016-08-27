@@ -13,7 +13,6 @@ class Point;
 #define MAP_BLOCK_HEIGHT 32
 
 
-#include "../gameobjects/Bomb.h"
 #include "../gameobjects/Player.h"
 
 
@@ -39,11 +38,6 @@ public:
 	static Point GetNearestCenterPointFromPoint(int x, int y);
 
 
-	static BOMB_VECTOR & GetBombs() { return bombs; }
-	static Bomb * Universe::GetBombAtPoint(int x, int y);
-	static Bomb * Universe::GetBombAtGridPoint(int x, int y);
-
-
 	static Keyboard * GetKeyboard() { return keyboard; }
 	static void SetKeyboard(Keyboard * aKeyboard ) { keyboard = aKeyboard; }
 
@@ -60,7 +54,6 @@ private:
 	static int mapLeftX;
 	static int mapTopY;
 
-	static BOMB_VECTOR  bombs;
 	static PLAYER_VECTOR players;
 
 

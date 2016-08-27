@@ -99,7 +99,6 @@
   <ItemGroup>
     <ClCompile Include="ai\PathFinder.cpp" />
     <ClCompile Include="bob\BlitterObject.cpp" />
-    <ClCompile Include="gameobjects\Bomb.cpp" />
     <ClCompile Include="gameobjects\ControllerSelector.cpp" />
     <ClCompile Include="gameobjects\GameObject.cpp" />
     <ClCompile Include="gameobjects\Number.cpp" />
@@ -135,7 +134,6 @@
     <ClInclude Include="bob\BlitterObject.h" />
     <ClInclude Include="Bomberman.h" />
     <ClInclude Include="fmod\fmod.hpp" />
-    <ClInclude Include="gameobjects\Bomb.h" />
     <ClInclude Include="gameobjects\ControlEvent.h" />
     <ClInclude Include="gameobjects\GameObject.h" />
     <ClInclude Include="gameobjects\HowManyPlayers.h" />
