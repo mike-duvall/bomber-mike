@@ -102,7 +102,6 @@
     <ClCompile Include="gameobjects\GameObject.cpp" />
     <ClCompile Include="gameobjects\Number.cpp" />
     <ClCompile Include="gameobjects\Player.cpp" />
-    <ClCompile Include="gameobjects\Selector.cpp" />
     <ClCompile Include="gameobjects\SimpleGameObject.cpp" />
     <ClCompile Include="gameobjects\Timer.cpp" />
     <ClCompile Include="gamestate\GameStart.cpp" />
