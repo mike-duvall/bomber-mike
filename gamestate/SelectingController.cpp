@@ -7,18 +7,17 @@
 #include "GameStart.h"
 #include "../input/Keyboard.h"
 #include "../input/Joystick.h"
-#include "../input/ComputerController.h"
 
 
 GameState * SelectingController::Update()
 {
 
-	bool skip = false;
+	bool skip = true;
 	if(skip)
 	{
 		{
 		Player * computerPlayer = Universe::GetPlayers()[1];
-		computerPlayer->SetController(new ComputerController(computerPlayer));
+		computerPlayer->SetController(Universe::GetKeyboard());
 		}
 
 
@@ -311,14 +310,6 @@ GameState * SelectingController::OnItemSelected()
 		Player * thePlayer = Universe::GetPlayers()[playerNumber];
 		switch(selection)
 		{
-		case CONTROLLER_COMPUTER:
-			thePlayer->SetController(new ComputerController(thePlayer));
-			break;
-
-		case CONTROLLER_GAMEPAD:
-			thePlayer->SetController(Joystick::allAttachedJoysticks[joystickIndex]);
-			joystickIndex++;
-			break;
 
 		case CONTROLLER_KEYBOARD:
 			thePlayer->SetController(Universe::GetKeyboard());

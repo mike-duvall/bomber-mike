@@ -111,9 +111,6 @@
     <ClCompile Include="gameobjects\Timer.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
-    <ClCompile Include="input\ComputerController.cpp">
-      <Filter>Source Files\input</Filter>
-    </ClCompile>
     <ClCompile Include="input\Joystick.cpp">
       <Filter>Source Files\input</Filter>
     </ClCompile>
@@ -149,9 +146,6 @@
     </ClCompile>
     <ClCompile Include="sound\MSound.cpp">
       <Filter>Source Files\sound</Filter>
-    </ClCompile>
-    <ClCompile Include="ai\PathFinder.cpp">
-      <Filter>Source Files\ai</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -190,9 +184,6 @@
     </ClInclude>
     <ClInclude Include="gameobjects\SelectMatch.h">
       <Filter>Header Files\gameobjects</Filter>
-    </ClInclude>
-    <ClInclude Include="input\ComputerController.h">
-      <Filter>Header Files\input</Filter>
     </ClInclude>
     <ClInclude Include="input\Controller.h">
       <Filter>Header Files\input</Filter>
@@ -262,9 +253,6 @@
     </ClInclude>
     <ClInclude Include="fmod\fmod.hpp">
       <Filter>Header Files\fmod</Filter>
-    </ClInclude>
-    <ClInclude Include="ai\PathFinder.h">
-      <Filter>Header Files\ai</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

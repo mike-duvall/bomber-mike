@@ -97,7 +97,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ai\PathFinder.cpp" />
     <ClCompile Include="bob\BlitterObject.cpp" />
     <ClCompile Include="gameobjects\ControllerSelector.cpp" />
     <ClCompile Include="gameobjects\GameObject.cpp" />
@@ -113,7 +112,6 @@
     <ClCompile Include="gamestate\SelectingController.cpp" />
     <ClCompile Include="gamestate\SelectingNumPlayers.cpp" />
     <ClCompile Include="gamestate\TitleGameState.cpp" />
-    <ClCompile Include="input\ComputerController.cpp" />
     <ClCompile Include="input\Joystick.cpp" />
     <ClCompile Include="input\Keyboard.cpp" />
     <ClCompile Include="main\main.cpp" />
@@ -126,7 +124,6 @@
     <ClCompile Include="universe\Universe.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ai\PathFinder.h" />
     <ClInclude Include="bob\BlitterObject.h" />
     <ClInclude Include="Bomberman.h" />
     <ClInclude Include="fmod\fmod.hpp" />
@@ -142,7 +139,6 @@
     <ClInclude Include="gamestate\SelectingController.h" />
     <ClInclude Include="gamestate\SelectingNumPlayers.h" />
     <ClInclude Include="gamestate\Starting.h" />
-    <ClInclude Include="input\ComputerController.h" />
     <ClInclude Include="input\Controller.h" />
     <ClInclude Include="input\Joystick.h" />
     <ClInclude Include="input\Keyboard.h" />
