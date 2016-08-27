@@ -10,18 +10,10 @@
 GameState * SelectingNumPlayers::Update()
 {
 
-	bool skip = true;
-	if(skip)
-	{
-		this->HandleSetupPlayers(2);
-		return GetNextGameStateAndDeleteCurrentGameState();
-
-	}
-	else
-	{
-		return SelectingBaseGameState::Update();
-	}
-
+	this->HandleSetupPlayers(2);
+//	return GetNextGameStateAndDeleteCurrentGameState();
+	delete this;
+	return new SelectingController();
 
 }
 
@@ -29,8 +21,7 @@ GameState * SelectingNumPlayers::Update()
 
 GameState * SelectingNumPlayers::GetNextGameStateAndDeleteCurrentGameState()
 {
-	delete this;
-	return new SelectingController();
+	return NULL;
 }
 
 SelectingNumPlayers::SelectingNumPlayers()
@@ -57,9 +48,6 @@ SelectingNumPlayers::SelectingNumPlayers()
 
 }
 
- 
-
-
 
 GameState * SelectingNumPlayers::OnItemSelected()
 {
@@ -73,25 +61,14 @@ GameState * SelectingNumPlayers::OnItemSelected()
 void SelectingNumPlayers::HandleSetupPlayers(int numPlayers)
 {
 
+	Keyboard * aKeyboard = 0;
+ 	Player * player1 = new Player( 32, 32, WHITE_PLAYER );
+	Universe::GetPlayers().push_back( player1 );
 
-	if(numPlayers >= 1)
-	{
+ 	int columnOffset = 13 * 32;
+ 	int rowOffset = 11 * 32;
 
-		Keyboard * aKeyboard = 0;
- 		Player * player1 = new Player( 32, 32, WHITE_PLAYER );
-		Universe::GetPlayers().push_back( player1 );
-	}
-
-
-	if(numPlayers >= 2)
-	{
-
- 		int columnOffset = 13 * 32;
- 		int rowOffset = 11 * 32;
-
-		Player * player2 = new Player(columnOffset, rowOffset, BLACK_PLAYER );
-		Universe::GetPlayers().push_back( player2 );
-	}
-
+	Player * player2 = new Player(columnOffset, rowOffset, BLACK_PLAYER );
+	Universe::GetPlayers().push_back( player2 );
 
 }
