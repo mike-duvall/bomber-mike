@@ -108,7 +108,6 @@
     <ClCompile Include="gamestate\GameStart.cpp" />
     <ClCompile Include="gamestate\GameState.cpp" />
     <ClCompile Include="gamestate\Playing.cpp" />
-    <ClCompile Include="gamestate\SelectingBaseGameState.cpp" />
     <ClCompile Include="gamestate\SelectingController.cpp" />
     <ClCompile Include="gamestate\SelectingNumPlayers.cpp" />
     <ClCompile Include="gamestate\TitleGameState.cpp" />
@@ -133,7 +132,6 @@
     <ClInclude Include="gamestate\GameStart.h" />
     <ClInclude Include="gamestate\GameState.h" />
     <ClInclude Include="gamestate\Playing.h" />
-    <ClInclude Include="gamestate\SelectingBaseGameState.h" />
     <ClInclude Include="gamestate\SelectingController.h" />
     <ClInclude Include="gamestate\SelectingNumPlayers.h" />
     <ClInclude Include="gamestate\Starting.h" />

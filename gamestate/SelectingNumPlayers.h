@@ -3,10 +3,11 @@
 
 
 
-#include "SelectingBaseGameState.h"
-#include "../gameobjects/Selector.h"
 
-class SelectingNumPlayers : public SelectingBaseGameState
+#include "../gameobjects/Selector.h"
+#include "../gamestate/GameStart.h"
+
+class SelectingNumPlayers : public GameState
 {
 public:
 
@@ -14,9 +15,9 @@ public:
 
 private:
 
-	GameState * OnItemSelected();
+
  	void HandleSetupPlayers(int numPlayers);
-	GameState * GetNextGameStateAndDeleteCurrentGameState();
+
 	GameState * Update();
 	
 

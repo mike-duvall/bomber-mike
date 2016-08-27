@@ -43,22 +43,7 @@ GameState * SelectingController::GetNextGameStateAndDeleteCurrentGameState()
 
 SelectingController::SelectingController()
 {
-	string filename = "bitmaps/PickControl/ChooseControl.bmp";
-	gameObject = new SimpleGameObject(70,55, 478,370,filename);
 
-	selectorPosition = 1;
-	selectorX = 130;
-	selectorYBase = 142;
-	maxSelectorPosition = (int)Universe::GetPlayers().size();
-
-	int selectorWidth = 46;
-	int selectorHeight = 32;
-
-	UpdateSelectorLocation();
-
-	keyRecentlyPressed = true;
-	keyPressedCountdownInitialValue = 25;
-	keyPresseedCountdownTimer = keyPressedCountdownInitialValue;
 
 
 }

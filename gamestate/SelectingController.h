@@ -5,11 +5,12 @@
 
 #include "GameState.h"
 #include "../gameobjects/Selector.h"
-#include "SelectingBaseGameState.h"
+
 #include "../gameobjects/SimpleGameObject.h"
 #include "../gameobjects/ControllerSelector.h"
 
-class SelectingController : public SelectingBaseGameState
+class SelectingController : public GameState
+
 {
 public:
 

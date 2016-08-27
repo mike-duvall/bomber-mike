@@ -19,31 +19,8 @@ GameState * SelectingNumPlayers::Update()
 
 
 
-GameState * SelectingNumPlayers::GetNextGameStateAndDeleteCurrentGameState()
-{
-	return NULL;
-}
-
 SelectingNumPlayers::SelectingNumPlayers()
 {
-	string filename = "bitmaps/Selecting/HowManyPlayers.bmp";
-	gameObject = new SimpleGameObject(70,55, 478,370,filename);
-
-
-
-	selectorPosition = 1;
-	selectorX = 110;
-	selectorYBase = 172;
-	maxSelectorPosition = 3;
-
-	int selectorWidth = 46;
-	int selectorHeight = 32;
-
-	UpdateSelectorLocation();
-
-	keyRecentlyPressed = false;
-	keyPressedCountdownInitialValue = 25;
-	keyPresseedCountdownTimer = keyPressedCountdownInitialValue;
 	
 
 }
