@@ -5,7 +5,6 @@
 
 #include "SelectingBaseGameState.h"
 #include "../gameobjects/Selector.h"
-#include "../fmod//fmod.hpp"
 
 class SelectingNumPlayers : public SelectingBaseGameState
 {
@@ -19,8 +18,7 @@ private:
  	void HandleSetupPlayers(int numPlayers);
 	GameState * GetNextGameStateAndDeleteCurrentGameState();
 	GameState * Update();
-	FMOD::Channel * soundChannel;
-
+	
 
 };
 

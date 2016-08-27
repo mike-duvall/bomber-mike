@@ -5,7 +5,6 @@
 #include "../input/Joystick.h"
 #include "../input/Keyboard.h"
 #include "../gameobjects/SimpleGameObject.h" 
-#include "../sound/MSound.h"
 
 
 GameState * SelectingNumPlayers::Update()
@@ -30,11 +29,8 @@ GameState * SelectingNumPlayers::Update()
 
 GameState * SelectingNumPlayers::GetNextGameStateAndDeleteCurrentGameState()
 {
-	// get pointer on the stack to soundChannel before
-	// deleting this
-	FMOD::Channel * tempSoundChannel = soundChannel;
 	delete this;
-	return new SelectingController(tempSoundChannel);
+	return new SelectingController();
 }
 
 SelectingNumPlayers::SelectingNumPlayers()
@@ -58,8 +54,6 @@ SelectingNumPlayers::SelectingNumPlayers()
 	keyPressedCountdownInitialValue = 25;
 	keyPresseedCountdownTimer = keyPressedCountdownInitialValue;
 	
-	soundChannel = Sound::PlaySound(Sound::pickingStuff, .5f);
-	int x = 3;
 
 }
 

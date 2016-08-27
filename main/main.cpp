@@ -27,7 +27,6 @@
 #include "../gamestate/TitleGameState.h"
 #include "../gamestate/SelectingNumPlayers.h"
 
-#include "../sound/MSound.h"
 
 
 using namespace std;
@@ -272,9 +271,6 @@ int Game_Init(void *parms,  int num_parms)
 
 	// hide the mouse
 	ShowCursor(FALSE);
-
-
-	Sound::InitSounds();
 
 	//currentGameState = new TitleGameState();
 	currentGameState = new SelectingNumPlayers();

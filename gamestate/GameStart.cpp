@@ -54,7 +54,6 @@ GameStart::GameStart()
   	redPad3GameObject = new SimpleGameObject(padRightX,padUpperY,padWidth,padHeight,"bitmaps/GameStart/RedPad3.bmp", mask );
   	bluePad4GameObject = new SimpleGameObject(padLeftX,padLowerY,padWidth,padHeight,"bitmaps/GameStart/BluePad4.bmp", mask );
 
-	Sound::PlaySound(Sound::gameStart, .5f);
 }
 
 void Setup()

@@ -4,7 +4,6 @@
 
 
 #include "GameState.h"
-#include "../sound/MSound.h"
 
 class SimpleGameObject;
 
@@ -63,8 +62,6 @@ private:
 	int preDuVallTimer;
 	int mikeDuVallTimer;
 	int preFashizzleCountdownTimer;
-
-	FMOD::Channel * openingChannel;
 
 
 };

@@ -4,7 +4,6 @@
 
 
 #include "GameState.h"
-#include "../fmod//fmod.hpp"
 
 
 class SimpleGameObject;
@@ -21,7 +20,6 @@ public:
 	GameState * Update();
 
 private:
-	FMOD::Channel * soundChannel;
 
 	void SetScoreIconLocations();
 	void Update_And_Draw_Scoreboard();

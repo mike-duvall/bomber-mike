@@ -144,9 +144,6 @@
     <ClCompile Include="sound\dxutil.cpp">
       <Filter>Source Files\sound</Filter>
     </ClCompile>
-    <ClCompile Include="sound\MSound.cpp">
-      <Filter>Source Files\sound</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bomberman.h">
@@ -239,9 +236,6 @@
     <ClInclude Include="sound\jni.h">
       <Filter>Header Files\sound</Filter>
     </ClInclude>
-    <ClInclude Include="sound\MSound.h">
-      <Filter>Header Files\sound</Filter>
-    </ClInclude>
     <ClInclude Include="sound\RefCountPtr.h">
       <Filter>Header Files\sound</Filter>
     </ClInclude>
@@ -250,9 +244,6 @@
     </ClInclude>
     <ClInclude Include="sound\WAVFile.h">
       <Filter>Header Files\sound</Filter>
-    </ClInclude>
-    <ClInclude Include="fmod\fmod.hpp">
-      <Filter>Header Files\fmod</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

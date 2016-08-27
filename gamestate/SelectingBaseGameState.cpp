@@ -11,7 +11,6 @@
 #include "../bob/BlitterObject.h"
 #include "../input/Keyboard.h"
 #include "../input/Joystick.h"
-#include "../sound/MSound.h"
 #include "GameStart.h"
 
 
@@ -25,7 +24,6 @@
 #include <sstream>
 using namespace std;
 
-#include "../sound/MSound.h"
 #include "../gameobjects/SimpleGameObject.h"
 
 
@@ -108,7 +106,6 @@ void SelectingBaseGameState::HandleMoveSelectorUp()
 
 	if(selectorPosition > 1)
 	{
-		Sound::PlaySound(Sound::selectorMoved, 1.0f);		
 		selectorPosition--;
 	}
 
@@ -122,7 +119,6 @@ void SelectingBaseGameState::HandleMoveSelectorDown()
 
 	if(selectorPosition < maxSelectorPosition)
 	{
-		Sound::PlaySound(Sound::selectorMoved, 1.0f);		
 		selectorPosition++;
 	}
 
@@ -218,7 +214,6 @@ GameState * SelectingBaseGameState::Update()
 		{
 			subState = SUB_STATE_PAUSE_AFTER_SELECTING;
 			selector->GetBlitterObject()->Set_Animation(1);
-			Sound::PlaySound(Sound::selectionMade, .5f);
 		}
 
 	}

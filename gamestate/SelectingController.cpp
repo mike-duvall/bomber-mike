@@ -64,21 +64,15 @@ void SelectingController::Draw_Special()
 
 GameState * SelectingController::GetNextGameStateAndDeleteCurrentGameState()
 {
-	// get pointer on the stack to soundChannel before
-	// deleting this
-	FMOD::Channel * tempSoundChannel = soundChannel;
 	delete this;
 	Universe::SetNumberOfRoundsInGame(2);
 	return new GameStart();
-
 }
 
 
 
-SelectingController::SelectingController(	FMOD::Channel * aSoundChannel)
-//SelectingController::SelectingController(	)
+SelectingController::SelectingController()
 {
-//	gameObject = new SelectMatch(70,55);
 	string filename = "bitmaps/PickControl/ChooseControl.bmp";
 	gameObject = new SimpleGameObject(70,55, 478,370,filename);
 
@@ -96,9 +90,6 @@ SelectingController::SelectingController(	FMOD::Channel * aSoundChannel)
 	keyPressedCountdownInitialValue = 25;
 	keyPresseedCountdownTimer = keyPressedCountdownInitialValue;
 	
-	soundChannel = aSoundChannel;
-
-
 	Create_PlayerIcons();
 
 }

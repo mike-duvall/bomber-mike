@@ -6,7 +6,6 @@
 #include "../gameobjects//SimpleGameObject.h"
 #include "../universe/Universe.h"
 #include "../bob/BlitterObject.h"
-#include "../sound/MSound.h"
 #include "../input/Keyboard.h"
 #include "../input/Joystick.h"
 #include "SelectingNumPlayers.h"
@@ -17,8 +16,6 @@
 
 TitleGameState::TitleGameState()
 {
-
-	openingChannel = Sound::PlaySound(Sound::opening, .5f);
 
 	subState = SUB_STATE_BLACK_MOVING;
 	titleX = 50;
@@ -128,7 +125,6 @@ void TitleGameState::HandleAnimatingCredits()
 	{
 		clonedBy = new SimpleGameObject(700,400,87,24,"bitmaps/Cloned by.bmp",_RGB32BIT(0,36,0,109));
 		cloneByTimer = 33;
-		Sound::PlaySound(Sound::creditsWhoosh, .5f);
 		preDuVallTimer = 75;
 
 	}
@@ -150,7 +146,6 @@ void TitleGameState::HandleAnimatingCredits()
 		{
 			mikeDuVall = new SimpleGameObject(-150,425,169,24,"bitmaps/Mike DuVall.bmp",_RGB32BIT(0,36,0,109));
 			mikeDuVallTimer = 26;
-			Sound::PlaySound(Sound::creditsWhoosh, .5f);
 		}
 
 		if(mikeDuVallTimer > 0)
@@ -214,7 +209,6 @@ GameState * TitleGameState::Update()
 	bool skip = false;
 	if(skip)
 	{
-		openingChannel->stop();
 		delete this;
 		return new SelectingNumPlayers();
 
@@ -292,7 +286,6 @@ GameState * TitleGameState::Update()
 
 	if (keyboard_state[DIK_SPACE] || joystickButtonPressed )
 	{
-		openingChannel->stop();
 		delete this;
 		return new SelectingNumPlayers();
 

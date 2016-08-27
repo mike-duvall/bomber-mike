@@ -117,7 +117,6 @@
     <ClCompile Include="main\main.cpp" />
     <ClCompile Include="main\winmain.cpp" />
     <ClCompile Include="sound\dxutil.cpp" />
-    <ClCompile Include="sound\MSound.cpp" />
     <ClCompile Include="t3dlib\ddutil.cpp" />
     <ClCompile Include="t3dlib\t3dlib1.cpp" />
     <ClCompile Include="t3dlib\t3dlib3.cpp" />
@@ -126,7 +125,6 @@
   <ItemGroup>
     <ClInclude Include="bob\BlitterObject.h" />
     <ClInclude Include="Bomberman.h" />
-    <ClInclude Include="fmod\fmod.hpp" />
     <ClInclude Include="gameobjects\ControlEvent.h" />
     <ClInclude Include="gameobjects\GameObject.h" />
     <ClInclude Include="gameobjects\HowManyPlayers.h" />
@@ -149,7 +147,6 @@
     <ClInclude Include="sound\dxutil.h" />
     <ClInclude Include="sound\ErrorHandling.h" />
     <ClInclude Include="sound\jni.h" />
-    <ClInclude Include="sound\MSound.h" />
     <ClInclude Include="sound\RefCountPtr.h" />
     <ClInclude Include="sound\Sound.h" />
     <ClInclude Include="sound\WAVFile.h" />
