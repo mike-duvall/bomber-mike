@@ -166,23 +166,7 @@ void EndOfRoundReport::Create_Title()
 
 void EndOfRoundReport::Create_Vertical_Groups()
 {
-	int baseX = 40;
-	int xIncrement = 480;
-	int baseYInitValue = 100;
-	int baseY = baseYInitValue;
-	int yIncrement = 60;
 
-
-	int numPlayers = (int)Universe::GetPlayers().size();
-	for(int playerIndex = 1; playerIndex <= numPlayers; playerIndex++, baseY+=yIncrement)
-	{
-		VictoryLightVerticalGroup * nextGroup = new VictoryLightVerticalGroup(baseX,baseY);
-		victoryLightVerticalGroups.push_back(nextGroup);
-
-		nextGroup = new VictoryLightVerticalGroup(baseX + xIncrement,baseY);
-		victoryLightVerticalGroups.push_back(nextGroup);
-
-	}
 
 }
 
@@ -190,22 +174,6 @@ void EndOfRoundReport::Create_Vertical_Groups()
 void EndOfRoundReport::Create_Horizontol_Groups()
 {
 
-	int baseX = 40;
-	int xIncrement = 60;
-	int baseYInitValue = 100;
-	int baseY = baseYInitValue;
-	int yIncrement = 60;
-	for(int i = 0; i < 8; i++,baseX+= xIncrement )
-	{
-		int numPlayers = (int)Universe::GetPlayers().size();
-		int numRows = numPlayers + 1;
-		for(int playerIndex = 1; playerIndex <= numRows; playerIndex++, baseY+=yIncrement)
-		{
-			VictoryLightHorizontalGroup * nextGroup = new VictoryLightHorizontalGroup(baseX,baseY);
-			victoryLightHorizontalGroups.push_back(nextGroup);
-		}
-		baseY = baseYInitValue;
-	}
 
 }
 
@@ -241,42 +209,6 @@ void EndOfRoundReport::Draw_GoldCoins()
 
 
 
-void EndOfRoundReport::Update_And_Draw_VictoryLights()
-{
-	{
-	VICTORY_LIGHT_HORIZONTAL_GROUP_VECTOR::iterator theIterator;
-
-	for(	theIterator = victoryLightHorizontalGroups.begin();
-		theIterator != victoryLightHorizontalGroups.end();
-		theIterator++
-		)
-	{
-
-		VictoryLightHorizontalGroup * next = *theIterator;
-		next->Draw(lpddsback);
-		next->Update();
-
-	}
-	}
-
-	{
-	VICTORY_LIGHT_VERTICAL_GROUP_VECTOR::iterator theIterator;
-
-	for(	theIterator = victoryLightVerticalGroups.begin();
-		theIterator != victoryLightVerticalGroups.end();
-		theIterator++
-		)
-	{
-
-		VictoryLightVerticalGroup * next = *theIterator;
-		next->Draw(lpddsback);
-		next->Update();
-
-	}
-	}
-
-}
-
 
 
 GameState * EndOfRoundReport::Update()
@@ -301,7 +233,6 @@ GameState * EndOfRoundReport::Update()
 
 	DDraw_Fill_Surface(lpddsback,backgroundColor );
 
-	Update_And_Draw_VictoryLights();
 	Draw_GoldCoins();
 
 	winMatchText->Draw(lpddsback);

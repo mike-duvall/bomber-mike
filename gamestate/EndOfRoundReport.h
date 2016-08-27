@@ -7,7 +7,6 @@
 
 
 #include "../gameobjects/VictoryLightHorizontalGroup.h"
-#include "../gameobjects/VictoryLightVerticalGroup.h"
 #include "../gameobjects/SimpleGameObject.h"
 
 
@@ -32,7 +31,6 @@ private:
 
 	int countdownTimer;
 	VICTORY_LIGHT_HORIZONTAL_GROUP_VECTOR victoryLightHorizontalGroups;
-	VICTORY_LIGHT_VERTICAL_GROUP_VECTOR victoryLightVerticalGroups;
 	SimpleGameObject * winMatchText;
 	SimpleGameObject * winMatchNumber;
 

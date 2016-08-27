@@ -123,9 +123,6 @@
     <ClCompile Include="gameobjects\VictoryLightHorizontalGroup.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
-    <ClCompile Include="gameobjects\VictoryLightVerticalGroup.cpp">
-      <Filter>Source Files\gameobjects</Filter>
-    </ClCompile>
     <ClCompile Include="gameobjects\VictoryLlight.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
@@ -319,6 +316,9 @@
     </ClInclude>
     <ClInclude Include="ai\PathFinder.h">
       <Filter>Header Files\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="gameobjects\VictoryLightHorizontalGroup.h">
+      <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
