@@ -9,7 +9,6 @@ using namespace std;
 
 
 BOMB_VECTOR  Universe::bombs;
-POWERUP_VECTOR Universe::powerups;
 
 PLAYER_VECTOR Universe::players;
 EXPLODING_PLAYER_VECTOR Universe::explodingPlayers;
@@ -60,35 +59,6 @@ void Delete_All_ExplosionParts()
 
 }
 
-void Delete_All_Powerups()
-{
-	POWERUP_VECTOR::iterator theIterator;
-
-	for(	theIterator = Universe::GetPowerups().begin();
-		theIterator != Universe::GetPowerups().end();
-		theIterator++
-		)
-	{
-		Powerup * next = *theIterator;
-		delete next;
-	}
-	Universe::GetPowerups().clear();
-}
-
-// void Delete_All_FlamePowerups()
-// {
-// 	FLAME_POWERUP_VECTOR::iterator theIterator;
-// 
-// 	for(	theIterator = Universe::GetFlamePowerups().begin();
-// 		theIterator != Universe::GetFlamePowerups().end();
-// 		theIterator++
-// 		)
-// 	{
-// 		FlamePowerup * next = *theIterator;
-// 		delete next;
-// 	}
-// 	Universe::GetFlamePowerups().clear();
-// }
 
 void Delete_All_Bombs()
 {
@@ -116,9 +86,6 @@ void Universe::ClearAndDeleteAll()
 	Delete_All_Bombs();
 	Delete_All_Blocks();
 	Delete_All_ExplosionParts();
-	Delete_All_Powerups();
-// 	Delete_All_BombPowerups();
-// 	Delete_All_FlamePowerups();
 	Delete_All_ExplodingPlayers();
 
 
@@ -189,25 +156,6 @@ int Universe::GetNumberOfAlivePlayers()
 
 	return numAlivePlayers;
 
-}
-
-void Universe::RemovePowerup(Powerup * aPowerup)
-{
-	POWERUP_VECTOR::iterator theIterator;
-	POWERUP_VECTOR & thPowerups = Universe::GetPowerups();
-
-	for(	theIterator = thPowerups.begin();
-		theIterator != thPowerups.end();
-		theIterator++
-		)
-	{
-		Powerup * next = *theIterator;
-		if(next == aPowerup)
-		{
-			thPowerups.erase(theIterator);
-			return;
-		}
-	}
 }
 
 

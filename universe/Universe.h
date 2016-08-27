@@ -14,7 +14,6 @@ class Point;
 
 
 #include "../gameobjects/Bomb.h"
-#include "../gameobjects/Powerup.h"
 #include "../gameobjects/Player.h"
 #include "../gameobjects/ExplodingPlayer.h"
 
@@ -48,9 +47,6 @@ public:
 	static Bomb * Universe::GetBombAtGridPoint(int x, int y);
 
 
- 	static POWERUP_VECTOR & GetPowerups() { return powerups; }
- 	static void RemovePowerup(Powerup * aPowerup);
-
 	static Keyboard * GetKeyboard() { return keyboard; }
 	static void SetKeyboard(Keyboard * aKeyboard ) { keyboard = aKeyboard; }
 
@@ -68,7 +64,6 @@ private:
 	static int mapTopY;
 
 	static BOMB_VECTOR  bombs;
-	static POWERUP_VECTOR powerups;
 	static PLAYER_VECTOR players;
 	static EXPLODING_PLAYER_VECTOR explodingPlayers;
 
