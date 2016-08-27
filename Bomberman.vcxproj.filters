@@ -221,12 +221,6 @@
     <ClInclude Include="main\Globals.h">
       <Filter>Header Files\main</Filter>
     </ClInclude>
-    <ClInclude Include="sound\AudioEngine.h">
-      <Filter>Header Files\sound</Filter>
-    </ClInclude>
-    <ClInclude Include="sound\AudioManager.h">
-      <Filter>Header Files\sound</Filter>
-    </ClInclude>
     <ClInclude Include="sound\dxutil.h">
       <Filter>Header Files\sound</Filter>
     </ClInclude>
@@ -237,12 +231,6 @@
       <Filter>Header Files\sound</Filter>
     </ClInclude>
     <ClInclude Include="sound\RefCountPtr.h">
-      <Filter>Header Files\sound</Filter>
-    </ClInclude>
-    <ClInclude Include="sound\Sound.h">
-      <Filter>Header Files\sound</Filter>
-    </ClInclude>
-    <ClInclude Include="sound\WAVFile.h">
       <Filter>Header Files\sound</Filter>
     </ClInclude>
   </ItemGroup>

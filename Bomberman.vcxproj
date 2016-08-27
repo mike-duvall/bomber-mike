@@ -142,14 +142,10 @@
     <ClInclude Include="input\Keyboard.h" />
     <ClInclude Include="main\Globals.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="sound\AudioEngine.h" />
-    <ClInclude Include="sound\AudioManager.h" />
     <ClInclude Include="sound\dxutil.h" />
     <ClInclude Include="sound\ErrorHandling.h" />
     <ClInclude Include="sound\jni.h" />
     <ClInclude Include="sound\RefCountPtr.h" />
-    <ClInclude Include="sound\Sound.h" />
-    <ClInclude Include="sound\WAVFile.h" />
     <ClInclude Include="source\t3dlib\t3dlib1.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="t3dlib\ddutil.h" />
