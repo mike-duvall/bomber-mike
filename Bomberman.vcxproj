@@ -106,7 +106,6 @@
     <ClCompile Include="gameobjects\Selector.cpp" />
     <ClCompile Include="gameobjects\SimpleGameObject.cpp" />
     <ClCompile Include="gameobjects\Timer.cpp" />
-    <ClCompile Include="gamestate\EndOfMatch.cpp" />
     <ClCompile Include="gamestate\EndOfRound.cpp" />
     <ClCompile Include="gamestate\EndOfRoundReport.cpp" />
     <ClCompile Include="gamestate\GameStart.cpp" />
@@ -139,7 +138,6 @@
     <ClInclude Include="gameobjects\HowManyPlayers.h" />
     <ClInclude Include="gameobjects\Player.h" />
     <ClInclude Include="gameobjects\SelectMatch.h" />
-    <ClInclude Include="gamestate\EndOfMatch.h" />
     <ClInclude Include="gamestate\EndOfRound.h" />
     <ClInclude Include="gamestate\EndOfRoundReport.h" />
     <ClInclude Include="gamestate\GameStart.h" />

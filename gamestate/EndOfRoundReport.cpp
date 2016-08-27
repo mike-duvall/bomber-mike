@@ -8,7 +8,6 @@
 #include "../gameobjects/SimpleGameObject.h"
 
 #include "GameStart.h"
-#include "EndOfMatch.h"
 
 
 #include <iostream>
@@ -254,15 +253,7 @@ GameState * EndOfRoundReport::Update()
 
 	if(countdownTimer <= 0)
 	{
-		if( matchOver)
-		{
-			return new EndOfMatch();
-		}
-		else
-		{
-			return new GameStart();
-		}
-
+		return new GameStart();
 	}
 
 	return this;
