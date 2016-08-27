@@ -129,9 +129,6 @@
     <ClCompile Include="gamestate\SelectingNumPlayers.cpp">
       <Filter>Source Files\gamestate</Filter>
     </ClCompile>
-    <ClCompile Include="gamestate\TitleGameState.cpp">
-      <Filter>Source Files\gamestate</Filter>
-    </ClCompile>
     <ClCompile Include="sound\dxutil.cpp">
       <Filter>Source Files\sound</Filter>
     </ClCompile>

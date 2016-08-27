@@ -24,7 +24,6 @@
 
 #include "../universe/Universe.h"
 #include "../universe/Point.h"
-#include "../gamestate/TitleGameState.h"
 #include "../gamestate/SelectingNumPlayers.h"
 
 
