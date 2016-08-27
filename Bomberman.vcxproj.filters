@@ -99,9 +99,6 @@
     <ClCompile Include="gameobjects\ControllerSelector.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
-    <ClCompile Include="gameobjects\Explodingplayer.cpp">
-      <Filter>Source Files\gameobjects</Filter>
-    </ClCompile>
     <ClCompile Include="gameobjects\GameObject.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
@@ -204,9 +201,6 @@
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
     <ClInclude Include="gameobjects\ControlEvent.h">
-      <Filter>Header Files\gameobjects</Filter>
-    </ClInclude>
-    <ClInclude Include="gameobjects\ExplodingPlayer.h">
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
     <ClInclude Include="gameobjects\GameObject.h">

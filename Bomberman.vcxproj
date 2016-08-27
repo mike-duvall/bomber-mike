@@ -102,7 +102,6 @@
     <ClCompile Include="gameobjects\Block.cpp" />
     <ClCompile Include="gameobjects\Bomb.cpp" />
     <ClCompile Include="gameobjects\ControllerSelector.cpp" />
-    <ClCompile Include="gameobjects\Explodingplayer.cpp" />
     <ClCompile Include="gameobjects\GameObject.cpp" />
     <ClCompile Include="gameobjects\Number.cpp" />
     <ClCompile Include="gameobjects\Player.cpp" />
@@ -140,7 +139,6 @@
     <ClInclude Include="gameobjects\Block.h" />
     <ClInclude Include="gameobjects\Bomb.h" />
     <ClInclude Include="gameobjects\ControlEvent.h" />
-    <ClInclude Include="gameobjects\ExplodingPlayer.h" />
     <ClInclude Include="gameobjects\GameObject.h" />
     <ClInclude Include="gameobjects\HowManyPlayers.h" />
     <ClInclude Include="gameobjects\Player.h" />

@@ -15,7 +15,6 @@ class Point;
 
 #include "../gameobjects/Bomb.h"
 #include "../gameobjects/Player.h"
-#include "../gameobjects/ExplodingPlayer.h"
 
 
 
@@ -33,8 +32,6 @@ public:
 	static PLAYER_VECTOR & GetPlayers() { return players; }
 	static int GetNumberOfAlivePlayers();
 	static Player * GetSurvivingPlayer();
-
-	static EXPLODING_PLAYER_VECTOR & GetExplodingPlayers() { return explodingPlayers; }
 
 	static Block * GetBlockAtPoint(int x, int y);
 	static Block * GetBlockAtGridPoint(int x, int y);
@@ -65,7 +62,6 @@ private:
 
 	static BOMB_VECTOR  bombs;
 	static PLAYER_VECTOR players;
-	static EXPLODING_PLAYER_VECTOR explodingPlayers;
 
 
 	static Keyboard * keyboard;

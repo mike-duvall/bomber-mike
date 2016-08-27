@@ -11,7 +11,6 @@ using namespace std;
 BOMB_VECTOR  Universe::bombs;
 
 PLAYER_VECTOR Universe::players;
-EXPLODING_PLAYER_VECTOR Universe::explodingPlayers;
 
 
 Keyboard * Universe::keyboard;
@@ -35,23 +34,6 @@ void Delete_All_Blocks()
 }
 
 
-
-void Delete_All_ExplodingPlayers()
-{
-	EXPLODING_PLAYER_VECTOR::iterator theIterator;
-
-	for(	theIterator = Universe::GetExplodingPlayers().begin();
-		theIterator != Universe::GetExplodingPlayers().end();
-		theIterator++
-		)
-	{
-		ExplodingPlayer * next = *theIterator;
-		delete next;
-
-	}
-	Universe::GetExplodingPlayers().clear();
-
-}
 
 void Delete_All_ExplosionParts()
 {
@@ -86,9 +68,6 @@ void Universe::ClearAndDeleteAll()
 	Delete_All_Bombs();
 	Delete_All_Blocks();
 	Delete_All_ExplosionParts();
-	Delete_All_ExplodingPlayers();
-
-
 }
 
 
