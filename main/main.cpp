@@ -58,78 +58,6 @@ void Set_Pallete_From_Bitmap(string filename)
 #define TOTAL_NUM_COLUMNS 13
 
 
-void CreateIndestructableBlocks()
-{
-
-	int x = 0;
-	int y = 0;
-
-}
-
-
-void CreateDestructableBlocks()
-{
-
-//	int blockMap[TOTAL_NUM_ROWS][TOTAL_NUM_COLUMNS] = {
-//			{0,0,0,1,1,1,1,1,1,1,0,0,0},
-// 			{0,0,1,0,1,0,1,0,1,0,1,0,0},
-//			{0,0,1,1,1,1,1,1,1,1,1,1,0},
-//			{1,0,1,0,1,0,0,0,1,0,1,0,1},
-//			{1,1,1,1,1,1,0,1,1,1,1,1,1},
-//			{1,0,0,0,0,0,0,0,0,0,1,0,1},
-//			{1,1,1,1,1,1,0,1,1,1,0,1,1},
-//			{1,0,1,0,1,0,0,0,1,0,1,0,1},
-//			{0,1,1,0,1,0,1,1,1,1,1,1,0},
-//			{0,0,1,0,1,0,1,0,1,0,1,0,0},
-//			{0,0,0,1,1,0,1,1,1,1,0,0,0},
-//
-//	};
-//
-//
-//// 	 	int blockMap[TOTAL_NUM_ROWS][TOTAL_NUM_COLUMNS] = {
-//// 	 			{0,0,0,0,1,0,0,0,0,0,0,0,0},
-//// 	 			{0,0,0,0,0,0,0,0,0,0,0,0,0},
-//// 	 			{1,0,0,0,1,0,0,0,0,0,0,0,0},
-//// 	 			{0,0,0,0,0,0,0,0,0,0,0,0,0},
-//// 	 			{0,0,0,0,1,0,0,0,0,0,0,0,0},
-//// 	 			{0,0,0,0,0,0,0,0,0,0,0,0,0},
-//// 	 			{0,0,0,0,1,0,0,0,0,0,1,0,0},
-//// 	 			{0,0,0,0,0,0,0,0,0,0,0,0,0},
-//// 	 			{0,0,0,0,1,0,0,0,0,0,1,0,0},
-//// 	 			{0,0,0,0,1,0,0,0,0,0,0,0,0},
-//// 	 			{0,0,0,0,1,0,0,0,0,0,1,0,0},
-//// 	 
-//// 	 	};
-//
-//
-//
-//
-//	for(int row = 0; row < TOTAL_NUM_ROWS; row++ )
-//	{
-//		for(int column = 0; column < TOTAL_NUM_COLUMNS; column++)
-//		{
-//			if( blockMap[row][column] )
-//			{
-//				DestructableBlock * aDestructableBlock;
-//				int x = (column + 1) * 32;
-//				int y = (row + 1) * 32;
-//
-//				aDestructableBlock = new DestructableBlock(x,y );
-//				Universe::GetAllBlocks().push_back(aDestructableBlock);
-//
-//			}
-//		}
-//	}
-
-
-}
-
-void BuildMap()
-{
-	CreateIndestructableBlocks();
-	CreateDestructableBlocks();
-}
-
 
 
 
@@ -186,18 +114,10 @@ int Game_Shutdown(void *parms,  int num_parms)
 int Game_Main(void *parms, int num_parms)
 {
 
-
-
-
 	// check of user is trying to exit
 	if (KEY_DOWN(VK_ESCAPE) )
 		PostMessage(main_window_handle, WM_DESTROY,0,0);
 
-//	Sound::InitSounds();
-// 
-// 
-// 	Sound::PlaySound(soundId);
-	
 
 	// start the timing clock
 	Start_Clock();

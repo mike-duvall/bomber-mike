@@ -14,9 +14,6 @@
 #include "Playing.h"
 
 
-extern void BuildMap();
-
-
 
 GameStart::GameStart()
 {
@@ -77,8 +74,6 @@ void Setup()
 
 	Universe::ClearAndDeleteAll();
 
-
-	BuildMap();
 
 }
 
