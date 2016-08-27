@@ -10,7 +10,6 @@
 
 #include "../universe/Universe.h"
 #include "../bob/BlitterObject.h"
-#include "../gamestate/EndOfRound.h"
 
 #include <iostream>
 #include <sstream>

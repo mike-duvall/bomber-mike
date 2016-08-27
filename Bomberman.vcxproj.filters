@@ -123,9 +123,6 @@
     <ClCompile Include="universe\Universe.cpp">
       <Filter>Source Files\universe</Filter>
     </ClCompile>
-    <ClCompile Include="gamestate\EndOfRound.cpp">
-      <Filter>Source Files\gamestate</Filter>
-    </ClCompile>
     <ClCompile Include="gamestate\GameStart.cpp">
       <Filter>Source Files\gamestate</Filter>
     </ClCompile>
@@ -214,9 +211,6 @@
     </ClInclude>
     <ClInclude Include="universe\Universe.h">
       <Filter>Header Files\universe</Filter>
-    </ClInclude>
-    <ClInclude Include="gamestate\EndOfRound.h">
-      <Filter>Header Files\gamestate</Filter>
     </ClInclude>
     <ClInclude Include="gamestate\GameStart.h">
       <Filter>Header Files\gamestate</Filter>
