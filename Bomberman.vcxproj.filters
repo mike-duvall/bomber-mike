@@ -141,9 +141,6 @@
     <ClCompile Include="gamestate\SelectingNumPlayers.cpp">
       <Filter>Source Files\gamestate</Filter>
     </ClCompile>
-    <ClCompile Include="gamestate\SelectingNumRounds.cpp">
-      <Filter>Source Files\gamestate</Filter>
-    </ClCompile>
     <ClCompile Include="gamestate\TitleGameState.cpp">
       <Filter>Source Files\gamestate</Filter>
     </ClCompile>
@@ -228,9 +225,6 @@
       <Filter>Header Files\gamestate</Filter>
     </ClInclude>
     <ClInclude Include="gamestate\SelectingNumPlayers.h">
-      <Filter>Header Files\gamestate</Filter>
-    </ClInclude>
-    <ClInclude Include="gamestate\SelectingNumRounds.h">
       <Filter>Header Files\gamestate</Filter>
     </ClInclude>
     <ClInclude Include="gamestate\Starting.h">

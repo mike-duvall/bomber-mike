@@ -112,7 +112,6 @@
     <ClCompile Include="gamestate\SelectingBaseGameState.cpp" />
     <ClCompile Include="gamestate\SelectingController.cpp" />
     <ClCompile Include="gamestate\SelectingNumPlayers.cpp" />
-    <ClCompile Include="gamestate\SelectingNumRounds.cpp" />
     <ClCompile Include="gamestate\TitleGameState.cpp" />
     <ClCompile Include="input\ComputerController.cpp" />
     <ClCompile Include="input\Joystick.cpp" />
@@ -142,7 +141,6 @@
     <ClInclude Include="gamestate\SelectingBaseGameState.h" />
     <ClInclude Include="gamestate\SelectingController.h" />
     <ClInclude Include="gamestate\SelectingNumPlayers.h" />
-    <ClInclude Include="gamestate\SelectingNumRounds.h" />
     <ClInclude Include="gamestate\Starting.h" />
     <ClInclude Include="input\ComputerController.h" />
     <ClInclude Include="input\Controller.h" />

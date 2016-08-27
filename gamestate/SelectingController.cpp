@@ -1,6 +1,5 @@
 #include "SelectingController.h"
 
-#include "SelectingNumRounds.h"
 
 #include "../universe/Universe.h"
 #include "../gameobjects/SimpleGameObject.h"
@@ -70,7 +69,9 @@ GameState * SelectingController::GetNextGameStateAndDeleteCurrentGameState()
 	// deleting this
 	FMOD::Channel * tempSoundChannel = soundChannel;
 	delete this;
-	return new SelectingNumRounds(tempSoundChannel);
+	Universe::SetNumberOfRoundsInGame(2);
+	return new GameStart();
+
 }
 
 
