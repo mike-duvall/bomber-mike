@@ -173,9 +173,6 @@
     <ClInclude Include="gameobjects\Player.h">
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
-    <ClInclude Include="gameobjects\SelectMatch.h">
-      <Filter>Header Files\gameobjects</Filter>
-    </ClInclude>
     <ClInclude Include="input\Controller.h">
       <Filter>Header Files\input</Filter>
     </ClInclude>
@@ -204,9 +201,6 @@
       <Filter>Header Files\gamestate</Filter>
     </ClInclude>
     <ClInclude Include="gamestate\SelectingNumPlayers.h">
-      <Filter>Header Files\gamestate</Filter>
-    </ClInclude>
-    <ClInclude Include="gamestate\Starting.h">
       <Filter>Header Files\gamestate</Filter>
     </ClInclude>
     <ClInclude Include="main\Globals.h">

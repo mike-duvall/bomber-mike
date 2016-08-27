@@ -127,13 +127,11 @@
     <ClInclude Include="gameobjects\GameObject.h" />
     <ClInclude Include="gameobjects\HowManyPlayers.h" />
     <ClInclude Include="gameobjects\Player.h" />
-    <ClInclude Include="gameobjects\SelectMatch.h" />
     <ClInclude Include="gamestate\GameStart.h" />
     <ClInclude Include="gamestate\GameState.h" />
     <ClInclude Include="gamestate\Playing.h" />
     <ClInclude Include="gamestate\SelectingController.h" />
     <ClInclude Include="gamestate\SelectingNumPlayers.h" />
-    <ClInclude Include="gamestate\Starting.h" />
     <ClInclude Include="input\Controller.h" />
     <ClInclude Include="input\Joystick.h" />
     <ClInclude Include="input\Keyboard.h" />
