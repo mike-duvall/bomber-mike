@@ -6,10 +6,8 @@
 #include "../universe/Universe.h"
 #include "../bob/BlitterObject.h"
 
-#include "EndOfRoundReport.h"
 
 extern void Draw_Score(Player * aPlayer, int x, int y);
-
 
 
 void Draw_Players()
@@ -54,20 +52,6 @@ GameState * EndOfRound::Update()
 	DDraw_Flip();
 
 	countDownTimer--;
-
-	if(countDownTimer < 1)
-	{
-		Player * survivor = Universe::GetSurvivingPlayer();
-		if(survivor)
-		{
-			int numberOfSurvivorWins = survivor->GetNumberOfWins();
-			numberOfSurvivorWins++;
-			survivor->SetNumberofWins(numberOfSurvivorWins);
-
-		}
-
-		return new EndOfRoundReport();
-	}
 
 	return this;
 
