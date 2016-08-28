@@ -128,15 +128,6 @@ string Player::GetNameFromPlayerType()
 	case WHITE_PLAYER:
 		return "White";
 		break;
-	case BLACK_PLAYER:
-		return "Black";
-		break;
-	case RED_PLAYER:
-		return "Red";
-		break;
-	case BLUE_PLAYER:
-		return "Blue";
-		break;
 
 	}
 	return "";
@@ -160,7 +151,6 @@ void Player::SetInitialValuesForNewMatch()
 
 void Player::SetInitialValuesForNewRound()
 {
-	playerState = PLAYER_STATE_ALIVE;
 
 	this->GetBlitterObject()->Set_Pos(initialX, initialY);
 
@@ -192,7 +182,6 @@ Player::Player(int x, int y, int aPlayerType)
 	playerType = aPlayerType;
 	name = 	GetNameFromPlayerType();
 	moveIncrementAmount = 2;
-	playerState = PLAYER_STATE_ALIVE;
 	numberOfWins = 0;
 
 	int playerWidth = 44;
@@ -256,6 +245,20 @@ Player::Player(int x, int y, int aPlayerType)
 
 }
 
+
+
+
+
+Player::~Player()
+{
+	delete theBlitterObject_;
+}
+
+
+BOB * Player::GetTheBob()
+{
+	return theBlitterObject_->getTheBOB();
+}
 
 
 

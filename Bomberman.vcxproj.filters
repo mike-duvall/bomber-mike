@@ -81,9 +81,6 @@
     <ClCompile Include="bob\BlitterObject.cpp">
       <Filter>Source Files\bob</Filter>
     </ClCompile>
-    <ClCompile Include="gameobjects\GameObject.cpp">
-      <Filter>Source Files\gameobjects</Filter>
-    </ClCompile>
     <ClCompile Include="gameobjects\Player.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
@@ -117,9 +114,6 @@
       <Filter>Header Files\bob</Filter>
     </ClInclude>
     <ClInclude Include="gameobjects\ControlEvent.h">
-      <Filter>Header Files\gameobjects</Filter>
-    </ClInclude>
-    <ClInclude Include="gameobjects\GameObject.h">
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
     <ClInclude Include="gameobjects\Player.h">

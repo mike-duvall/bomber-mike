@@ -4,7 +4,7 @@
 
 #include <ddraw.h> 
 #include "../t3dlib/t3dlib1.h"
-#include "GameObject.h"
+
 
 class BlitterObject;
 class IndestructableBlock;
@@ -17,28 +17,16 @@ using namespace std;
 
 
 class Player;
-class Joystick;
-class Powerup;
-class SimpleGameObject;
-class Number;
 class Controller;
-
-typedef vector<Player *> PLAYER_VECTOR;
 
 
 
 #define WHITE_PLAYER 1
-#define BLACK_PLAYER 2
-#define RED_PLAYER   3
-#define BLUE_PLAYER  4
-
-
-#define PLAYER_STATE_ALIVE 1
-#define PLAYER_STATE_DEAD  2
 
 
 
-class Player : public GameObject
+
+class Player 
 {
 public:
 	Player();
@@ -57,6 +45,10 @@ public:
 	void SetInitialValuesForNewMatch();
 	void SetInitialValuesForNewRound();
 	const string & GetName() { return name;}
+
+	BlitterObject * GetBlitterObject() { return theBlitterObject_; }
+	BOB * GetTheBob();
+	virtual ~Player();
 
 
 private:
@@ -80,6 +72,11 @@ private:
 	int initialX;
 	int initialY;
 	string name;
+
+
+protected:
+
+	BlitterObject * theBlitterObject_;
 
 
 
