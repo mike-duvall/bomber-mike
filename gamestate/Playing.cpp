@@ -15,24 +15,8 @@ using namespace std;
 
 extern Player * thePlayer;
 
-Playing::Playing()
-{
-
-}
 
 
-Playing::~Playing()
-{
-}
-
-
-
-
-void Update_And_Draw_Players()
-{
-	thePlayer->Update();
-	thePlayer->Draw(lpddsback);
-}
 
 
 
@@ -44,9 +28,9 @@ void Playing::Update()
 	// clear the drawing surface
 	DDraw_Fill_Surface(lpddsback,backgroundColor );
 
-	Update_And_Draw_Players();
+	thePlayer->Update();
+	thePlayer->Draw(lpddsback);
 
 	DDraw_Flip();
-
 
 }

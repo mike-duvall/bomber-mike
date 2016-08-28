@@ -3,21 +3,12 @@
 
 
 
-
-class SimpleGameObject;
-
-
-
 class Playing 
 {
 public:
 
-	Playing();
-	virtual ~Playing();
-
 	void Update();
 
-private:
 
 
 
