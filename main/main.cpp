@@ -44,6 +44,7 @@ Playing * playingGameState;
 #define TOTAL_NUM_ROWS 11
 #define TOTAL_NUM_COLUMNS 13
 
+Keyboard * theKeyboard;
 
 
 int Game_Init(void *parms,  int num_parms)
@@ -56,7 +57,7 @@ int Game_Init(void *parms,  int num_parms)
 	if (DirectInput8Create(main_instance,DIRECTINPUT_VERSION,IID_IDirectInput8, (void **)&lpdi,NULL)!=DI_OK)
 		return(0);
 
-	Universe::SetKeyboard(new Keyboard(lpdi, main_window_handle) );
+	theKeyboard = new Keyboard(lpdi, main_window_handle);
 
 
 	// set clipping rectangle to screen extents so mouse cursor
@@ -78,7 +79,7 @@ int Game_Init(void *parms,  int num_parms)
 
 	{
 		Player * humanPlayer = Universe::GetPlayers()[0];
-		humanPlayer->SetController(Universe::GetKeyboard());
+		humanPlayer->SetController(theKeyboard);
 	}
 
 

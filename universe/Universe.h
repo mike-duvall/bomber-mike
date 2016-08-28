@@ -3,12 +3,7 @@
 
 
 class Player;
-class Keyboard;
-class Joystick;
-class Point;
 
-// #define MAP_LEFT_X 20
-// #define MAP_TOP_Y 50
 #define MAP_BLOCK_WIDTH 32
 #define MAP_BLOCK_HEIGHT 32
 
@@ -31,11 +26,6 @@ public:
 	static PLAYER_VECTOR & GetPlayers() { return players; }
 
 
-	static Keyboard * GetKeyboard() { return keyboard; }
-	static void SetKeyboard(Keyboard * aKeyboard ) { keyboard = aKeyboard; }
-
-
-
 private:
 
 
@@ -43,9 +33,6 @@ private:
 	static int mapTopY;
 
 	static PLAYER_VECTOR players;
-
-
-	static Keyboard * keyboard;
 
 
 };

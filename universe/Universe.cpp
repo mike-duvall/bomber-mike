@@ -10,7 +10,6 @@ using namespace std;
 
 PLAYER_VECTOR Universe::players;
 
-Keyboard * Universe::keyboard;
 
 
 int Universe::mapLeftX;
