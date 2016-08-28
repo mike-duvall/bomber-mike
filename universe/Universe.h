@@ -29,23 +29,11 @@ public:
 	static void SetMapTopY(int newY) { mapTopY = newY;}
 
 	static PLAYER_VECTOR & GetPlayers() { return players; }
-	static int GetNumberOfAlivePlayers();
-	static Player * GetSurvivingPlayer();
-
-	static Block * GetBlockAtPoint(int x, int y);
-	static Block * GetBlockAtGridPoint(int x, int y);
-	static void RemoveBlock(Block * aBlock);
-	static Point GetNearestCenterPointFromPoint(int x, int y);
 
 
 	static Keyboard * GetKeyboard() { return keyboard; }
 	static void SetKeyboard(Keyboard * aKeyboard ) { keyboard = aKeyboard; }
 
-
-	static int GetNumberOfRoundsInGame() { return numberOfRoundsInGame; }
-	static void SetNumberOfRoundsInGame(int aNumberOfRounds) { numberOfRoundsInGame = aNumberOfRounds;}
-
-	static void ClearAndDeleteAll();
 
 
 private:
@@ -58,9 +46,6 @@ private:
 
 
 	static Keyboard * keyboard;
-	static Joystick * joystick;
-
-	static int numberOfRoundsInGame;
 
 
 };

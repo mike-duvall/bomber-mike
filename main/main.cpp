@@ -81,7 +81,6 @@ int Game_Init(void *parms,  int num_parms)
 		humanPlayer->SetController(Universe::GetKeyboard());
 	}
 
-	Universe::SetNumberOfRoundsInGame(2);
 
 	Universe::SetMapLeftX(20);
 	Universe::SetMapTopY(50);
@@ -97,9 +96,6 @@ int Game_Init(void *parms,  int num_parms)
 		Player * next = *theIterator;
 		next->SetInitialValuesForNewRound();
 	}
-
-	Universe::ClearAndDeleteAll();
-
 
 	playingGameState =  new Playing();
 
