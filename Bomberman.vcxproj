@@ -109,7 +109,6 @@
     <ClCompile Include="t3dlib\ddutil.cpp" />
     <ClCompile Include="t3dlib\t3dlib1.cpp" />
     <ClCompile Include="t3dlib\t3dlib3.cpp" />
-    <ClCompile Include="universe\Universe.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bob\BlitterObject.h" />
@@ -130,7 +129,6 @@
     <ClInclude Include="t3dlib\ddutil.h" />
     <ClInclude Include="t3dlib\t3dlib3.h" />
     <ClInclude Include="universe\Point.h" />
-    <ClInclude Include="universe\Universe.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Bomberman.ico" />

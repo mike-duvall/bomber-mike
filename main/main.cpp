@@ -21,7 +21,6 @@
 
 #include "../input/Keyboard.h"
 
-#include "../universe/Universe.h"
 #include "../universe/Point.h"
 #include "../gamestate/Playing.h"
 
@@ -45,8 +44,10 @@ Playing * playingGameState;
 #define TOTAL_NUM_COLUMNS 13
 
 Keyboard * theKeyboard;
-
 Player * thePlayer;
+int mapLeftX;
+int mapTopY;
+
 
 int Game_Init(void *parms,  int num_parms)
 {
@@ -72,11 +73,12 @@ int Game_Init(void *parms,  int num_parms)
 	thePlayer = new Player(32, 32, WHITE_PLAYER);
 	thePlayer->SetController(theKeyboard);
 
-	int columnOffset = 13 * 32;
-	int rowOffset = 11 * 32;
+	//int columnOffset = 13 * 32;
+	//int rowOffset = 11 * 32;
 
-	Universe::SetMapLeftX(20);
-	Universe::SetMapTopY(50);
+	
+	mapLeftX = 20;
+	mapTopY = 50;
 
 	thePlayer->SetInitialValuesForNewRound();
 

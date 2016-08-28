@@ -1,6 +1,9 @@
 #include "BlitterObject.h"
 
-#include "../universe/Universe.h"
+
+extern int mapLeftX;
+extern int mapTopY;
+
 
 
 BlitterObject::BlitterObject(
@@ -80,7 +83,7 @@ int BlitterObject::Animate()
 int BlitterObject::Draw(LPDIRECTDRAWSURFACE7 dest)
 {
 //	return ::Draw_BOB(theBOB_,dest);
-	return ::Draw_BOB_To_Relative_Coordinates(theBOB_,dest, Universe::GetMapLeftX(), Universe::GetMapTopY() );
+	return ::Draw_BOB_To_Relative_Coordinates(theBOB_, dest, mapLeftX, mapTopY);
 }
 
 

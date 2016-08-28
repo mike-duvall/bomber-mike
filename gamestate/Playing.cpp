@@ -4,9 +4,9 @@
 #include "../t3dlib/t3dlib1.h"
 
 #include "../gameobjects/SimpleGameObject.h"
+#include "../gameobjects/Player.h"
 
 
-#include "../universe/Universe.h"
 #include "../bob/BlitterObject.h"
 
 #include <iostream>
@@ -14,8 +14,6 @@
 using namespace std;
 
 extern Player * thePlayer;
-
-
 
 
 

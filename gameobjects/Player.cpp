@@ -4,7 +4,7 @@
 #include "../t3dlib/t3dlib1.h"
 #include "../t3dlib/ddutil.h"
 #include "../bob/BlitterObject.h"
-#include "../universe/Universe.h"
+
 
 #include "SimpleGameObject.h"
 #include "../input/Controller.h"

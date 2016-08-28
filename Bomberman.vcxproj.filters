@@ -93,9 +93,6 @@
     <ClCompile Include="input\Keyboard.cpp">
       <Filter>Source Files\input</Filter>
     </ClCompile>
-    <ClCompile Include="universe\Universe.cpp">
-      <Filter>Source Files\universe</Filter>
-    </ClCompile>
     <ClCompile Include="gamestate\Playing.cpp">
       <Filter>Source Files\gamestate</Filter>
     </ClCompile>
@@ -138,9 +135,6 @@
       <Filter>Header Files\input</Filter>
     </ClInclude>
     <ClInclude Include="universe\Point.h">
-      <Filter>Header Files\universe</Filter>
-    </ClInclude>
-    <ClInclude Include="universe\Universe.h">
       <Filter>Header Files\universe</Filter>
     </ClInclude>
     <ClInclude Include="gamestate\Playing.h">
