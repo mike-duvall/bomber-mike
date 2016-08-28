@@ -23,8 +23,6 @@ public:
 	static void SetMapLeftX(int newX) { mapLeftX = newX;}
 	static void SetMapTopY(int newY) { mapTopY = newY;}
 
-	static PLAYER_VECTOR & GetPlayers() { return players; }
-
 
 private:
 
@@ -32,7 +30,6 @@ private:
 	static int mapLeftX;
 	static int mapTopY;
 
-	static PLAYER_VECTOR players;
 
 
 };

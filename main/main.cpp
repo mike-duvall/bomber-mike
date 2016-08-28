@@ -46,6 +46,7 @@ Playing * playingGameState;
 
 Keyboard * theKeyboard;
 
+Player * thePlayer;
 
 int Game_Init(void *parms,  int num_parms)
 {
@@ -68,35 +69,17 @@ int Game_Init(void *parms,  int num_parms)
 	// hide the mouse
 	ShowCursor(FALSE);
 
-
-	Keyboard * aKeyboard = 0;
-	Player * player1 = new Player(32, 32, WHITE_PLAYER);
-	Universe::GetPlayers().push_back(player1);
+	thePlayer = new Player(32, 32, WHITE_PLAYER);
+	thePlayer->SetController(theKeyboard);
 
 	int columnOffset = 13 * 32;
 	int rowOffset = 11 * 32;
 
-
-	{
-		Player * humanPlayer = Universe::GetPlayers()[0];
-		humanPlayer->SetController(theKeyboard);
-	}
-
-
 	Universe::SetMapLeftX(20);
 	Universe::SetMapTopY(50);
 
+	thePlayer->SetInitialValuesForNewRound();
 
-	PLAYER_VECTOR::iterator theIterator;
-
-	for (theIterator = Universe::GetPlayers().begin();
-		theIterator != Universe::GetPlayers().end();
-		theIterator++
-		)
-	{
-		Player * next = *theIterator;
-		next->SetInitialValuesForNewRound();
-	}
 
 	playingGameState =  new Playing();
 

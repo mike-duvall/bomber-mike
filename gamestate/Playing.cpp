@@ -13,6 +13,7 @@
 #include <sstream>
 using namespace std;
 
+extern Player * thePlayer;
 
 Playing::Playing()
 {
@@ -29,28 +30,8 @@ Playing::~Playing()
 
 void Update_And_Draw_Players()
 {
-
-	PLAYER_VECTOR::iterator theIterator;
-
-	int playerIndex = 0;
-	
-
-	for(	theIterator = Universe::GetPlayers().begin();
-		theIterator != Universe::GetPlayers().end();
-		theIterator++
-		)
-	{
-		Player * next = *theIterator;
-		playerIndex++;
-
-		if(next->GetPlayerState() == PLAYER_STATE_ALIVE)
-		{
-			boolean removeThisPlayer =  next->Update();
-			next->Draw(lpddsback);
-
-		}
-	}
-
+	thePlayer->Update();
+	thePlayer->Draw(lpddsback);
 }
 
 
