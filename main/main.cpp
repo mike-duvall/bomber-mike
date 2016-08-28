@@ -67,8 +67,6 @@ int Game_Init(void *parms,  int num_parms)
 	// hide the mouse
 	ShowCursor(FALSE);
 
-	//currentGameState = new TitleGameState();
-	//currentGameState = new SelectingNumPlayers();
 
 	Keyboard * aKeyboard = 0;
 	Player * player1 = new Player(32, 32, WHITE_PLAYER);
@@ -77,20 +75,11 @@ int Game_Init(void *parms,  int num_parms)
 	int columnOffset = 13 * 32;
 	int rowOffset = 11 * 32;
 
-	Player * player2 = new Player(columnOffset, rowOffset, BLACK_PLAYER);
-	Universe::GetPlayers().push_back(player2);
-
-	{
-		Player * computerPlayer = Universe::GetPlayers()[1];
-		computerPlayer->SetController(Universe::GetKeyboard());
-	}
-
 
 	{
 		Player * humanPlayer = Universe::GetPlayers()[0];
 		humanPlayer->SetController(Universe::GetKeyboard());
 	}
-
 
 	Universe::SetNumberOfRoundsInGame(2);
 
