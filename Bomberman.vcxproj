@@ -113,7 +113,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bob\BlitterObject.h" />
-    <ClInclude Include="Bomberman.h" />
     <ClInclude Include="gameobjects\ControlEvent.h" />
     <ClInclude Include="gameobjects\GameObject.h" />
     <ClInclude Include="gameobjects\Player.h" />

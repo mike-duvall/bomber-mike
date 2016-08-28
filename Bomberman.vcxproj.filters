@@ -29,9 +29,6 @@
     <Filter Include="Source Files\sound">
       <UniqueIdentifier>{b8962353-6795-4c24-9558-0deb89dedccf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\ai">
-      <UniqueIdentifier>{551f85c4-a9b7-428b-87f3-486b410077b1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
@@ -59,12 +56,6 @@
     </Filter>
     <Filter Include="Header Files\sound">
       <UniqueIdentifier>{8a9f5b04-ba2d-4f02-a7c3-c843aaadc912}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\fmod">
-      <UniqueIdentifier>{e39eef37-d713-4b9a-9c58-b57a71fa259d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\ai">
-      <UniqueIdentifier>{13af5262-e28c-412b-9662-326d04b23af4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
@@ -113,9 +104,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bomberman.h">
-      <Filter>Source Files\sound</Filter>
-    </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
