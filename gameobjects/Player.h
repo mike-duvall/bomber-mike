@@ -7,19 +7,13 @@
 
 
 class BlitterObject;
-class IndestructableBlock;
-class Block;
 
 
 #include <vector>
 
 using namespace std;
 
-
-class Player;
 class Controller;
-
-
 
 #define WHITE_PLAYER 1
 
@@ -38,7 +32,6 @@ public:
 
 	string GetNameFromPlayerType();
 
-	int GetPlayerState() { return playerState;}
 	int GetPlayerType() { return playerType;}
 	int GetNumberOfWins() { return numberOfWins;}
 	void SetNumberofWins(int numWins) { numberOfWins = numWins;}
@@ -66,7 +59,6 @@ private:
 	//////////////////////////////////////////////////
 
 	int moveIncrementAmount;
-	int playerState;
 	int playerType;
 	int numberOfWins;
 	int initialX;
