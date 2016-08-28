@@ -70,7 +70,7 @@ int Game_Init(void *parms,  int num_parms)
 	// hide the mouse
 	ShowCursor(FALSE);
 
-	thePlayer = new Player(32, 32, WHITE_PLAYER);
+	thePlayer = new Player(32, 32);
 	thePlayer->SetController(theKeyboard);
 
 	//int columnOffset = 13 * 32;

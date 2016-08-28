@@ -119,12 +119,6 @@ void Player::Draw(LPDIRECTDRAWSURFACE7 dest)
 
 
 
-string Player::GetBitmapFilenameFromPlayerType(int aPlayerType)
-{
-	return "WhitePlayer.bmp";
-}
-
-
 
 
 void Player::SetInitialValuesForNewRound()
@@ -146,7 +140,7 @@ Player::Player()
 	theBlitterObject_ = 0;
 }
 
-Player::Player(int x, int y, int aPlayerType)
+Player::Player(int x, int y)
 {
 
 	x -= 6;
@@ -157,7 +151,6 @@ Player::Player(int x, int y, int aPlayerType)
 	initialX = x;
 	initialY = y;
 
-	playerType = aPlayerType;
 	moveIncrementAmount = 2;
 
 	int playerWidth = 44;
@@ -179,7 +172,7 @@ Player::Player(int x, int y, int aPlayerType)
 	 };
 
 
-	string shortFileName = GetBitmapFilenameFromPlayerType(playerType);
+	string shortFileName = "WhitePlayer.bmp";
 	
 
 	string pathPrefix = "";
@@ -220,8 +213,6 @@ Player::Player(int x, int y, int aPlayerType)
 
 
 }
-
-
 
 
 

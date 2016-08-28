@@ -24,13 +24,12 @@ class Player
 {
 public:
 	Player();
-	Player(int x, int y, int playerType);
+	Player(int x, int y);
 	void SetController(Controller * aController) { this->theController = aController;}
 	void Update(int controlEvent);
 	bool Update();
 	void Draw(LPDIRECTDRAWSURFACE7 dest);
 
-	int GetPlayerType() { return playerType;}
 	void SetInitialValuesForNewRound();
 
 	BlitterObject * GetBlitterObject() { return theBlitterObject_; }
@@ -38,9 +37,6 @@ public:
 
 
 private:
-
-	string GetBitmapFilenameFromPlayerType(int aPlayerType);
-
 
 	Controller * theController;
 
@@ -52,7 +48,6 @@ private:
 	//////////////////////////////////////////////////
 
 	int moveIncrementAmount;
-	int playerType;
 	int initialX;
 	int initialY;
 
