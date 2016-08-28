@@ -142,13 +142,6 @@ string Player::GetBitmapFilenameFromPlayerType(int aPlayerType)
 
 
 
-
-
-void Player::SetInitialValuesForNewMatch()
-{
-	numberOfWins = 0;
-}
-
 void Player::SetInitialValuesForNewRound()
 {
 
@@ -182,7 +175,6 @@ Player::Player(int x, int y, int aPlayerType)
 	playerType = aPlayerType;
 	name = 	GetNameFromPlayerType();
 	moveIncrementAmount = 2;
-	numberOfWins = 0;
 
 	int playerWidth = 44;
 	int playerHeight = 44;

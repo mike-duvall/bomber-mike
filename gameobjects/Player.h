@@ -33,9 +33,6 @@ public:
 	string GetNameFromPlayerType();
 
 	int GetPlayerType() { return playerType;}
-	int GetNumberOfWins() { return numberOfWins;}
-	void SetNumberofWins(int numWins) { numberOfWins = numWins;}
-	void SetInitialValuesForNewMatch();
 	void SetInitialValuesForNewRound();
 	const string & GetName() { return name;}
 
@@ -60,7 +57,6 @@ private:
 
 	int moveIncrementAmount;
 	int playerType;
-	int numberOfWins;
 	int initialX;
 	int initialY;
 	string name;
