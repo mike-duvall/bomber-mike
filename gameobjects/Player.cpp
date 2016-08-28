@@ -28,13 +28,18 @@ using namespace std;
 
 
 
+void Player::HandleAnimation(int direction) {
+	if (theBlitterObject_->Get_Current_Animation() != direction)
+		theBlitterObject_->Set_Animation(direction);
+	theBlitterObject_->Animate();
+
+}
+
+
 void Player::HandleMoveDown()
 {
 	theBlitterObject_->IncrementY(moveIncrementAmount);
-	// check animation needs to change
-	if (theBlitterObject_->Get_Current_Animation() != SOUTH)
-		theBlitterObject_->Set_Animation(SOUTH);
-	theBlitterObject_->Animate();
+	this->HandleAnimation(SOUTH);
 }
 
 
@@ -42,10 +47,7 @@ void Player::HandleMoveDown()
 void Player::HandleMoveUp()
 {
 	theBlitterObject_->IncrementY(-moveIncrementAmount);
-	// check animation needs to change
-	if (theBlitterObject_->Get_Current_Animation() != NORTH)
-		theBlitterObject_->Set_Animation(NORTH);
-	theBlitterObject_->Animate();
+	this->HandleAnimation(NORTH);
 }
 
 
@@ -58,10 +60,7 @@ void Player::HandleMoveRight(int controlEvent)
 void Player::HandleMoveLeft(int controlEvent)
 {
 	theBlitterObject_->IncrementX(-moveIncrementAmount);
-	// check animation needs to change
-	if (theBlitterObject_->Get_Current_Animation() != WEST)
-		theBlitterObject_->Set_Animation(WEST);
-	theBlitterObject_->Animate();
+	this->HandleAnimation(WEST);
 }
 
 

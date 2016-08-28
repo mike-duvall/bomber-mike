@@ -42,6 +42,8 @@ private:
 	void HandleMoveRight(int controlEvent);
 	//////////////////////////////////////////////////
 
+	void Player::HandleAnimation(int direction);
+
 	int moveIncrementAmount;
 	int initialX;
 	int initialY;
