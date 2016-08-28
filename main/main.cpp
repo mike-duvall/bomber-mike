@@ -24,7 +24,7 @@
 
 #include "../universe/Universe.h"
 #include "../universe/Point.h"
-#include "../gamestate/GameStart.h"
+#include "../gamestate/Playing.h"
 
 
 
@@ -96,7 +96,26 @@ int Game_Init(void *parms,  int num_parms)
 
 
 	Universe::SetNumberOfRoundsInGame(2);
-	currentGameState =  new GameStart();
+
+	Universe::SetMapLeftX(20);
+	Universe::SetMapTopY(50);
+
+
+	PLAYER_VECTOR::iterator theIterator;
+
+	for (theIterator = Universe::GetPlayers().begin();
+		theIterator != Universe::GetPlayers().end();
+		theIterator++
+		)
+	{
+		Player * next = *theIterator;
+		next->SetInitialValuesForNewRound();
+	}
+
+	Universe::ClearAndDeleteAll();
+
+
+	currentGameState =  new Playing();
 
 
 	return(1);
