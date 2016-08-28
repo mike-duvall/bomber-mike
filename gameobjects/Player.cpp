@@ -171,9 +171,6 @@ void Player::SetInitialValuesForNewRound()
 {
 	playerState = PLAYER_STATE_ALIVE;
 
-	this->numAllowedBombs = 1;
-	this->numBombsDropped = 0;
-	this->explosionSize = 2;
 	this->GetBlitterObject()->Set_Pos(initialX, initialY);
 
 	theBlitterObject_->Set_Animation(SOUTH);
@@ -213,10 +210,6 @@ Player::Player(int x, int y, int aPlayerType)
 	int totalNumFrames = 12;
 	int transparentColorKey = RGB(0,107,0);
 
-	bombDropCoundownTimerInitialValue = 20;
-	bombDropCoundownTimer = 0;
-
-	explosionSize = 6;
 
 	theBlitterObject_ = new BlitterObject(x,y,playerWidth,playerHeight,totalNumFrames,
 		BOB_ATTR_VISIBLE | BOB_ATTR_MULTI_ANIM,DDSCAPS_VIDEOMEMORY, transparentColorKey);
@@ -269,23 +262,7 @@ Player::Player(int x, int y, int aPlayerType)
 	theBlitterObject_->Set_Anim_Speed(8);
 	theBlitterObject_->Set_Vel(0,0);
 
-	this->numAllowedBombs = 2;
-	this->numBombsDropped = 0;
-
 	theCollisionBOB_  = new BOB();
-
-	string playerTypeName = GetNameFromPlayerType();
-
-	string iconLongFilename = pathPrefix + string("bitmaps/InGame/Scoreboard/" ) + playerTypeName + string("Icon.bmp");
-	scoreIcon = new SimpleGameObject(0,0,36,30,iconLongFilename,_RGB32BIT(0,0,182,0));
-	string iconCryLongFilename = pathPrefix + string("bitmaps/InGame/Scoreboard/" ) + playerTypeName + string("CryIcon.bmp");
-	scoreCryIcon = new SimpleGameObject(0,0,36,30,iconCryLongFilename,_RGB32BIT(0,0,182,0));
-
-	
-	scoreShell = new SimpleGameObject(1,1, 18,18,"bitmaps/InGame/Scoreboard/BlankPlayerScore.bmp",1);
-	scoreNumber = new Number(1,1);
-	scoreNumber->SetValue(this->GetNumberOfWins());
-
 
 
 }

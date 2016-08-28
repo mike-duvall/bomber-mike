@@ -50,10 +50,9 @@ public:
 
 	string GetNameFromPlayerType();
 
-	void IncrementNumberOfAllowedBombs() { this->numAllowedBombs++;}
-	void DecrementNumberOfActuallyDroppedBombs() { this->numBombsDropped--;}
-	void SetExplosionSize(int newExplosionSize) { explosionSize = newExplosionSize;}
-	virtual int  GetExplosionSize() { return explosionSize; }
+
+
+
 	int GetPlayerState() { return playerState;}
 	int GetPlayerType() { return playerType;}
 	int GetNumberOfWins() { return numberOfWins;}
@@ -62,7 +61,6 @@ public:
 	void SetInitialValuesForNewRound();
 	const string & GetName() { return name;}
 
-	SimpleGameObject * GetScoreShell() { return scoreShell; }
 
 
 private:
@@ -79,11 +77,6 @@ private:
 	bool HandleMoveRight(int controlEvent);
 	//////////////////////////////////////////////////
 
-	int bombDropCoundownTimer;
-	int bombDropCoundownTimerInitialValue;
-	int numAllowedBombs;
-	int numBombsDropped;
-	int explosionSize;
 	int moveIncrementAmount;
 	int playerState;
 	int playerType;
@@ -93,11 +86,6 @@ private:
 	string name;
 
 	BOB * theCollisionBOB_;
-
-	SimpleGameObject * scoreIcon;
-	SimpleGameObject * scoreCryIcon;
-	SimpleGameObject * scoreShell;
-	Number * scoreNumber;
 
 
 };
