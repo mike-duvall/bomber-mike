@@ -28,46 +28,20 @@ using namespace std;
 
 void Player::HandleMoveDown()
 {
-	HandleMoveDownWithNoBlockBelow();
-
-}
-
-
-Number * Player::GetScoreNumber()
-{
-	scoreNumber->SetValue(this->GetNumberOfWins());
-	scoreNumber->GetBlitterObject()->Animate();
-	return scoreNumber;
-}
-
-
-
-void Player::HandleMoveDownWithNoBlockBelow()
-{
 	this->GetBlitterObject()->IncrementY(moveIncrementAmount);
 	// check animation needs to change
 	if (this->GetBlitterObject()->Get_Current_Animation() != SOUTH)
 		this->GetBlitterObject()->Set_Animation(SOUTH);
 	this->GetBlitterObject()->Animate();
+
+
 }
 
-void Player::HandleMoveUpWithNoBlockAbove()
-{
-	this->GetBlitterObject()->IncrementY(-moveIncrementAmount);
-	// check animation needs to change
-	if (this->GetBlitterObject()->Get_Current_Animation() != NORTH)
-		this->GetBlitterObject()->Set_Animation(NORTH);
-	this->GetBlitterObject()->Animate();
-}
 
 
 void Player::HandleMoveRightWithNoBlockToTheRight()
 {
 	this->GetBlitterObject()->IncrementX(moveIncrementAmount);
-	// check animation needs to change
-	//if (this->GetBlitterObject()->Get_Current_Animation() != EAST)
-	//	this->GetBlitterObject()->Set_Animation(EAST);
-	//this->GetBlitterObject()->Animate();
 }
 
 
@@ -84,7 +58,12 @@ void Player::HandleMoveLeftWithNoBlockToTheLeft()
 
 void Player::HandleMoveUp()
 {
-	HandleMoveUpWithNoBlockAbove();
+	this->GetBlitterObject()->IncrementY(-moveIncrementAmount);
+	// check animation needs to change
+	if (this->GetBlitterObject()->Get_Current_Animation() != NORTH)
+		this->GetBlitterObject()->Set_Animation(NORTH);
+	this->GetBlitterObject()->Animate();
+
 }
 
 
@@ -152,52 +131,6 @@ void Player::Update(int controlEvent)
 	
 }
 
-
-
-
-
-
-int Player::GetCollisionBoxCenterX() 
-{
-
-	RECT collisionBox = this->GetCollisionBox();
-
-	int x = collisionBox.left + 16;
-
-	return x;
-
-}
-
-
-int Player::GetCollisionBoxCenterY() 
-{
-
-	RECT collisionBox = this->GetCollisionBox();
-
-	int y = collisionBox.top + 16;
-
-	return y;
-
-}
-
-
-
-RECT Player::GetCollisionBox()
-{
-	int playerX = theBlitterObject_->GetX();
-	int playerY = theBlitterObject_->GetY();
-	int playerWidth = theBlitterObject_->GetWidth();
-	int playerHeight= theBlitterObject_->GetHeight();
-
-	RECT collisionBox;
-
-	collisionBox.top = playerY + 12;
-	collisionBox.left = playerX + 6;
-	collisionBox.bottom = collisionBox.top + 32 - 1;
-	collisionBox.right = collisionBox.left + 32 -1;
-
-	return collisionBox;
-}
 
 
 
@@ -386,46 +319,5 @@ Player::Player(int x, int y, int aPlayerType)
 }
 
 
-
-SimpleGameObject * Player::GetScoreIcon()
-{
-	if(this->GetPlayerState() == PLAYER_STATE_ALIVE)
-	{
-		return scoreIcon;
-	}
-	else
-	{
-		return scoreCryIcon;
-	}
-
-}
-
-void Player::SetScoreIconPos(int x, int y)
-{
-	scoreIcon->GetBlitterObject()->Set_Pos(x,y);
-	scoreCryIcon->GetBlitterObject()->Set_Pos(x,y);
-
-}
-
-
-BOB * Player::GetTheCollisionBob()
-{
-	RECT collisionBox = this->GetCollisionBox();
-
-	theCollisionBOB_->x = collisionBox.left;
-	theCollisionBOB_->y = collisionBox.top;
-	theCollisionBOB_->width = collisionBox.right - collisionBox.left + 1;
-	theCollisionBOB_->height = collisionBox.bottom - collisionBox.top + 1;
-
-	return theCollisionBOB_;
-
-}
-
-
-
-Player::~Player()
-{
-
-}
 
 

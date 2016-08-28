@@ -47,11 +47,6 @@ public:
 	void Update(int controlEvent);
 	bool Update();
 	void Draw(LPDIRECTDRAWSURFACE7 dest);
-	virtual ~Player();
-
-	BOB * GetTheCollisionBob();
-	// Override collision box
-	virtual RECT GetCollisionBox();
 
 	string GetNameFromPlayerType();
 
@@ -60,7 +55,6 @@ public:
 	void SetExplosionSize(int newExplosionSize) { explosionSize = newExplosionSize;}
 	virtual int  GetExplosionSize() { return explosionSize; }
 	int GetPlayerState() { return playerState;}
-	void PlaceExplodingPlayer();
 	int GetPlayerType() { return playerType;}
 	int GetNumberOfWins() { return numberOfWins;}
 	void SetNumberofWins(int numWins) { numberOfWins = numWins;}
@@ -68,39 +62,18 @@ public:
 	void SetInitialValuesForNewRound();
 	const string & GetName() { return name;}
 
-	SimpleGameObject * GetScoreIcon();
-	void SetScoreIconPos(int x, int y);
 	SimpleGameObject * GetScoreShell() { return scoreShell; }
-	Number * GetScoreNumber();
-
-	RECT GetRoundedPlayerLocationMapSquare();
-	int GetRoundedSquareCenterX();
-	int GetRoundedSquareCenterY();
-
-
-	int GetCollisionBoxCenterX();
-	int GetCollisionBoxCenterY();
 
 
 private:
 
 	string GetBitmapFilenameFromPlayerType(int aPlayerType);
-	Powerup *  IsCollisionWithPowerup();
 
-//	Joystick * controllingJoystick;
+
 	Controller * theController;
-
-
-	bool IsCollisionWithBomb();
-
-	void HandleDropBomb();
 
 	//////////////////////////////////////////////////
 	void HandleMoveDown();
-	void HandleMoveDownWithNoBlockBelow();
-	void HandleMoveDownWithBlockBelow(Block * aBlock);
-	GameObject * GetBlockingGameObjectImmediatelyBelowAndToTheRight();
-	GameObject *  GetBlockingGameObjectImmediatelyBelowAndToTheLeft();
 
 	// case 1 
 	bool PlayerLeftEdgeOverlapsWithRightHalfOfBlock(Block * aBlock);
