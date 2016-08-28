@@ -96,9 +96,6 @@
     <ClCompile Include="gameobjects\GameObject.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
-    <ClCompile Include="gameobjects\Number.cpp">
-      <Filter>Source Files\gameobjects</Filter>
-    </ClCompile>
     <ClCompile Include="gameobjects\Player.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>

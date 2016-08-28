@@ -7,7 +7,6 @@
 #include "../universe/Universe.h"
 
 #include "SimpleGameObject.h"
-#include "Number.h"
 #include "../input/Controller.h"
 
 
