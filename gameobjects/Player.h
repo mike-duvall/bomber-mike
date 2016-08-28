@@ -50,9 +50,6 @@ public:
 
 	string GetNameFromPlayerType();
 
-
-
-
 	int GetPlayerState() { return playerState;}
 	int GetPlayerType() { return playerType;}
 	int GetNumberOfWins() { return numberOfWins;}
@@ -60,7 +57,6 @@ public:
 	void SetInitialValuesForNewMatch();
 	void SetInitialValuesForNewRound();
 	const string & GetName() { return name;}
-
 
 
 private:
@@ -85,7 +81,6 @@ private:
 	int initialY;
 	string name;
 
-	BOB * theCollisionBOB_;
 
 
 };

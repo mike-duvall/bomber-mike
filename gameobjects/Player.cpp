@@ -262,8 +262,6 @@ Player::Player(int x, int y, int aPlayerType)
 	theBlitterObject_->Set_Anim_Speed(8);
 	theBlitterObject_->Set_Vel(0,0);
 
-	theCollisionBOB_  = new BOB();
-
 
 }
 
