@@ -38,7 +38,7 @@ extern HWND      main_window_handle;
 
 
 LPDIRECTINPUT8        lpdi      = NULL;    // dinput object
-GameState * currentGameState;
+Playing * playingGameState;
 
 
 
@@ -115,7 +115,7 @@ int Game_Init(void *parms,  int num_parms)
 	Universe::ClearAndDeleteAll();
 
 
-	currentGameState =  new Playing();
+	playingGameState =  new Playing();
 
 
 	return(1);
@@ -147,7 +147,8 @@ int Game_Main(void *parms, int num_parms)
 	// start the timing clock
 	Start_Clock();
 
-	currentGameState = currentGameState->Update();
+
+	playingGameState->Update();
 
 
 	// sync to 30 fps

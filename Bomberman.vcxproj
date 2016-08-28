@@ -101,7 +101,6 @@
     <ClCompile Include="gameobjects\GameObject.cpp" />
     <ClCompile Include="gameobjects\Player.cpp" />
     <ClCompile Include="gameobjects\SimpleGameObject.cpp" />
-    <ClCompile Include="gamestate\GameState.cpp" />
     <ClCompile Include="gamestate\Playing.cpp" />
     <ClCompile Include="input\Joystick.cpp" />
     <ClCompile Include="input\Keyboard.cpp" />
@@ -119,7 +118,6 @@
     <ClInclude Include="gameobjects\ControlEvent.h" />
     <ClInclude Include="gameobjects\GameObject.h" />
     <ClInclude Include="gameobjects\Player.h" />
-    <ClInclude Include="gamestate\GameState.h" />
     <ClInclude Include="gamestate\Playing.h" />
     <ClInclude Include="input\Controller.h" />
     <ClInclude Include="input\Joystick.h" />

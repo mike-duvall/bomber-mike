@@ -3,29 +3,21 @@
 
 
 
-#include "GameState.h"
-
 
 class SimpleGameObject;
-class Timer;
 
 
-class Playing : public GameState
+
+class Playing 
 {
 public:
 
 	Playing();
 	virtual ~Playing();
 
-	GameState * Update();
+	void Update();
 
 private:
-
-	void SetScoreIconLocations();
-	void Update_And_Draw_Scoreboard();
-
-	SimpleGameObject * clock;
-	Timer * timer;
 
 
 

@@ -57,7 +57,7 @@ void Update_And_Draw_Players()
 
 
 
-GameState * Playing::Update()
+void Playing::Update()
 {
 	DWORD backgroundColor = _RGB32BIT(0,0,107,0);
 	// clear the drawing surface
@@ -67,6 +67,5 @@ GameState * Playing::Update()
 
 	DDraw_Flip();
 
-	return this;
 
 }
