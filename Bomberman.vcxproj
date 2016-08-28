@@ -98,7 +98,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="bob\BlitterObject.cpp" />
-    <ClCompile Include="gameobjects\ControllerSelector.cpp" />
     <ClCompile Include="gameobjects\GameObject.cpp" />
     <ClCompile Include="gameobjects\Player.cpp" />
     <ClCompile Include="gameobjects\SimpleGameObject.cpp" />
