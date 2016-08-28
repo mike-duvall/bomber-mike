@@ -20,7 +20,6 @@
 
 
 #include "../input/Keyboard.h"
-#include "../input/Joystick.h"
 
 #include "../universe/Universe.h"
 #include "../universe/Point.h"
@@ -58,8 +57,6 @@ int Game_Init(void *parms,  int num_parms)
 		return(0);
 
 	Universe::SetKeyboard(new Keyboard(lpdi, main_window_handle) );
-
-	Joystick::InitializeJoysticks(lpdi, main_window_handle);
 
 
 	// set clipping rectangle to screen extents so mouse cursor

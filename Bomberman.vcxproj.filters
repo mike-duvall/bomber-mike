@@ -99,9 +99,6 @@
     <ClCompile Include="gameobjects\SimpleGameObject.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
-    <ClCompile Include="input\Joystick.cpp">
-      <Filter>Source Files\input</Filter>
-    </ClCompile>
     <ClCompile Include="input\Keyboard.cpp">
       <Filter>Source Files\input</Filter>
     </ClCompile>
@@ -147,9 +144,6 @@
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
     <ClInclude Include="input\Controller.h">
-      <Filter>Header Files\input</Filter>
-    </ClInclude>
-    <ClInclude Include="input\Joystick.h">
       <Filter>Header Files\input</Filter>
     </ClInclude>
     <ClInclude Include="input\Keyboard.h">
