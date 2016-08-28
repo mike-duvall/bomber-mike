@@ -33,25 +33,6 @@ void Player::HandleMoveDown()
 	if (this->GetBlitterObject()->Get_Current_Animation() != SOUTH)
 		this->GetBlitterObject()->Set_Animation(SOUTH);
 	this->GetBlitterObject()->Animate();
-
-
-}
-
-
-
-void Player::HandleMoveRightWithNoBlockToTheRight()
-{
-	this->GetBlitterObject()->IncrementX(moveIncrementAmount);
-}
-
-
-void Player::HandleMoveLeftWithNoBlockToTheLeft()
-{
-	this->GetBlitterObject()->IncrementX(-moveIncrementAmount);
-	// check animation needs to change
-	if (this->GetBlitterObject()->Get_Current_Animation() != WEST)
-		this->GetBlitterObject()->Set_Animation(WEST);
-	this->GetBlitterObject()->Animate();
 }
 
 
@@ -69,17 +50,19 @@ void Player::HandleMoveUp()
 
 bool Player::HandleMoveRight(int controlEvent)
 {
-
-	bool playerMoved = TRUE;
-	HandleMoveRightWithNoBlockToTheRight();
-    return playerMoved;
-
+	this->GetBlitterObject()->IncrementX(moveIncrementAmount);
+	return true;
 }
 
 
 void Player::HandleMoveLeft(int controlEvent)
 {
-	HandleMoveLeftWithNoBlockToTheLeft();
+	this->GetBlitterObject()->IncrementX(-moveIncrementAmount);
+	// check animation needs to change
+	if (this->GetBlitterObject()->Get_Current_Animation() != WEST)
+		this->GetBlitterObject()->Set_Animation(WEST);
+	this->GetBlitterObject()->Animate();
+
 }
 
 
@@ -124,9 +107,6 @@ void Player::Update(int controlEvent)
 		HandleMoveUp();
 		break;
 
-	//case CONTROL_EVENT_DROP_BOMB:
-	//	HandleDropBomb();
-	//	break;
 	}
 	
 }
