@@ -24,6 +24,9 @@ using namespace std;
 #define WEST         2
 #define SOUTH        3
 
+#define NUM_FRAMES_PER_ANIMATION 4
+#define NUM_ANIMATIONS 4
+
 
 
 void Player::HandleMoveDown()
@@ -88,14 +91,11 @@ void Player::Update(int controlEvent)
 	{
 
 	case CONTROL_EVENT_MOVE_EAST:
-	case CONTROL_EVENT_MOVE_SOUTH_EAST:
-	case CONTROL_EVENT_MOVE_NORTH_EAST:
 		HandleMoveRight(controlEvent);
 		break;
 
-	case CONTROL_EVENT_MOVE_SOUTH_WEST:
+
 	case CONTROL_EVENT_MOVE_WEST:
-	case CONTROL_EVENT_MOVE_NORTH_WEST:
 		HandleMoveLeft(controlEvent);
 		break;
 
@@ -154,14 +154,11 @@ string Player::GetNameFromPlayerType()
 
 string Player::GetBitmapFilenameFromPlayerType(int aPlayerType)
 {
-
  	return  GetNameFromPlayerType() + string("Player.bmp");
 }
 
 
 
-#define NUM_FRAMES_PER_ANIMATION 4
-#define NUM_ANIMATIONS 4
 
 
 
@@ -236,10 +233,7 @@ Player::Player(int x, int y, int aPlayerType)
 	string shortFileName = GetBitmapFilenameFromPlayerType(playerType);
 	
 
-//	string pathPrefix = "../bitmaps/";
 	string pathPrefix = "";
-//	string pathPrefix = "bitmaps/";
-//	string longFilename = pathPrefix.operator +=(shortFileName);
 	string longFilename = "bitmaps/" + shortFileName;
 
 	// load in new bitmap file
@@ -261,7 +255,6 @@ Player::Player(int x, int y, int aPlayerType)
 
 	}
 
-
 	Unload_Bitmap_File(&bitmap8bit);
 
 	// set the animation sequences
@@ -278,7 +271,6 @@ Player::Player(int x, int y, int aPlayerType)
 
 	this->numAllowedBombs = 2;
 	this->numBombsDropped = 0;
-
 
 	theCollisionBOB_  = new BOB();
 
