@@ -118,22 +118,6 @@ void Player::Draw(LPDIRECTDRAWSURFACE7 dest)
 
 
 
-
-
-
-void Player::SetInitialValuesForNewRound()
-{
-
-	this->GetBlitterObject()->Set_Pos(initialX, initialY);
-
-	theBlitterObject_->Set_Animation(SOUTH);
-
-	BOB * bob = theBlitterObject_->getTheBOB();
-	bob->curr_frame = bob->animations[bob->curr_animation][bob->anim_index];
-
-}
-
-
 Player::Player()
 {
 
@@ -210,6 +194,14 @@ Player::Player(int x, int y)
 	theBlitterObject_->Set_Animation(0);
 	theBlitterObject_->Set_Anim_Speed(8);
 	theBlitterObject_->Set_Vel(0,0);
+
+	this->GetBlitterObject()->Set_Pos(initialX, initialY);
+
+	theBlitterObject_->Set_Animation(SOUTH);
+
+	BOB * bob = theBlitterObject_->getTheBOB();
+	bob->curr_frame = bob->animations[bob->curr_animation][bob->anim_index];
+
 
 
 }

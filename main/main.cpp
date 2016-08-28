@@ -76,16 +76,10 @@ int Game_Init(void *parms,  int num_parms)
 	//int columnOffset = 13 * 32;
 	//int rowOffset = 11 * 32;
 
-	
 	mapLeftX = 20;
 	mapTopY = 50;
 
-	thePlayer->SetInitialValuesForNewRound();
-
-
 	playingGameState =  new Playing();
-
-
 	return(1);
 
 } // end Game_Init

@@ -29,12 +29,8 @@ public:
 	void Update(int controlEvent);
 	bool Update();
 	void Draw(LPDIRECTDRAWSURFACE7 dest);
-
-	void SetInitialValuesForNewRound();
-
 	BlitterObject * GetBlitterObject() { return theBlitterObject_; }
 	virtual ~Player();
-
 
 private:
 
