@@ -30,41 +30,38 @@ using namespace std;
 
 void Player::HandleMoveDown()
 {
-	this->GetBlitterObject()->IncrementY(moveIncrementAmount);
+	theBlitterObject_->IncrementY(moveIncrementAmount);
 	// check animation needs to change
-	if (this->GetBlitterObject()->Get_Current_Animation() != SOUTH)
-		this->GetBlitterObject()->Set_Animation(SOUTH);
-	this->GetBlitterObject()->Animate();
+	if (theBlitterObject_->Get_Current_Animation() != SOUTH)
+		theBlitterObject_->Set_Animation(SOUTH);
+	theBlitterObject_->Animate();
 }
 
 
 
 void Player::HandleMoveUp()
 {
-	this->GetBlitterObject()->IncrementY(-moveIncrementAmount);
+	theBlitterObject_->IncrementY(-moveIncrementAmount);
 	// check animation needs to change
-	if (this->GetBlitterObject()->Get_Current_Animation() != NORTH)
-		this->GetBlitterObject()->Set_Animation(NORTH);
-	this->GetBlitterObject()->Animate();
-
+	if (theBlitterObject_->Get_Current_Animation() != NORTH)
+		theBlitterObject_->Set_Animation(NORTH);
+	theBlitterObject_->Animate();
 }
 
 
-bool Player::HandleMoveRight(int controlEvent)
+void Player::HandleMoveRight(int controlEvent)
 {
-	this->GetBlitterObject()->IncrementX(moveIncrementAmount);
-	return true;
+	theBlitterObject_->IncrementX(moveIncrementAmount);
 }
 
 
 void Player::HandleMoveLeft(int controlEvent)
 {
-	this->GetBlitterObject()->IncrementX(-moveIncrementAmount);
+	theBlitterObject_->IncrementX(-moveIncrementAmount);
 	// check animation needs to change
-	if (this->GetBlitterObject()->Get_Current_Animation() != WEST)
-		this->GetBlitterObject()->Set_Animation(WEST);
-	this->GetBlitterObject()->Animate();
-
+	if (theBlitterObject_->Get_Current_Animation() != WEST)
+		theBlitterObject_->Set_Animation(WEST);
+	theBlitterObject_->Animate();
 }
 
 
@@ -195,7 +192,7 @@ Player::Player(int x, int y)
 	theBlitterObject_->Set_Anim_Speed(8);
 	theBlitterObject_->Set_Vel(0,0);
 
-	this->GetBlitterObject()->Set_Pos(initialX, initialY);
+	theBlitterObject_->Set_Pos(initialX, initialY);
 
 	theBlitterObject_->Set_Animation(SOUTH);
 

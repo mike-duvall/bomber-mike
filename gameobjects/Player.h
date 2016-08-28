@@ -29,7 +29,6 @@ public:
 	void Update(int controlEvent);
 	bool Update();
 	void Draw(LPDIRECTDRAWSURFACE7 dest);
-	BlitterObject * GetBlitterObject() { return theBlitterObject_; }
 	virtual ~Player();
 
 private:
@@ -40,7 +39,7 @@ private:
 	void HandleMoveDown();
 	void HandleMoveUp();
 	void HandleMoveLeft(int controlEvent);
-	bool HandleMoveRight(int controlEvent);
+	void HandleMoveRight(int controlEvent);
 	//////////////////////////////////////////////////
 
 	int moveIncrementAmount;
