@@ -30,11 +30,8 @@ public:
 	bool Update();
 	void Draw(LPDIRECTDRAWSURFACE7 dest);
 
-	string GetNameFromPlayerType();
-
 	int GetPlayerType() { return playerType;}
 	void SetInitialValuesForNewRound();
-	const string & GetName() { return name;}
 
 	BlitterObject * GetBlitterObject() { return theBlitterObject_; }
 	BOB * GetTheBob();
@@ -59,14 +56,11 @@ private:
 	int playerType;
 	int initialX;
 	int initialY;
-	string name;
 
 
 protected:
 
 	BlitterObject * theBlitterObject_;
-
-
 
 };
 

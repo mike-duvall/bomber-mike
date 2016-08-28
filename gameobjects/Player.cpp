@@ -73,7 +73,6 @@ void Player::HandleMoveLeft(int controlEvent)
 bool Player::Update()
 {
 	int controlEvent = CONTROL_EVENT_DO_NOTHING;
-	bool playerMoved = FALSE;
 
 	controlEvent = this->theController->GetControlEvent();
 	this->Update(controlEvent);
@@ -112,31 +111,17 @@ void Player::Update(int controlEvent)
 
 
 
-
-
 void Player::Draw(LPDIRECTDRAWSURFACE7 dest)
 {
 	theBlitterObject_->Draw(dest);
 }
 
 
-string Player::GetNameFromPlayerType()
-{
-	int aPlayerType = this->GetPlayerType();
-	switch(aPlayerType)
-	{
-	case WHITE_PLAYER:
-		return "White";
-		break;
-
-	}
-	return "";
-}
 
 
 string Player::GetBitmapFilenameFromPlayerType(int aPlayerType)
 {
- 	return  GetNameFromPlayerType() + string("Player.bmp");
+	return "WhitePlayer.bmp";
 }
 
 
@@ -173,7 +158,6 @@ Player::Player(int x, int y, int aPlayerType)
 	initialY = y;
 
 	playerType = aPlayerType;
-	name = 	GetNameFromPlayerType();
 	moveIncrementAmount = 2;
 
 	int playerWidth = 44;
