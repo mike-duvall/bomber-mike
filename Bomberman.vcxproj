@@ -100,7 +100,6 @@
     <ClCompile Include="bob\BlitterObject.cpp" />
     <ClCompile Include="gameobjects\GameObject.cpp" />
     <ClCompile Include="gameobjects\Player.cpp" />
-    <ClCompile Include="gameobjects\SimpleGameObject.cpp" />
     <ClCompile Include="gamestate\Playing.cpp" />
     <ClCompile Include="input\Keyboard.cpp" />
     <ClCompile Include="main\main.cpp" />

@@ -3,7 +3,6 @@
 
 #include "../t3dlib/t3dlib1.h"
 
-#include "../gameobjects/SimpleGameObject.h"
 #include "../gameobjects/Player.h"
 
 

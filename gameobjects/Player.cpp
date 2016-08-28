@@ -6,7 +6,7 @@
 #include "../bob/BlitterObject.h"
 
 
-#include "SimpleGameObject.h"
+
 #include "../input/Controller.h"
 
 

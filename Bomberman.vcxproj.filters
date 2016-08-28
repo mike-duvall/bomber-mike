@@ -87,9 +87,6 @@
     <ClCompile Include="gameobjects\Player.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
-    <ClCompile Include="gameobjects\SimpleGameObject.cpp">
-      <Filter>Source Files\gameobjects</Filter>
-    </ClCompile>
     <ClCompile Include="input\Keyboard.cpp">
       <Filter>Source Files\input</Filter>
     </ClCompile>
