@@ -34,7 +34,6 @@ public:
 	void SetInitialValuesForNewRound();
 
 	BlitterObject * GetBlitterObject() { return theBlitterObject_; }
-	BOB * GetTheBob();
 	virtual ~Player();
 
 

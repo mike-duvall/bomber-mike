@@ -231,10 +231,5 @@ Player::~Player()
 }
 
 
-BOB * Player::GetTheBob()
-{
-	return theBlitterObject_->getTheBOB();
-}
-
 
 
