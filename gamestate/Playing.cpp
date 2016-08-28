@@ -2,20 +2,14 @@
 
 
 #include "../t3dlib/t3dlib1.h"
-
 #include "../gameobjects/Player.h"
-
-
 #include "../bob/BlitterObject.h"
 
 #include <iostream>
 #include <sstream>
-using namespace std;
+
 
 extern Player * thePlayer;
-
-
-
 
 
 
