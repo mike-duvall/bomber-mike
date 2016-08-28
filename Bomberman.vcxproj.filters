@@ -105,9 +105,6 @@
     <ClCompile Include="gameobjects\SimpleGameObject.cpp">
       <Filter>Source Files\gameobjects</Filter>
     </ClCompile>
-    <ClCompile Include="gameobjects\Timer.cpp">
-      <Filter>Source Files\gameobjects</Filter>
-    </ClCompile>
     <ClCompile Include="input\Joystick.cpp">
       <Filter>Source Files\input</Filter>
     </ClCompile>
@@ -156,9 +153,6 @@
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
     <ClInclude Include="gameobjects\GameObject.h">
-      <Filter>Header Files\gameobjects</Filter>
-    </ClInclude>
-    <ClInclude Include="gameobjects\HowManyPlayers.h">
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
     <ClInclude Include="gameobjects\Player.h">

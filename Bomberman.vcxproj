@@ -103,7 +103,6 @@
     <ClCompile Include="gameobjects\Number.cpp" />
     <ClCompile Include="gameobjects\Player.cpp" />
     <ClCompile Include="gameobjects\SimpleGameObject.cpp" />
-    <ClCompile Include="gameobjects\Timer.cpp" />
     <ClCompile Include="gamestate\GameStart.cpp" />
     <ClCompile Include="gamestate\GameState.cpp" />
     <ClCompile Include="gamestate\Playing.cpp" />
@@ -122,7 +121,6 @@
     <ClInclude Include="Bomberman.h" />
     <ClInclude Include="gameobjects\ControlEvent.h" />
     <ClInclude Include="gameobjects\GameObject.h" />
-    <ClInclude Include="gameobjects\HowManyPlayers.h" />
     <ClInclude Include="gameobjects\Player.h" />
     <ClInclude Include="gamestate\GameStart.h" />
     <ClInclude Include="gamestate\GameState.h" />

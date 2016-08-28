@@ -4,8 +4,6 @@
 #include "../t3dlib/t3dlib1.h"
 
 #include "../gameobjects/SimpleGameObject.h"
-#include "../gameobjects/Timer.h"
-#include "../gameobjects/Number.h"
 
 
 #include "../universe/Universe.h"
