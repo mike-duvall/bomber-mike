@@ -116,15 +116,7 @@ void Player::Update(int controlEvent)
 
 void Player::Draw(LPDIRECTDRAWSURFACE7 dest)
 {
-
 	theBlitterObject_->Draw(dest);
-
-	int drawBoundingBox = 0;
-
-	if(drawBoundingBox)
-	{
-		this->DrawCollisionBox(dest);
-	}
 }
 
 

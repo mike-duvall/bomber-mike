@@ -16,8 +16,6 @@ public:
 	int GetControlEvent();
 	bool IsDropBombPressed();
 
-	
-
 
 private:
 		LPDIRECTINPUTDEVICE8  lpdikey;

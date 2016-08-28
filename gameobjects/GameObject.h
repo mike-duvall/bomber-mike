@@ -14,17 +14,10 @@ class GameObject
 public:
 
 
-	virtual RECT GetCollisionBox();
-	void DrawCollisionBox(LPDIRECTDRAWSURFACE7 dest);
 	void Draw(LPDIRECTDRAWSURFACE7 dest);
 	BlitterObject * GetBlitterObject() { return theBlitterObject_; }
 	BOB * GetTheBob();
-	virtual BOB * GetTheCollisionBob();
-
 	virtual ~GameObject();
-
-
-
 
 
 protected:
