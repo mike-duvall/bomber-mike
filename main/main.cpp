@@ -52,7 +52,7 @@ int mapTopY;
 int Game_Init(void *parms,  int num_parms)
 {
 
-	int windowed = true;
+	int windowed = false;
 	DDraw_Init(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, windowed);
 
 	// first create the direct input object
