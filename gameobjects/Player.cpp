@@ -18,28 +18,14 @@
 using namespace std;
 
 
-#define EAST         0
-#define NORTH        1
-#define WEST         2
-#define SOUTH        3
-
-#define NUM_FRAMES_PER_ANIMATION 4
-#define NUM_ANIMATIONS 4
 
 
 
-void Player::HandleAnimation(int direction) {
-	//if (theBlitterObject_->Get_Current_Animation() != direction)
-	//	theBlitterObject_->Set_Animation(direction);
-	//theBlitterObject_->Animate();
-
-}
 
 
 void Player::HandleMoveDown()
 {
 	theBlitterObject_->IncrementY(moveIncrementAmount);
-	this->HandleAnimation(SOUTH);
 }
 
 
@@ -47,7 +33,6 @@ void Player::HandleMoveDown()
 void Player::HandleMoveUp()
 {
 	theBlitterObject_->IncrementY(-moveIncrementAmount);
-	this->HandleAnimation(NORTH);
 }
 
 
@@ -60,7 +45,6 @@ void Player::HandleMoveRight(int controlEvent)
 void Player::HandleMoveLeft(int controlEvent)
 {
 	theBlitterObject_->IncrementX(-moveIncrementAmount);
-	this->HandleAnimation(WEST);
 }
 
 
@@ -122,11 +106,8 @@ Player::Player()
 
 Player::Player(int x, int y)
 {
-
 	x -= 6;
 	y -= 12;
-
-
 
 	initialX = x;
 	initialY = y;
@@ -143,15 +124,7 @@ Player::Player(int x, int y)
 	theBlitterObject_ = new BlitterObject(x,y,playerWidth,playerHeight,totalNumFrames,
 		BOB_ATTR_VISIBLE | BOB_ATTR_MULTI_ANIM,DDSCAPS_VIDEOMEMORY, transparentColorKey);
 
-	//int animations[NUM_ANIMATIONS][NUM_FRAMES_PER_ANIMATION] =
-	//{
-	//		{0,1,0,2},
-	//		{3,4,3,5},
-	//		{6,7,6,8},
-	//		{9,10,9,11}
-	// };
 	int animations[] = { 0 };
-
 
 	string shortFileName = "WhitePlayer.bmp";
 	
@@ -167,26 +140,10 @@ Player::Player(int x, int y)
 	}
 
 
-	//int frameNumber = 0;
-	//for(int row = 0; row < 4; row++)
-	//{ 
-	//	for(int column = 0; column < 3; column++)
-	//	{
-	//	theBlitterObject_->Load_Frame(dds,frameNumber,column, row,BITMAP_EXTRACT_MODE_CELL);  
-	//	frameNumber++;
-	//	}
-
-	//}
 	theBlitterObject_->Load_Frame(dds, 0,0,0,  BITMAP_EXTRACT_MODE_CELL);
 
 	Unload_Bitmap_File(&bitmap8bit);
 
-	// set the animation sequences
-
-	//for(int animation = 0; animation < 4; animation++)
-	//{
-	//	theBlitterObject_->Load_Animation(animation,NUM_FRAMES_PER_ANIMATION, animations[animation]);
-	//}
 	theBlitterObject_->Load_Animation(0, 1, animations);
 
 
@@ -195,14 +152,6 @@ Player::Player(int x, int y)
 	theBlitterObject_->Set_Vel(0,0);
 
 	theBlitterObject_->Set_Pos(initialX, initialY);
-
-	//theBlitterObject_->Set_Animation(SOUTH);
-
-	BOB * bob = theBlitterObject_->getTheBOB();
-	//bob->curr_frame = bob->animations[bob->curr_animation][bob->anim_index];
-
-
-
 }
 
 
