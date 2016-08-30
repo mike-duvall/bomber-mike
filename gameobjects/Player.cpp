@@ -114,10 +114,15 @@ Player::Player(int x, int y)
 
 	moveIncrementAmount = 2;
 
-	int playerWidth = 44;
-	int playerHeight = 44;
+	//int playerWidth = 44;
+	//int playerHeight = 44;
 
-	int totalNumFrames = 12;
+	int playerWidth = 128;
+	int playerHeight = 128;
+
+
+	//int totalNumFrames = 12;
+	int totalNumFrames = 1;
 	int transparentColorKey = RGB(0,107,0);
 
 
@@ -126,7 +131,7 @@ Player::Player(int x, int y)
 
 	int animations[] = { 0 };
 
-	string shortFileName = "WhitePlayer.bmp";
+	string shortFileName = "WhitePlayerMushroom.bmp";
 	
 
 	string pathPrefix = "";
