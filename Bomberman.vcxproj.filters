@@ -23,9 +23,6 @@
     <Filter Include="Source Files\universe">
       <UniqueIdentifier>{94ed2db2-79f6-4fe8-8318-5d5826939155}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gamestate">
-      <UniqueIdentifier>{5a2883ba-1538-4a39-b38b-1025a1905005}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\sound">
       <UniqueIdentifier>{b8962353-6795-4c24-9558-0deb89dedccf}</UniqueIdentifier>
     </Filter>
@@ -47,9 +44,6 @@
     </Filter>
     <Filter Include="Header Files\universe">
       <UniqueIdentifier>{a1c5c377-fb80-4903-9d86-52f6e8675bba}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gamestate">
-      <UniqueIdentifier>{b941923c-1b30-4909-8dae-3f5fc4c58858}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\main">
       <UniqueIdentifier>{f6e3b0c4-41b7-4340-ac45-b2f888a4ab87}</UniqueIdentifier>
@@ -86,9 +80,6 @@
     </ClCompile>
     <ClCompile Include="input\Keyboard.cpp">
       <Filter>Source Files\input</Filter>
-    </ClCompile>
-    <ClCompile Include="gamestate\Playing.cpp">
-      <Filter>Source Files\gamestate</Filter>
     </ClCompile>
     <ClCompile Include="sound\dxutil.cpp">
       <Filter>Source Files\sound</Filter>
@@ -127,9 +118,6 @@
     </ClInclude>
     <ClInclude Include="universe\Point.h">
       <Filter>Header Files\universe</Filter>
-    </ClInclude>
-    <ClInclude Include="gamestate\Playing.h">
-      <Filter>Header Files\gamestate</Filter>
     </ClInclude>
     <ClInclude Include="main\Globals.h">
       <Filter>Header Files\main</Filter>

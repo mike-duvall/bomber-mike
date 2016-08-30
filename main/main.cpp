@@ -18,13 +18,10 @@
 
 #include "../gameobjects/Player.h"
 
-
 #include "../input/Keyboard.h"
-
 #include "../universe/Point.h"
-#include "../gamestate/Playing.h"
 
-
+#include "../gameobjects/ControlEvent.h"
 
 using namespace std;
 
@@ -32,11 +29,10 @@ using namespace std;
 extern HINSTANCE main_instance;
 extern HWND      main_window_handle;
 
-#include "../gameobjects/ControlEvent.h"
+
 
 
 LPDIRECTINPUT8        lpdi      = NULL;    // dinput object
-Playing * playingGameState;
 
 
 
@@ -52,7 +48,7 @@ int mapTopY;
 int Game_Init(void *parms,  int num_parms)
 {
 
-	int windowed = true;
+	int windowed = false;
 	DDraw_Init(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, windowed);
 
 	// first create the direct input object
@@ -79,7 +75,6 @@ int Game_Init(void *parms,  int num_parms)
 	mapLeftX = 20;
 	mapTopY = 50;
 
-	playingGameState =  new Playing();
 	return(1);
 
 } // end Game_Init
@@ -97,6 +92,21 @@ int Game_Shutdown(void *parms,  int num_parms)
 ///////////////////////////////////////////////////////////
 
 
+void Update()
+{
+
+	// clear the drawing surface
+	DWORD backgroundColor = _RGB32BIT(0, 0, 0, 0);
+	DDraw_Fill_Surface(lpddsback, backgroundColor);
+
+	thePlayer->Update();
+	thePlayer->Draw(lpddsback);
+
+	DDraw_Flip();
+
+}
+
+
 
 int Game_Main(void *parms, int num_parms)
 {
@@ -110,7 +120,7 @@ int Game_Main(void *parms, int num_parms)
 	Start_Clock();
 
 
-	playingGameState->Update();
+	Update();
 
 
 	// sync to 30 fps
