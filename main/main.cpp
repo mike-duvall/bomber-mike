@@ -94,12 +94,7 @@ void CreateBlitterObject(int x, int y)
 	Unload_Bitmap_File(&bitmap8bit);
 
 	theBlitterObject_->Load_Animation(0, 1, animations);
-
-
 	theBlitterObject_->Set_Animation(0);
-	theBlitterObject_->Set_Anim_Speed(8);
-	theBlitterObject_->Set_Vel(0, 0);
-
 	theBlitterObject_->Set_Pos(initialX, initialY);
 }
 

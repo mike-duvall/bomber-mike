@@ -41,16 +41,6 @@ int BlitterObject::Set_Animation(int anim_index)
 	return ::Set_Animation_BOB(theBOB_, anim_index);
 }
 
-int BlitterObject::Set_Anim_Speed(int speed)
-{
-	return ::Set_Anim_Speed_BOB(theBOB_, speed);
-}
-
-
-int BlitterObject::Set_Vel(int xv, int yv)
-{
-	return ::Set_Vel_BOB(theBOB_, xv, yv);
-}
 
 
 int BlitterObject::Set_Pos(int x, int y)
@@ -69,14 +59,8 @@ int BlitterObject::Load_Animation(
 
 
 
-int BlitterObject::Animate()
-{
-	return ::Animate_BOB(theBOB_);
-}
-
 int BlitterObject::Draw(LPDIRECTDRAWSURFACE7 dest)
 {
-//	return ::Draw_BOB(theBOB_,dest);
 	return ::Draw_BOB_To_Relative_Coordinates(theBOB_, dest, mapLeftX, mapTopY);
 }
 
