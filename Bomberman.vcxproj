@@ -107,7 +107,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gameobjects\ControlEvent.h" />
-    <ClInclude Include="input\Controller.h" />
     <ClInclude Include="input\Keyboard.h" />
     <ClInclude Include="main\Globals.h" />
     <ClInclude Include="Resource.h" />

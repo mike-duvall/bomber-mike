@@ -36,7 +36,6 @@ LPDIRECTINPUT8        lpdi      = NULL;    // dinput object
 
 
 Keyboard * theKeyboard;
-Controller * theController;
 BOB * theBOB_;
 int mapLeftX;
 int mapTopY;
@@ -121,7 +120,6 @@ int Game_Init(void *parms,  int num_parms)
 	ShowCursor(FALSE);
 
 	CreateBlitterObject(32, 32);
-	theController = theKeyboard;
 
 
 	mapLeftX = 20;
@@ -179,7 +177,7 @@ bool Mushroom_Update()
 {
 	int controlEvent = CONTROL_EVENT_DO_NOTHING;
 
-	controlEvent = theController->GetControlEvent();
+	controlEvent = theKeyboard->GetControlEvent();
 	Mushroom_Update(controlEvent);
 
 	return false;

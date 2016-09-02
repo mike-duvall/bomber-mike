@@ -4,9 +4,8 @@
 #define DIRECTINPUT_VERSION 0x0800
 #include <dinput.h>
 
-#include "Controller.h"
 
-class Keyboard : public Controller
+class Keyboard 
 {
 public:
 	Keyboard(LPDIRECTINPUT8 lpdi,HWND main_window_handle);

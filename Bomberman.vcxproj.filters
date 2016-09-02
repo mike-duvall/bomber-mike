@@ -98,9 +98,6 @@
     <ClInclude Include="gameobjects\ControlEvent.h">
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
-    <ClInclude Include="input\Controller.h">
-      <Filter>Header Files\input</Filter>
-    </ClInclude>
     <ClInclude Include="input\Keyboard.h">
       <Filter>Header Files\input</Filter>
     </ClInclude>
