@@ -11,8 +11,6 @@ Keyboard::Keyboard(LPDIRECTINPUT8 lpdi,HWND main_window_handle)
 		throw "Error initializing keyboard";
 	}
 
-		
-
 
 	// set cooperation level
 	if (lpdikey->SetCooperativeLevel(main_window_handle, 
@@ -46,31 +44,10 @@ UCHAR *  Keyboard::GetKey()
 
 int Keyboard::GetControlEvent()
 {
-// 	UCHAR * keyboard_state = Universe::GetKeyboard()->GetKey();
 	UCHAR * keyboard_state = this->GetKey();
 
 	int controlEvent = CONTROL_EVENT_DO_NOTHING;
  
-	if(keyboard_state[DIK_UP] && keyboard_state[DIK_RIGHT] )
-	{
-		controlEvent = CONTROL_EVENT_MOVE_NORTH_EAST;
-	}
-	else
-	if(keyboard_state[DIK_DOWN] && keyboard_state[DIK_RIGHT] )
-	{
-		controlEvent = CONTROL_EVENT_MOVE_SOUTH_EAST;
-	}
-	else
-	if(keyboard_state[DIK_DOWN] && keyboard_state[DIK_LEFT] )
-	{
-		controlEvent = CONTROL_EVENT_MOVE_SOUTH_WEST;
-	}
-	else
-	if(keyboard_state[DIK_UP] && keyboard_state[DIK_LEFT] )
-	{
-		controlEvent = CONTROL_EVENT_MOVE_NORTH_WEST;
-	}
-	else
 	if(keyboard_state[DIK_UP])
 	{
 		controlEvent = CONTROL_EVENT_MOVE_NORTH;
