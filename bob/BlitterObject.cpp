@@ -29,17 +29,11 @@ BlitterObject::~BlitterObject()
 	delete theBOB_;
 }
 
-int BlitterObject::Load_Frame(BITMAP_FILE_PTR bitmap, int frame, int cx,int cy,int mode)
-{
-	return ::Load_Frame_BOB(theBOB_,bitmap, frame, cx, cy, mode);
-}
 
 int BlitterObject::Load_Frame(IDirectDrawSurface7 * dds, int frame, int cx,int cy,int mode)
 {
 	return ::Load_Frame_BOB(theBOB_,dds, frame, cx, cy, mode);
 }
-
-
 
 
 int BlitterObject::Set_Animation(int anim_index)
@@ -87,20 +81,4 @@ int BlitterObject::Draw(LPDIRECTDRAWSURFACE7 dest)
 }
 
 
-
-BlitterObject * BlitterObject::Clone()
-{
-
-	
-	BOB * newBob = new BOB();
-	Clone_BOB(theBOB_, newBob );
-
-
-	BlitterObject * newBlitter = new BlitterObject(newBob);
-	return newBlitter;
-
-
-
-
-}
 

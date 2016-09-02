@@ -23,10 +23,6 @@ public:
 
 	virtual ~BlitterObject();
 
-
-	BlitterObject * Clone();
-
-    int Load_Frame(BITMAP_FILE_PTR bitmap, int frame, int cx,int cy,int mode);              
 	int Load_Frame(IDirectDrawSurface7 * dds, int frame, int cx,int cy,int mode);
 
 	int Set_Animation(int anim_index);
@@ -55,8 +51,6 @@ public:
 
 	int Draw(LPDIRECTDRAWSURFACE7 dest);
 
-
-	BOB * getTheBOB() { return theBOB_; }
 
 
 
