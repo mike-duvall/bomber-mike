@@ -98,7 +98,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="bob\BlitterObject.cpp" />
-    <ClCompile Include="gameobjects\Player.cpp" />
     <ClCompile Include="input\Keyboard.cpp" />
     <ClCompile Include="main\main.cpp" />
     <ClCompile Include="main\winmain.cpp" />
@@ -110,7 +109,6 @@
   <ItemGroup>
     <ClInclude Include="bob\BlitterObject.h" />
     <ClInclude Include="gameobjects\ControlEvent.h" />
-    <ClInclude Include="gameobjects\Player.h" />
     <ClInclude Include="input\Controller.h" />
     <ClInclude Include="input\Keyboard.h" />
     <ClInclude Include="main\Globals.h" />

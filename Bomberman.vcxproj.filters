@@ -75,9 +75,6 @@
     <ClCompile Include="bob\BlitterObject.cpp">
       <Filter>Source Files\bob</Filter>
     </ClCompile>
-    <ClCompile Include="gameobjects\Player.cpp">
-      <Filter>Source Files\gameobjects</Filter>
-    </ClCompile>
     <ClCompile Include="input\Keyboard.cpp">
       <Filter>Source Files\input</Filter>
     </ClCompile>
@@ -105,9 +102,6 @@
       <Filter>Header Files\bob</Filter>
     </ClInclude>
     <ClInclude Include="gameobjects\ControlEvent.h">
-      <Filter>Header Files\gameobjects</Filter>
-    </ClInclude>
-    <ClInclude Include="gameobjects\Player.h">
       <Filter>Header Files\gameobjects</Filter>
     </ClInclude>
     <ClInclude Include="input\Controller.h">
