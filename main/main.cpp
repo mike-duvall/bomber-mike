@@ -41,7 +41,6 @@ LPDIRECTINPUT8        lpdi      = NULL;    // dinput object
 #define TOTAL_NUM_COLUMNS 13
 
 Keyboard * theKeyboard;
-//Player * thePlayer;
 BlitterObject * theBlitterObject_;
 int mapLeftX;
 int mapTopY;
@@ -51,7 +50,6 @@ int initialX;
 int initialY;
 
 Controller * theController;
-
 
 
 
@@ -127,13 +125,9 @@ int Game_Init(void *parms,  int num_parms)
 	// hide the mouse
 	ShowCursor(FALSE);
 
-//	thePlayer = new Player(32, 32);
 	CreateBlitterObject(32, 32);
-	//thePlayer->SetController(theKeyboard);
 	theController = theKeyboard;
 
-	//int columnOffset = 13 * 32;
-	//int rowOffset = 11 * 32;
 
 	mapLeftX = 20;
 	mapTopY = 50;
@@ -141,8 +135,6 @@ int Game_Init(void *parms,  int num_parms)
 	return(1);
 
 } // end Game_Init
-
-
 
 
 
@@ -156,33 +148,6 @@ int Game_Shutdown(void *parms,  int num_parms)
 	return(1);
 } 
 
-///////////////////////////////////////////////////////////
-
-
-void HandleMoveDown()
-{
-	theBlitterObject_->IncrementY(moveIncrementAmount);
-}
-
-
-
-void HandleMoveUp()
-{
-	theBlitterObject_->IncrementY(-moveIncrementAmount);
-}
-
-
-void HandleMoveRight(int controlEvent)
-{
-	theBlitterObject_->IncrementX(moveIncrementAmount);
-}
-
-
-void HandleMoveLeft(int controlEvent)
-{
-	theBlitterObject_->IncrementX(-moveIncrementAmount);
-}
-
 
 
 void Mushroom_Update(int controlEvent)
@@ -192,20 +157,20 @@ void Mushroom_Update(int controlEvent)
 	{
 
 	case CONTROL_EVENT_MOVE_EAST:
-		HandleMoveRight(controlEvent);
+		theBlitterObject_->IncrementX(moveIncrementAmount);
 		break;
 
 
 	case CONTROL_EVENT_MOVE_WEST:
-		HandleMoveLeft(controlEvent);
+		theBlitterObject_->IncrementX(-moveIncrementAmount);
 		break;
 
 	case CONTROL_EVENT_MOVE_SOUTH:
-		HandleMoveDown();
+		theBlitterObject_->IncrementY(moveIncrementAmount);
 		break;
 
 	case CONTROL_EVENT_MOVE_NORTH:
-		HandleMoveUp();
+		theBlitterObject_->IncrementY(-moveIncrementAmount);
 		break;
 
 	}
@@ -240,23 +205,12 @@ void Mushroom_Draw(LPDIRECTDRAWSURFACE7 dest)
 
 void Update()
 {
-
 	// clear the drawing surface
 	DWORD backgroundColor = _RGB32BIT(0, 0, 0, 0);
 	DDraw_Fill_Surface(lpddsback, backgroundColor);
-
-
-	//Pull over remaining Player methods as non-object methods
-//		Then delete Player.cpp and H
-
-	//thePlayer->Update();
 	Mushroom_Update();
-
-	//thePlayer->Draw(lpddsback);
 	Mushroom_Draw(lpddsback);
-
 	DDraw_Flip();
-
 }
 
 
@@ -271,19 +225,13 @@ int Game_Main(void *parms, int num_parms)
 
 	// start the timing clock
 	Start_Clock();
-
-
 	Update();
-
 
 	// sync to 30 fps
 //	Wait_Clock(30);
 //	Wait_Clock(20);
 	Wait_Clock(1);
 
-
 	return(1);
-
 } 
-
 
