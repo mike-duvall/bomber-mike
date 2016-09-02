@@ -35,10 +35,8 @@ extern HWND      main_window_handle;
 LPDIRECTINPUT8        lpdi      = NULL;    // dinput object
 
 
-#define TOTAL_NUM_ROWS 11
-#define TOTAL_NUM_COLUMNS 13
-
 Keyboard * theKeyboard;
+Controller * theController;
 BOB * theBOB_;
 int mapLeftX;
 int mapTopY;
@@ -47,7 +45,7 @@ int moveIncrementAmount;
 int initialX;
 int initialY;
 
-Controller * theController;
+
 
 
 
