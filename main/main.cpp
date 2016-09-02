@@ -24,8 +24,6 @@
 
 #include "../t3dlib/t3dlib1.h"
 
-#include "../bob/BlitterObject.h"
-
 
 using namespace std;
 
@@ -41,7 +39,7 @@ LPDIRECTINPUT8        lpdi      = NULL;    // dinput object
 #define TOTAL_NUM_COLUMNS 13
 
 Keyboard * theKeyboard;
-BlitterObject * theBlitterObject_;
+BOB * theBOB_;
 int mapLeftX;
 int mapTopY;
 
@@ -69,9 +67,13 @@ void CreateBlitterObject(int x, int y)
 	int totalNumFrames = 1;
 	int transparentColorKey = RGB(0, 107, 0);
 
+	
+	theBOB_ = new BOB();
+	if (!Create_BOB(theBOB_, x, y, playerWidth, playerHeight, totalNumFrames, BOB_ATTR_VISIBLE | BOB_ATTR_MULTI_ANIM, DDSCAPS_VIDEOMEMORY, transparentColorKey, 8))
+	{
+		throw "Unable to create BOB";
+	}
 
-	theBlitterObject_ = new BlitterObject(x, y, playerWidth, playerHeight, totalNumFrames,
-		BOB_ATTR_VISIBLE | BOB_ATTR_MULTI_ANIM, DDSCAPS_VIDEOMEMORY, transparentColorKey);
 
 	int animations[] = { 0 };
 
@@ -89,13 +91,13 @@ void CreateBlitterObject(int x, int y)
 	}
 
 
-	theBlitterObject_->Load_Frame(dds, 0, 0, 0, BITMAP_EXTRACT_MODE_CELL);
+	Load_Frame_BOB(theBOB_, dds, 0, 0, 0, BITMAP_EXTRACT_MODE_CELL);
 
 	Unload_Bitmap_File(&bitmap8bit);
 
-	theBlitterObject_->Load_Animation(0, 1, animations);
-	theBlitterObject_->Set_Animation(0);
-	theBlitterObject_->Set_Pos(initialX, initialY);
+	Load_Animation_BOB(theBOB_, 0, 1, animations);
+	Set_Animation_BOB(theBOB_, 0);
+	Set_Pos_BOB(theBOB_, initialX, initialY);
 }
 
 
@@ -152,20 +154,20 @@ void Mushroom_Update(int controlEvent)
 	{
 
 	case CONTROL_EVENT_MOVE_EAST:
-		theBlitterObject_->IncrementX(moveIncrementAmount);
+		theBOB_->x += moveIncrementAmount;
 		break;
 
 
 	case CONTROL_EVENT_MOVE_WEST:
-		theBlitterObject_->IncrementX(-moveIncrementAmount);
+		theBOB_->x -= moveIncrementAmount;
 		break;
 
 	case CONTROL_EVENT_MOVE_SOUTH:
-		theBlitterObject_->IncrementY(moveIncrementAmount);
+		theBOB_->y += moveIncrementAmount;
 		break;
 
 	case CONTROL_EVENT_MOVE_NORTH:
-		theBlitterObject_->IncrementY(-moveIncrementAmount);
+		theBOB_->y -= moveIncrementAmount;
 		break;
 
 	}
@@ -191,7 +193,7 @@ bool Mushroom_Update()
 
 void Mushroom_Draw(LPDIRECTDRAWSURFACE7 dest)
 {
-	theBlitterObject_->Draw(dest);
+	Draw_BOB_To_Relative_Coordinates(theBOB_, dest, mapLeftX, mapTopY);
 }
 
 

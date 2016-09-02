@@ -72,9 +72,6 @@
     <ClCompile Include="t3dlib\t3dlib3.cpp">
       <Filter>Source Files\t3dlib</Filter>
     </ClCompile>
-    <ClCompile Include="bob\BlitterObject.cpp">
-      <Filter>Source Files\bob</Filter>
-    </ClCompile>
     <ClCompile Include="input\Keyboard.cpp">
       <Filter>Source Files\input</Filter>
     </ClCompile>
@@ -97,9 +94,6 @@
     </ClInclude>
     <ClInclude Include="t3dlib\t3dlib3.h">
       <Filter>Header Files\t3dlib</Filter>
-    </ClInclude>
-    <ClInclude Include="bob\BlitterObject.h">
-      <Filter>Header Files\bob</Filter>
     </ClInclude>
     <ClInclude Include="gameobjects\ControlEvent.h">
       <Filter>Header Files\gameobjects</Filter>

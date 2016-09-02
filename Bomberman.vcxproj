@@ -97,7 +97,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="bob\BlitterObject.cpp" />
     <ClCompile Include="input\Keyboard.cpp" />
     <ClCompile Include="main\main.cpp" />
     <ClCompile Include="main\winmain.cpp" />
@@ -107,7 +106,6 @@
     <ClCompile Include="t3dlib\t3dlib3.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="bob\BlitterObject.h" />
     <ClInclude Include="gameobjects\ControlEvent.h" />
     <ClInclude Include="input\Controller.h" />
     <ClInclude Include="input\Keyboard.h" />
