@@ -115,7 +115,6 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="t3dlib\ddutil.h" />
     <ClInclude Include="t3dlib\t3dlib3.h" />
-    <ClInclude Include="universe\Point.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Bomberman.ico" />

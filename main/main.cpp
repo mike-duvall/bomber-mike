@@ -17,10 +17,6 @@
 
 
 
-//#include "../input/Keyboard.h"
-#include "../universe/Point.h"
-
-
 #define CONTROL_EVENT_MOVE_EAST 1
 #define CONTROL_EVENT_MOVE_SOUTH 3
 #define CONTROL_EVENT_MOVE_WEST 5

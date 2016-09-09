@@ -11,9 +11,6 @@
     <Filter Include="Source Files\t3dlib">
       <UniqueIdentifier>{522604d5-69e3-468c-bfbe-a1cc6a1b2a9c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\universe">
-      <UniqueIdentifier>{94ed2db2-79f6-4fe8-8318-5d5826939155}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\sound">
       <UniqueIdentifier>{b8962353-6795-4c24-9558-0deb89dedccf}</UniqueIdentifier>
     </Filter>
@@ -23,9 +20,6 @@
     </Filter>
     <Filter Include="Header Files\t3dlib">
       <UniqueIdentifier>{2c9893b5-3d4f-4481-a658-8b9f91090c51}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\universe">
-      <UniqueIdentifier>{a1c5c377-fb80-4903-9d86-52f6e8675bba}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\main">
       <UniqueIdentifier>{f6e3b0c4-41b7-4340-ac45-b2f888a4ab87}</UniqueIdentifier>
@@ -73,9 +67,6 @@
     </ClInclude>
     <ClInclude Include="t3dlib\t3dlib3.h">
       <Filter>Header Files\t3dlib</Filter>
-    </ClInclude>
-    <ClInclude Include="universe\Point.h">
-      <Filter>Header Files\universe</Filter>
     </ClInclude>
     <ClInclude Include="main\Globals.h">
       <Filter>Header Files\main</Filter>
