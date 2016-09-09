@@ -14,34 +14,19 @@
 
 #include "../t3dlib/t3dlib1.h"
 #include "../t3dlib/ddutil.h"
-
-
-
-#define CONTROL_EVENT_MOVE_EAST 1
-#define CONTROL_EVENT_MOVE_SOUTH 3
-#define CONTROL_EVENT_MOVE_WEST 5
-#define CONTROL_EVENT_MOVE_NORTH 7
-
-#define CONTROL_EVENT_DO_NOTHING 10
-
 #include "../t3dlib/t3dlib1.h"
 
 
 using namespace std;
 
-
 extern HINSTANCE main_instance;
 extern HWND      main_window_handle;
-
 LPDIRECTINPUTDEVICE8  lpdikey;
 UCHAR keyboard_state[256];
-
-
-
 LPDIRECTINPUT8        lpdi      = NULL;    // dinput object
 
 
-//Keyboard * theKeyboard;
+
 BOB * theBOB_;
 int mapLeftX;
 int mapTopY;
@@ -49,8 +34,6 @@ int mapTopY;
 int moveIncrementAmount;
 int initialX;
 int initialY;
-
-
 
 
 
@@ -106,7 +89,6 @@ void CreateBlitterObject(int x, int y)
 
 
 
-
 int Game_Init(void *parms,  int num_parms)
 {
 
@@ -116,8 +98,6 @@ int Game_Init(void *parms,  int num_parms)
 	// first create the direct input object
 	if (DirectInput8Create(main_instance,DIRECTINPUT_VERSION,IID_IDirectInput8, (void **)&lpdi,NULL)!=DI_OK)
 		return(0);
-
-//	theKeyboard = new Keyboard(lpdi, main_window_handle);
 
 	if (lpdi->CreateDevice(GUID_SysKeyboard, &lpdikey, NULL) != DI_OK)
 	{
@@ -145,7 +125,6 @@ int Game_Init(void *parms,  int num_parms)
 	}
 
 
-
 	// set clipping rectangle to screen extents so mouse cursor
 	// doens't mess up at edges
 	RECT screen_rect = {0,0,screen_width,screen_height};
@@ -163,8 +142,6 @@ int Game_Init(void *parms,  int num_parms)
 	return(1);
 
 } // end Game_Init
-
-
 
 
 
@@ -209,14 +186,10 @@ void Mushroom_Update()
 }
 
 
-
-
 void Mushroom_Draw(LPDIRECTDRAWSURFACE7 dest)
 {
 	Draw_BOB_To_Relative_Coordinates(theBOB_, dest, mapLeftX, mapTopY);
 }
-
-
 
 
 
