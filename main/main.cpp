@@ -17,10 +17,16 @@
 
 
 
-#include "../input/Keyboard.h"
+//#include "../input/Keyboard.h"
 #include "../universe/Point.h"
 
-#include "../gameobjects/ControlEvent.h"
+
+#define CONTROL_EVENT_MOVE_EAST 1
+#define CONTROL_EVENT_MOVE_SOUTH 3
+#define CONTROL_EVENT_MOVE_WEST 5
+#define CONTROL_EVENT_MOVE_NORTH 7
+
+#define CONTROL_EVENT_DO_NOTHING 10
 
 #include "../t3dlib/t3dlib1.h"
 
@@ -31,11 +37,15 @@ using namespace std;
 extern HINSTANCE main_instance;
 extern HWND      main_window_handle;
 
+LPDIRECTINPUTDEVICE8  lpdikey;
+UCHAR keyboard_state[256];
+
+
 
 LPDIRECTINPUT8        lpdi      = NULL;    // dinput object
 
 
-Keyboard * theKeyboard;
+//Keyboard * theKeyboard;
 BOB * theBOB_;
 int mapLeftX;
 int mapTopY;
@@ -99,6 +109,8 @@ void CreateBlitterObject(int x, int y)
 
 
 
+
+
 int Game_Init(void *parms,  int num_parms)
 {
 
@@ -109,7 +121,34 @@ int Game_Init(void *parms,  int num_parms)
 	if (DirectInput8Create(main_instance,DIRECTINPUT_VERSION,IID_IDirectInput8, (void **)&lpdi,NULL)!=DI_OK)
 		return(0);
 
-	theKeyboard = new Keyboard(lpdi, main_window_handle);
+//	theKeyboard = new Keyboard(lpdi, main_window_handle);
+
+	if (lpdi->CreateDevice(GUID_SysKeyboard, &lpdikey, NULL) != DI_OK)
+	{
+		throw "Error initializing keyboard";
+	}
+
+
+	// set cooperation level
+	if (lpdikey->SetCooperativeLevel(main_window_handle,
+		DISCL_NONEXCLUSIVE | DISCL_BACKGROUND) != DI_OK)
+	{
+		throw "Error initializing keyboard";
+	}
+
+
+	if (lpdikey->SetDataFormat(&c_dfDIKeyboard) != DI_OK)
+	{
+		throw "Error initializing keyboard";
+	}
+
+
+	if (lpdikey->Acquire() != DI_OK)
+	{
+		throw "Error initializing keyboard";
+	}
+
+
 
 	// set clipping rectangle to screen extents so mouse cursor
 	// doens't mess up at edges
@@ -142,47 +181,36 @@ int Game_Shutdown(void *parms,  int num_parms)
 } 
 
 
+//Next:  Get rid of Keyboard class.  Just read keyboard directly.  Get rid of defines of control event
+//	Then: start trimming down t3dlib code
 
-void Mushroom_Update(int controlEvent)
+void Mushroom_Update()
 {
 
-	switch (controlEvent)
+	lpdikey->GetDeviceState(256, (LPVOID)keyboard_state);
+
+
+	if (keyboard_state[DIK_UP])
 	{
-
-	case CONTROL_EVENT_MOVE_EAST:
-		theBOB_->x += moveIncrementAmount;
-		break;
-
-
-	case CONTROL_EVENT_MOVE_WEST:
-		theBOB_->x -= moveIncrementAmount;
-		break;
-
-	case CONTROL_EVENT_MOVE_SOUTH:
-		theBOB_->y += moveIncrementAmount;
-		break;
-
-	case CONTROL_EVENT_MOVE_NORTH:
 		theBOB_->y -= moveIncrementAmount;
-		break;
-
+	}
+	else
+	if (keyboard_state[DIK_RIGHT])
+	{
+		theBOB_->x += moveIncrementAmount;
+	}
+	else
+	if (keyboard_state[DIK_DOWN])
+	{
+		theBOB_->y += moveIncrementAmount;
+	}
+	else
+	if (keyboard_state[DIK_LEFT])
+	{
+		theBOB_->x -= moveIncrementAmount;
 	}
 
 }
-
-
-
-
-bool Mushroom_Update()
-{
-	int controlEvent = CONTROL_EVENT_DO_NOTHING;
-
-	controlEvent = theKeyboard->GetControlEvent();
-	Mushroom_Update(controlEvent);
-
-	return false;
-}
-
 
 
 

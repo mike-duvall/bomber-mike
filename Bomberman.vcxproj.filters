@@ -11,15 +11,6 @@
     <Filter Include="Source Files\t3dlib">
       <UniqueIdentifier>{522604d5-69e3-468c-bfbe-a1cc6a1b2a9c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\bob">
-      <UniqueIdentifier>{8cae67de-97a6-4107-a227-8dabeed2c63c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gameobjects">
-      <UniqueIdentifier>{409e683b-8a42-4f65-963f-9bc15a4976e3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\input">
-      <UniqueIdentifier>{de731667-b9ad-4d72-afa8-0a83f8735ff1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\universe">
       <UniqueIdentifier>{94ed2db2-79f6-4fe8-8318-5d5826939155}</UniqueIdentifier>
     </Filter>
@@ -32,15 +23,6 @@
     </Filter>
     <Filter Include="Header Files\t3dlib">
       <UniqueIdentifier>{2c9893b5-3d4f-4481-a658-8b9f91090c51}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\bob">
-      <UniqueIdentifier>{1fd35d6f-52b9-46bd-b28c-7395a2e5ce1f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gameobjects">
-      <UniqueIdentifier>{d9d33cad-143c-4605-a611-d3416fedca1f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\input">
-      <UniqueIdentifier>{6f0b9e30-00b5-4653-8632-58264ffb36b3}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\universe">
       <UniqueIdentifier>{a1c5c377-fb80-4903-9d86-52f6e8675bba}</UniqueIdentifier>
@@ -72,9 +54,6 @@
     <ClCompile Include="t3dlib\t3dlib3.cpp">
       <Filter>Source Files\t3dlib</Filter>
     </ClCompile>
-    <ClCompile Include="input\Keyboard.cpp">
-      <Filter>Source Files\input</Filter>
-    </ClCompile>
     <ClCompile Include="sound\dxutil.cpp">
       <Filter>Source Files\sound</Filter>
     </ClCompile>
@@ -94,12 +73,6 @@
     </ClInclude>
     <ClInclude Include="t3dlib\t3dlib3.h">
       <Filter>Header Files\t3dlib</Filter>
-    </ClInclude>
-    <ClInclude Include="gameobjects\ControlEvent.h">
-      <Filter>Header Files\gameobjects</Filter>
-    </ClInclude>
-    <ClInclude Include="input\Keyboard.h">
-      <Filter>Header Files\input</Filter>
     </ClInclude>
     <ClInclude Include="universe\Point.h">
       <Filter>Header Files\universe</Filter>

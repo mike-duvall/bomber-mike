@@ -97,7 +97,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="input\Keyboard.cpp" />
     <ClCompile Include="main\main.cpp" />
     <ClCompile Include="main\winmain.cpp" />
     <ClCompile Include="sound\dxutil.cpp" />
@@ -106,8 +105,6 @@
     <ClCompile Include="t3dlib\t3dlib3.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="gameobjects\ControlEvent.h" />
-    <ClInclude Include="input\Keyboard.h" />
     <ClInclude Include="main\Globals.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="sound\dxutil.h" />
